@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<style type="text/css">
+		.checkbox-inline{
+			padding-left: 0;
+		}
+		.list-tab-content{
+			width: 1024px;
+		    margin: 0 -10px;
+		    /*padding: 10px;*/
+		    border: 1px solid #cdcdcd;
+		}
+		.list {
+		    padding: 0 10px;
+		    margin-bottom: 5px;
+		    line-height: 25px;
+		}
+		.list .name-label {
+		    min-width: 135px;
+		    position: relative;
+		}
+		.floatLeft {
+		    float: left;
+		}
+		.list-tab-content .trading-range-box {
+		    padding-left: 15px;
+		}
+
+		.list-tab-content .trading-range-box .trading-range {
+		    width: 90pt;
+		    float: left;
+		}
+		.list .checkbox-input {
+		    vertical-align: -3px;
+		    margin-right: 5px;
+		}
+		.list-tab-content .trading-range-box .trading-range .list label {
+		    font-weight: 400;
+		    width: 67%;
+		}
+		.list-tab-content .trading-range-box .trading-range-detail .list label {
+		    font-weight: 400;
+		    line-height: 25px;
+		    margin-top: 5px;
+		    /*width: 35%;*/
+		}
+		.list-tab-content .trading-range-box .trading-range-detail {
+		    width: 886px;
+		    float: left;
+		}
+		 .list .radio-style {
+		    vertical-align: -3px;
+		    margin-right: 5px;
+		}
+		.list .alone-input {
+		    width: 5pc;
+		    margin-right: 5px;
+		}
+		input.input-global {
+		    width: 5pc;
+		    padding: 0 0 0 5px;
+		    height: 23px;
+		    font-size: 9pt;
+		    line-height: 23px;
+		    color: #707070;
+		    border: 1px solid #cdcdcd;
+		    border-radius: 1px;
+		}
+		.list a {
+		    margin-left: 5px;
+		    color: #2255a4;
+    		cursor: pointer;
+		}
+		.security-box {
+		    position: relative;
+		    width: 369px;
+		}
+		.security-box .selectInput {
+		    width: 173px;
+		}
+		.security-box .selectResult {
+		    left: 155px;
+		    display: block;
+		    position: absolute;
+		    overflow: hidden;
+		    background-color: #fff;
+		    border: 1px solid #ccc;
+		    top: 5px;
+		    max-width: 360px;
+		    white-space: nowrap;
+		    z-index: 2;
+		}
+		.security-box .selectResult .selected {
+		    background-color: #044afb;
+		    color: #fff;
+		}
+		.security-box .selectResult li {
+		    padding: 0 10px 0 15px;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</style>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li class="active"><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+				<ul class="nav nav-stacked nav-left col-md-1">
+					<li class="active"><a href="system.html">用户默认设置</a><div></div></li>
+					<li><a href="fundManagementSettings.html">资金管理设置</a><div></div></li>
+					<li><a href="systemNameManagement.html">系统名称管理</a><div></div></li>
+				</ul>
+                <!--/sidebar-->
+                <!-- 第一个    用户默认设置-->
+                <div class="nav-right col-md-11">
+	
+					<div>
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">系统管理</a></li>
+								<li class="active">用户默认设置</li>
+							</ol>
+						</div>
+						<div class="main">
+							<div class="width_label">
+								<form class="form">
+									<div class="form-group">
+									    <p>用户设置:</p>
+									    <label for="">是否开放用户注册:</label>
+									    <label class="checkbox-inline" style="width: 50px;">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked> 是
+										</label>
+										<label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2"> 否
+										</label>
+										<p style="margin-bottom: 20px;"></p>
+										<p>基本信息:</p>
+										<label for="name" style="margin-right: 10px;">收费方案:</label>
+										<select class="form-control" style="width: 20%; display: inline-block;">
+											<option>全局收费方案1</option>
+											<option>全局收费方案2</option>
+											<option>全局收费方案3</option>
+										</select>
+										<p style="margin-bottom: 10px;"></p>
+										<label for="name" style="margin-right: 10px;">归属分组:</label>
+										<select class="form-control" style="width: 20%; display: inline-block;">
+											<option>默认分组</option>
+										</select>
+										<p style="margin-bottom: 10px;"></p>
+										<label for="">风控模式:</label>
+									    <label class="checkbox-inline" style="width: 158px;">
+											<input type="radio" name="optionsRadiosinline2" id="optionsRadios5" value="option1" checked> 每个资金账户单独风控
+										</label>
+										<label class="checkbox-inline" style="width: 200px;">
+											<input type="radio" name="optionsRadiosinline2" id="optionsRadios6"  value="option2"> 所有资金账户联合风控
+										</label>
+										<p style="margin-bottom: 10px;"></p>
+										<label for="">账户模式:</label>
+									    <label class="checkbox-inline" style="width: 74px;">
+											<input type="radio" name="optionsRadiosinline3" id="optionsRadios7" value="option1" checked> 分账户
+										</label>
+										<label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline3" id="optionsRadios8"  value="option2"> 独立账户
+										</label>
+										<p style="margin-bottom: 20px;"></p>
+									    <p>账户设置:</p>
+									    <label for="">是否要实名开户:</label>
+									    <label class="checkbox-inline" style="width: 50px;">
+											<input type="radio" name="optionsRadiosinline4" id="optionsRadios9" value="option1" checked> 是
+										</label>
+										<label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline4" id="optionsRadios9"  value="option2"> 否
+										</label>
+										<p style="margin-bottom: 10px;"></p>
+									    <label for="">是否开启自动审核:</label>
+									    <label class="checkbox-inline" style="width: 50px;">
+											<input type="radio" name="optionsRadiosinline5" id="optionsRadios11" value="option1" checked> 是
+										</label>
+										<label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline5" id="optionsRadios12"  value="option2"> 否
+										</label>
+										<p style="margin-bottom: 10px;"></p>
+										<div class="capitalAccount_">
+											<label for="">资金账户:</label>
+											<label class="checkbox-inline" style="width: 122px;">
+												<input type="checkbox" id="inlineCheckbox1" value="option1" class="capitalAccoun1" checked> 在岸人民币账户
+											</label>
+											<label class="checkbox-inline">
+												<input type="checkbox" id="inlineCheckbox2" value="option2" class="capitalAccoun2"> 美元账户
+											</label>
+											<label class="checkbox-inline">
+												<input type="checkbox" id="inlineCheckbox3" value="option3" class="capitalAccoun3"> 港币账户
+											</label>
+											<label class="checkbox-inline" style="width: 122px;">
+												<input type="checkbox" id="inlineCheckbox4" value="option4" class="capitalAccoun4"> 离岸人民币账户
+											</label>
+										</div>
+										<p style="margin-bottom: 10px;"></p>
+										<div>
+											<ul class="nav nav-tabs" id="myTab1">
+												<li class="active capitalAccount1"><a href="#tab4111" data-toggle="tab">在岸人民币账户</a></li>
+												<li class="capitalAccount2"><a href="#tab4112" data-toggle="tab">美元账户</a></li>
+												<li class="capitalAccount3"><a href="#tab4113" data-toggle="tab">港币账户</a></li>
+												<li class="capitalAccount4"><a href="#tab4114" data-toggle="tab">离岸人民币账户</a></li>
+											</ul>
+											<!--tab pane-->
+											<div class="tab-content tab_content">
+												<!-- 第一个tab 在岸人民币账户-->
+												<div class="tab-pane fade active in capitalAccou1" id="tab4111">
+													<div class="row">
+														<div class="list-tab-content USDAccountEdit">
+															<div class="list clearfix">
+																<label class="floatLeft name-label" id="rangeUSDEdit">交易品类：</label>
+															</div>
+															<div class="trading-range-box clearfix">
+																<div class="trading-range">
+																	<div class="list clearfix">
+																		<input type="checkbox" class="checkbox-input checkbox-rangeUSD" id="USStockEdit" value="5"><label class="" for="USStockEdit">沪深A股</label>
+																	</div>
+																</div>
+																<div class="trading-range-detail">
+																	<div class="list clearfix">
+																		<label class="floatLeft name-label">交易佣金：</label>
+																		<input type="radio" name="settingUSStockEdit" class="radio-style" id="globalSettingUSD" checked=""><label for="globalSettingUSD" style="margin-right: 10px">使用全局设置</label>
+																	</div>
+																	<div class="list clearfix" style="display:block" id="globalSettingDetailUSD">
+																		
+																		
+																		<label class="floatLeft name-label" style="width: 70px; text-align: right">每股收取：</label>
+																		<input type="text" class="floatLeft input-global alone-input commissionForPreAmount5" value="0.0070" style="background-color:#eee" readonly=""><span class="floatLeft">元($)</span>
+																	
+																	
+																		<label class="floatLeft name-label" style="width: 70px; margin-left: 15px">最低费用：</label>
+																		<input type="text" class="floatLeft input-global alone-input minCommission5" value="0.7000" style="background-color:#eee" readonly="">元($)
+																	
+																	
+																		<label class="floatLeft name-label" style="width: 70px; margin-left: 15px">最高费用：</label>
+																		<input type="text" class="floatLeft input-global alone-input tradeMaxCommissionRatio5" value="1" style="background-color:#eee" readonly="">%
+																	
+																		<a href="../transaction/chargingScheme.html">查看全局费率设置</a>
+																	</div>
+																	<div class="list clearfix security-box securityBox" id="securityBoxUSStockEdit">
+																		<label class="floatLeft name-label">报单通道：</label>
+																		<!--<input class="floatLeft input-global selectInput account" id="accountUSStockEdit" type="text" data-type="1" data-value="420">-->
+														                <select class="selectResult">
+																			<option class="selected" data-value="420" data-type="1">1</option>
+																			<option class="" data-value="1665" data-type="0">模拟券商-1665</li>
+																			<option class="" data-value="1664" data-type="0">模拟券商-1664</li>
+																		</select>
+																	</div>
+																</div>
+															</div>
+															
+														</div>
+													</div>
+												</div>
+												<!-- 第二个tab 美元账户-->
+												<div class="tab-pane fade capitalAccou2 " id="tab4112">
+													<div class="row">
+														<div class="list-tab-content USDAccountEdit">
+															<div class="list clearfix">
+																<label class="floatLeft name-label" id="rangeUSDEdit">交易品类：</label>
+															</div>
+															<div class="trading-range-box clearfix">
+																<div class="trading-range">
+																	<div class="list clearfix">
+																		<input type="checkbox" class="checkbox-input checkbox-rangeUSD" id="USStockEdit" value="5"><label class="" for="USStockEdit">美股</label>
+																	</div>
+																</div>
+																<div class="trading-range-detail">
+																	<div class="list clearfix">
+																		<label class="floatLeft name-label">交易佣金：</label>
+																		<input type="radio" name="settingUSStockEdit" class="radio-style" id="globalSettingUSD" checked=""><label for="globalSettingUSD" style="margin-right: 10px">使用全局设置</label>
+																	</div>
+																	<div class="list clearfix" style="display:block" id="globalSettingDetailUSD">
+																		
+																		
+																		<label class="floatLeft name-label" style="width: 70px; text-align: right">每股收取：</label>
+																		<input type="text" class="floatLeft input-global alone-input commissionForPreAmount5" value="0.0070" style="background-color:#eee" readonly=""><span class="floatLeft">元($)</span>
+																	
+																	
+																		<label class="floatLeft name-label" style="width: 70px; margin-left: 15px">最低费用：</label>
+																		<input type="text" class="floatLeft input-global alone-input minCommission5" value="0.7000" style="background-color:#eee" readonly="">元($)
+																	
+																	
+																		<label class="floatLeft name-label" style="width: 70px; margin-left: 15px">最高费用：</label>
+																		<input type="text" class="floatLeft input-global alone-input tradeMaxCommissionRatio5" value="1" style="background-color:#eee" readonly="">%
+																	
+																		<a href="../transaction/chargingScheme.html">查看全局费率设置</a>
+																	</div>
+																	<div class="list clearfix security-box securityBox" id="securityBoxUSStockEdit">
+																		<label class="floatLeft name-label">报单通道：</label>
+																		<!--<input class="floatLeft input-global selectInput account" id="accountUSStockEdit" type="text" data-type="1" data-value="420">-->
+														                <select class="selectResult">
+																			<option class="selected" data-value="420" data-type="1">1</option>
+																			<option class="" data-value="1665" data-type="0">模拟券商-1665</li>
+																			<option class="" data-value="1664" data-type="0">模拟券商-1664</li>
+																		</select>
+																	</div>
+																</div>
+															</div>
+															<div class="trading-range-box clearfix">
+																<div class="trading-range">
+																	<div class="list clearfix">
+																		<input type="checkbox" class="checkbox-input checkbox-rangeUSD" id="USStockFutureEdit" value="USJRQH"><label class="" for="USStockFutureEdit">金融期货</label>
+																	</div>
+																</div>
+																<div class="trading-range-detail">
+																	<div class="list clearfix">
+																		<label class="floatLeft name-label">交易佣金：</label>
+																		<input type="radio" name="settingUSStockFutureEdit" class="radio-style" id="globalSettingUSD" checked=""><label for="globalSettingUSD" style="margin-right: 10px">使用全局设置</label>
+																	</div>
+																	<div class="list clearfix" style="display:block" id="globalSettingDetailUSD">
+																		<a href="../transaction/chargingScheme.html">查看全局费率设置</a>
+																	</div>
+																	<div class="list clearfix security-box securityBox" id="securityBoxUSStockFutureEdit">
+																		<label class="floatLeft name-label">报单通道：</label>
+																		<input class="floatLeft input-global selectInput account" id="accountUSStockFutureEdit" type="text" data-type="1" data-value="420">
+															                <ul class="selectResult" style="display: none;">
+															
+															
+																					<li class="selected" data-value="420" data-type="1">1</li>
+																				
+																					<li class="" data-value="1665" data-type="0">模拟券商-1665</li>
+																				
+																					<li class="" data-value="1664" data-type="0">模拟券商-1664</li>
+																				
+																			</ul>
+																	</div>
+																</div>
+															</div>
+															<div class="trading-range-box clearfix">
+																<div class="trading-range">
+																	<div class="list clearfix">
+																		<input type="checkbox" class="checkbox-input checkbox-rangeUSD" id="USOILEdit" value="USOIL"><label class="" for="USOILEdit">商品期货</label>
+																	</div>
+																</div>
+																<div class="trading-range-detail">
+																	<div class="list clearfix">
+																		<label class="floatLeft name-label">交易佣金：</label>
+																		<input type="radio" name="settingUSOILEdit" class="radio-style" id="globalSettingUSD" checked=""><label for="globalSettingUSD" style="margin-right: 10px">使用全局设置</label>
+																	</div>
+																	<div class="list clearfix" style="display:block" id="globalSettingDetailUSD">
+																		<a href="../transaction/chargingScheme.html">查看全局费率设置</a>
+																	</div>
+																	<div class="list clearfix security-box securityBox" id="securityBoxUSOILEdit">
+																		<label class="floatLeft name-label">报单通道：</label>
+																		<!--<input class="floatLeft input-global selectInput account" id="accountUSOILEdit" type="text" data-type="1" data-value="420">-->
+															                <select class="selectResult">
+																					<option class="selected" data-value="420" data-type="1">1</option>
+																					<option class="" data-value="1665" data-type="0">模拟券商-1665</li>
+																					<option class="" data-value="1664" data-type="0">模拟券商-1664</li>
+																			</select>
+																	</div>
+																</div>
+															</div>
+															<div class="trading-range-box clearfix">
+																<div class="trading-range">
+																	<div class="list clearfix">
+																		<input type="checkbox" class="checkbox-input checkbox-rangeUSD" id="USMETALEdit" value="USMETAL"><label class="" for="USMETALEdit">金银现货</label>
+																	</div>
+																</div>
+																<div class="trading-range-detail">
+																	<div class="list clearfix">
+																		<label class="floatLeft name-label">交易佣金：</label>
+																		<input type="radio" name="settingUSMETALEdit" class="radio-style" id="globalSettingUSD" checked=""><label for="globalSettingUSD" style="margin-right: 10px">使用全局设置</label>
+																	</div>
+																	<div class="list clearfix" style="display:block" id="globalSettingDetailUSD">
+																		<a href="../transaction/chargingScheme.html">查看全局费率设置</a>
+																	</div>
+																	<div class="list clearfix security-box securityBox" id="securityBoxUSMETALEdit">
+																		<label class="floatLeft name-label">报单通道：</label>
+																		<input class="floatLeft input-global selectInput account" id="accountUSMETALEdit" type="text" data-type="1" data-value="420">
+															                <!--<ul class="selectResult">
+																				<li class="selected" data-value="420" data-type="1">1</li>
+																				<li class="" data-value="1665" data-type="0">模拟券商-1665</li>
+																				<li class="" data-value="1664" data-type="0">模拟券商-1664</li>
+																			</ul>-->
+																	</div>
+																</div>
+															</div>
+														
+														</div>
+													</div>
+												</div>
+												<!-- 第三个tab 港币账户-->
+												<div class="tab-pane fade capitalAccou3" id="tab4113">
+													
+												<div class="row">
+														<div class="list-tab-content USDAccountEdit">
+															<div class="list clearfix">
+																<label class="floatLeft name-label" id="rangeUSDEdit">交易品类：</label>
+															</div>
+															<div class="trading-range-box clearfix">
+																<div class="trading-range">
+																	<div class="list clearfix">
+																		<input type="checkbox" class="checkbox-input checkbox-rangeUSD" id="USStockEdit" value="5"><label class="" for="USStockEdit">港股</label>
+																	</div>
+																</div>
+																<div class="trading-range-detail">
+																	<div class="list clearfix">
+																		<label class="floatLeft name-label">交易佣金：</label>
+																		<input type="radio" name="settingUSStockEdit" class="radio-style" id="globalSettingUSD" checked=""><label for="globalSettingUSD" style="margin-right: 10px">使用全局设置</label>
+																	</div>
+																	<div class="list clearfix" style="display:block" id="globalSettingDetailUSD">
+																		
+																		
+																		<label class="floatLeft name-label" style="width: 70px; text-align: right">每股收取：</label>
+																		<input type="text" class="floatLeft input-global alone-input commissionForPreAmount5" value="0.0070" style="background-color:#eee" readonly=""><span class="floatLeft">元($)</span>
+																	
+																	
+																		<label class="floatLeft name-label" style="width: 70px; margin-left: 15px">最低费用：</label>
+																		<input type="text" class="floatLeft input-global alone-input minCommission5" value="0.7000" style="background-color:#eee" readonly="">元($)
+																	
+																	
+																		<label class="floatLeft name-label" style="width: 70px; margin-left: 15px">最高费用：</label>
+																		<input type="text" class="floatLeft input-global alone-input tradeMaxCommissionRatio5" value="1" style="background-color:#eee" readonly="">%
+																	
+																		<a href="../transaction/chargingScheme.html">查看全局费率设置</a>
+																	</div>
+																	<div class="list clearfix security-box securityBox" id="securityBoxUSStockEdit">
+																		<label class="floatLeft name-label">报单通道：</label>
+																		<!--<input class="floatLeft input-global selectInput account" id="accountUSStockEdit" type="text" data-type="1" data-value="420">-->
+														                <select class="selectResult">
+																			<option class="selected" data-value="420" data-type="1">1</option>
+																			<option class="" data-value="1665" data-type="0">模拟券商-1665</li>
+																			<option class="" data-value="1664" data-type="0">模拟券商-1664</li>
+																		</select>
+																	</div>
+																</div>
+															</div>
+															<div class="trading-range-box clearfix">
+																<div class="trading-range">
+																	<div class="list clearfix">
+																		<input type="checkbox" class="checkbox-input checkbox-rangeUSD" id="USStockFutureEdit" value="USJRQH"><label class="" for="USStockFutureEdit">金融期货</label>
+																	</div>
+																</div>
+																<div class="trading-range-detail">
+																	<div class="list clearfix">
+																		<label class="floatLeft name-label">交易佣金：</label>
+																		<input type="radio" name="settingUSStockFutureEdit" class="radio-style" id="globalSettingUSD" checked=""><label for="globalSettingUSD" style="margin-right: 10px">使用全局设置</label>
+																	</div>
+																	<div class="list clearfix" style="display:block" id="globalSettingDetailUSD">
+																		<a href="../transaction/chargingScheme.html">查看全局费率设置</a>
+																	</div>
+																	<div class="list clearfix security-box securityBox" id="securityBoxUSStockFutureEdit">
+																		<label class="floatLeft name-label">报单通道：</label>
+																		<input class="floatLeft input-global selectInput account" id="accountUSStockFutureEdit" type="text" data-type="1" data-value="420">
+															                <ul class="selectResult" style="display: none;">
+															
+															
+																					<li class="selected" data-value="420" data-type="1">1</li>
+																				
+																					<li class="" data-value="1665" data-type="0">模拟券商-1665</li>
+																				
+																					<li class="" data-value="1664" data-type="0">模拟券商-1664</li>
+																				
+																			</ul>
+																	</div>
+																</div>
+															</div>
+															
+														</div>
+													</div>
+												</div>
+												<!-- 第四个tab 离岸人民币账户-->
+												<div class="tab-pane fade capitalAccou4" id="tab4114">
+													
+													<div class="row">
+														<div class="list-tab-content USDAccountEdit">
+															<div class="list clearfix">
+																<label class="floatLeft name-label" id="rangeUSDEdit">交易品类：</label>
+															</div>
+															<div class="trading-range-box clearfix">
+																<div class="trading-range">
+																	<div class="list clearfix">
+																		<input type="checkbox" class="checkbox-input checkbox-rangeUSD" id="USStockEdit" value="5"><label class="" for="USStockEdit">沪股通</label>
+																	</div>
+																</div>
+																<div class="trading-range-detail">
+																	<div class="list clearfix">
+																		<label class="floatLeft name-label">交易佣金：</label>
+																		<input type="radio" name="settingUSStockEdit" class="radio-style" id="globalSettingUSD" checked=""><label for="globalSettingUSD" style="margin-right: 10px">使用全局设置</label>
+																	</div>
+																	<div class="list clearfix" style="display:block" id="globalSettingDetailUSD">
+																		
+																		
+																		<label class="floatLeft name-label" style="width: 70px; text-align: right">每股收取：</label>
+																		<input type="text" class="floatLeft input-global alone-input commissionForPreAmount5" value="0.0070" style="background-color:#eee" readonly=""><span class="floatLeft">元($)</span>
+																	
+																	
+																		<label class="floatLeft name-label" style="width: 70px; margin-left: 15px">最低费用：</label>
+																		<input type="text" class="floatLeft input-global alone-input minCommission5" value="0.7000" style="background-color:#eee" readonly="">元($)
+																	
+																	
+																		<label class="floatLeft name-label" style="width: 70px; margin-left: 15px">最高费用：</label>
+																		<input type="text" class="floatLeft input-global alone-input tradeMaxCommissionRatio5" value="1" style="background-color:#eee" readonly="">%
+																	
+																		<a href="../transaction/chargingScheme.html">查看全局费率设置</a>
+																	</div>
+																	<div class="list clearfix security-box securityBox" id="securityBoxUSStockEdit">
+																		<label class="floatLeft name-label">报单通道：</label>
+																		<!--<input class="floatLeft input-global selectInput account" id="accountUSStockEdit" type="text" data-type="1" data-value="420">-->
+														                <select class="selectResult">
+																			<option class="selected" data-value="420" data-type="1">1</option>
+																			<option class="" data-value="1665" data-type="0">模拟券商-1665</li>
+																			<option class="" data-value="1664" data-type="0">模拟券商-1664</li>
+																		</select>
+																	</div>
+																</div>
+															</div>
+															<div class="trading-range-box clearfix">
+																<div class="trading-range">
+																	<div class="list clearfix">
+																		<input type="checkbox" class="checkbox-input checkbox-rangeUSD" id="USStockFutureEdit" value="USJRQH"><label class="" for="USStockFutureEdit">深股通</label>
+																	</div>
+																</div>
+																<div class="trading-range-detail">
+																	<div class="list clearfix">
+																		<label class="floatLeft name-label">交易佣金：</label>
+																		<input type="radio" name="settingUSStockFutureEdit" class="radio-style" id="globalSettingUSD" checked=""><label for="globalSettingUSD" style="margin-right: 10px">使用全局设置</label>
+																	</div>
+																	<div class="list clearfix" style="display:block" id="globalSettingDetailUSD">
+																		<a href="../transaction/chargingScheme.html">查看全局费率设置</a>
+																	</div>
+																	<div class="list clearfix security-box securityBox" id="securityBoxUSStockFutureEdit">
+																		<label class="floatLeft name-label">报单通道：</label>
+																		<input class="floatLeft input-global selectInput account" id="accountUSStockFutureEdit" type="text" data-type="1" data-value="420">
+															                <ul class="selectResult" style="display: none;">
+															
+															
+																					<li class="selected" data-value="420" data-type="1">1</li>
+																				
+																					<li class="" data-value="1665" data-type="0">模拟券商-1665</li>
+																				
+																					<li class="" data-value="1664" data-type="0">模拟券商-1664</li>
+																				
+																			</ul>
+																	</div>
+																</div>
+															</div>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<p style="margin-bottom: 30px;"></p>
+										<a class="btn normal_btn" style="margin-left: 12%;">确定</a>
+									</div>
+								</form>
+								<br />
+							</div>
+							<!--tab pane-->
+							
+						</div>
+            		</div>
+					<!--  新增 资金账户 弹出框 开始-->
+					<div class="message_pop" id="msgPop" >
+						<div class="msg_box">
+							<div class="msg_head clearfix">
+								<p id="msgTitle">消息提示</p>
+								<div class="msg_close do_close"></div>
+							</div>
+							<div class="msg_body" id="msgContent">
+								资金账户至少选择一项
+							</div>
+							<div class="msg_footer" id="msgBtn">
+								<a class="btn normal_btn pop_box_hide do_close">确定</a>
+							</div>
+						</div>
+						
+						
+					</div>
+					<!--  新增 资金账户 弹出框 结束-->					 									
+					
+                </div>
+                 <!-- 第一个    用户默认设置   end-->
+			</div>
+		
+		</div>
+		<script type="text/javascript">
+				/*用户账户   新增  资金信息   资金账户信息设置  */
+			if ($('.capitalAccoun1').prop("checked") == true ) {
+				//alert(1);
+				$('#myTab1 a[href="#tab4111"]').tab('show');
+				$('.capitalAccount1').addClass('showw');
+				/*$('.capitalAccou1').addClass('showw');*/
+			};
+			$('.capitalAccoun1').bind("click", function () {
+				var indexNum = $(this).parents(".capitalAccount_ label").index();
+			if ($(this).prop("checked") == true ) {
+				$('#myTab1 a[href="#tab4111"]').tab('show');
+				$('.capitalAccount1').addClass('showw');
+             	}
+			else {
+				$('.capitalAccount1').removeClass('showw');
+				if ($('.capitalAccoun2').prop("checked") == true && $('.capitalAccoun3').prop("checked") == true && $('.capitalAccoun4').prop("checked") == true ) {
+					$('#myTab1 a[href="#tab4112"]').tab('show');
+				}else if ($('.capitalAccoun3').prop("checked") == true && $('.capitalAccoun4').prop("checked") == true ) {
+					$('#myTab1 a[href="#tab4113"]').tab('show');
+				}else if ($('.capitalAccoun4').prop("checked") == true ) {
+					$('#myTab1 a[href="#tab4114"]').tab('show');
+				}else if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == false && $('.capitalAccoun3').prop("checked") == false && $('.capitalAccoun4').prop("checked") == false ){
+	            	$('.message_pop').css('display','block');
+	            	$('.do_close').click(function(){
+	            		$('.message_pop').css('display','none');
+	            	});
+	            	$(".capitalAccount_ label").eq(indexNum).find("input").prop("checked",true);
+	            	$('.capitalAccount1').addClass('showw');
+	            };
+				
+				
+				
+				
+            }
+		 	});
+			//点击之后变为不是打钩时触发
+            
+			$('.capitalAccoun2').bind('click',function( ) {
+				var indexNum = $(this).parents(".capitalAccount_ label").index();
+				if ($('.capitalAccoun2').prop("checked") == true ) {
+				$('#myTab1 a[href="#tab4112"]').tab('show');
+				$('.capitalAccount2').addClass('showw');
+				
+	           }//点击之后变为不是打钩时触发
+				else{
+	           	$('.capitalAccount2').removeClass('showw');
+	           	if ($('.capitalAccoun1').prop("checked") == true ){
+           			$('#myTab1 a[href="#tab4111"]').tab('show');
+	           	};
+	           	if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun3').prop("checked") == true ){
+           			$('#myTab1 a[href="#tab4113"]').tab('show');
+	           	};
+	           	if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun3').prop("checked") == false && $('.capitalAccoun4').prop("checked") == true ){
+           			$('#myTab1 a[href="#tab4114"]').tab('show');
+	           	};
+	           	if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == false && $('.capitalAccoun3').prop("checked") == false && $('.capitalAccoun4').prop("checked") == false ){
+		            	$('.message_pop').css('display','block');
+		            	$('.do_close').click(function(){
+		            		$('.message_pop').css('display','none');
+		            	});
+		            	$(".capitalAccount_ label").eq(indexNum).find("input").prop("checked",true);
+		            	$('.capitalAccount2').addClass('showw');
+	            };
+	           
+	           }
+            })
+			
+            $('.capitalAccoun3').bind('click',function( ) {
+            	var indexNum = $(this).parents(".capitalAccount_ label").index();
+            	if ($(this).prop("checked") == true) {
+                	$('#myTab1 a[href="#tab4113"]').tab('show');
+                	$('.capitalAccount3').addClass('showw');
+                	
+                }
+            	else{
+            		$('.capitalAccount3').removeClass('showw');
+            		if ($('.capitalAccoun1').prop("checked") == true){
+           				$('#myTab1 a[href="#tab4111"]').tab('show');
+	           		};
+            		if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == true ){
+           				$('#myTab1 a[href="#tab4112"]').tab('show');
+	           		};
+            		if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == false && $('.capitalAccoun4').prop("checked") == true ){
+           				$('#myTab1 a[href="#tab4114"]').tab('show');
+	           		};
+	           		if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == false && $('.capitalAccoun3').prop("checked") == false && $('.capitalAccoun4').prop("checked") == false ){
+		            	$('.message_pop').css('display','block');
+		            	$('.do_close').click(function(){
+		            		$('.message_pop').css('display','none');
+		            	});
+		            	$(".capitalAccount_ label").eq(indexNum).find("input").prop("checked",true);
+		            	$('.capitalAccount3').addClass('showw');
+		            };
+            	}
+            })
+            $('.capitalAccoun4').bind('click',function( ) {
+            	console.log();
+            	var indexNum = $(this).parents(".capitalAccount_ label").index();
+            	if ($(this).prop("checked") == true) {
+                	$('#myTab1 a[href="#tab4114"]').tab('show');
+                	$('.capitalAccount4').addClass('showw');
+                }
+            	else{
+            		$('.capitalAccount4').removeClass('showw');
+            		if ($('.capitalAccoun1').prop("checked") == true){
+           				$('#myTab1 a[href="#tab4111"]').tab('show');
+	           		};
+            		if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == true){
+           				$('#myTab1 a[href="#tab4112"]').tab('show');
+	           		};
+            		if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == false && $('.capitalAccoun3').prop("checked") == true ){
+           				$('#myTab1 a[href="#tab4113"]').tab('show');
+	           		};
+	           		if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == false && $('.capitalAccoun3').prop("checked") == false && $('.capitalAccoun4').prop("checked") == false ){
+   		            	$('.message_pop').css('display','block');
+		            	$('.do_close').click(function(){
+		            		$('.message_pop').css('display','none');
+		            	});
+		            	//console.log(indexNum);
+		            	//console.log($(".capitalAccount label").eq(indexNum).find("input"));
+		            	$(".capitalAccount_ label").eq(indexNum).find("input").prop("checked",true);
+		            	$('.capitalAccount4').addClass('showw');
+		            };
+            	}
+            });
+		</script>
+
+	</body>
+</html>
+

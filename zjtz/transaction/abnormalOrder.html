@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="active search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+                <ul class="nav nav-stacked nav-left col-md-1">
+                    <li><a href="../index.html">委托查询</a><div></div></li>
+                    <li><a href="transactionRecord.html">成交记录</a><div></div></li>
+                    <li><a href="positionInquiry.html">持仓查询</a><div></div></li>
+                    <li><a href="positionComparison.html">持仓对比</a><div></div></li>
+                    <li><a href="chargingScheme.html">收费方案</a><div></div></li>
+                    <li><a href="equityChange.html">权益变动</a><div></div></li>
+                    <li class="active"><a href="#">异常订单</a><div></div></li>
+                    <li><a href="transactionReconciliation.html">交易对账</a><div></div></li>
+                </ul>
+                <!--/sidebar-->
+                <!-- 第七个    异常订单-->
+                <div class="nav-right col-md-11">
+                	
+                	<div>
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">交易管理</a></li>
+								<li class="active">异常订单</li>
+							</ol>
+						</div>
+						<div class="main">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tab171" data-toggle="tab">异常订单列表</a></li>
+								<li><a href="#tab172" data-toggle="tab">自动处理设置</a></li>
+							</ul>
+							<!--tab pane-->
+							<div class="tab-content tab_content">
+								<!-- 第一个tab 异常订单列表-->
+								<div class="tab-pane fade active in" id="tab171">
+									<div>
+										<form class="form">
+											<div class="form-group">
+											    <label for="">委托时间</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">--</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <a class="btn normal_btn">查询</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>委托编号</th>
+														<th>用户编号</th>
+														<th>报单账户</th>
+														<th>委托时间</th>
+														<th>证券名称</th>
+														<th>操作类型</th>
+														<th>订单状态</th>
+														<th>异常类型</th>
+														<th>撤销时间</th>
+														<th>完成时间</th>
+														<th>委托金额</th>
+														<th>委托数量</th>
+														<th>委托价格<br/>当前价格</th>
+														<th>成交数量</th>
+														<th>成交均价</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td>编辑</td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								<!-- 第二个tab 自动处理设置-->
+								<div class="tab-pane fade" id="tab172">
+									<div>
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>异常订单类型</th>
+														<th>自动处理方式</th>
+														<th>延迟处理时间</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>余额不足</td>
+														<td>自动接单</td>
+														<td>0分钟</td>
+														<td>编辑</td>
+													</tr>	
+													<tr>
+														<td>余额不足</td>
+														<td>自动接单</td>
+														<td>0分钟</td>
+														<td>编辑</td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								
+							</div>
+							
+            			</div>
+            		</div>
+                
+
+                </div>
+                 <!-- 第七个    异常订单end-->
+			</div>
+		</div>
+		<script type="text/javascript">
+		    $(".form_date").datetimepicker({
+	    	  minView: "month", //选择日期后，不会再跳转去选择时分秒 
+		      format: "yyyy-mm-dd",
+		      autoclose: true,
+		      todayBtn: true,
+		      language:'zh-CN',
+		      pickerPosition:"bottom-left",
+		      bootcssVer:3
+		    });
+		    $(".pf-main").height($(window).height()-90);
+		  </script>
+	</body>
+</html>

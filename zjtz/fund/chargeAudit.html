@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="active search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+                <ul class="nav nav-stacked nav-left col-md-1">
+                	<li><a href="fund.html">资金流水</a><div></div></li>
+				    <li class="active"><a href="chargeAudit.html">充值审核</a><div></div></li>
+				    <li><a href="cashAudit.html">提现审核</a><div></div></li>
+                </ul>
+                <!--/sidebar-->
+                <!-- 第二个    充值审核-->
+                <div class="nav-right col-md-11">
+                	
+					<div>
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">资金管理</a></li>
+								<li class="active">充值审核</li>
+							</ol>
+						</div>
+						<div class="main">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tab221" data-toggle="tab">在岸人民币充值</a></li>
+								<li><a href="#tab222" data-toggle="tab">离岸人民币充值</a></li>
+								<li><a href="#tab223" data-toggle="tab">美元充值</a></li>
+								<li><a href="#tab224" data-toggle="tab">港币充值</a></li>
+								<li><a href="#tab225" data-toggle="tab">外部流水</a></li>
+							</ul>
+							<!--tab pane-->
+							<div class="tab-content tab_content">
+								<!-- 第一个tab 在岸人民币充值-->
+								<div class="tab-pane fade active in" id="tab221">
+									<div>
+										<form class="form">
+											<div class="form-group">
+											    <label for="">申请日期</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">--</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">手机号码</label><input type="text">
+											    <label for="">用户姓名</label><input type="text">
+											    <label for="">订单状态</label>
+											    <select class="form-control" style="display: inline-block; width: 10%;">
+													<option>全部</option>
+													<option>美元</option>
+													<option>人民币</option>
+													<option>港币</option>
+												</select>
+											</div>
+											<a class="btn normal_btn">查询</a>
+							  				<a class="btn export_btn">导出Excel</a>
+											<a class="btn normal_btn">记录导入</a>
+							  				<a class="btn export_btn">创建订单</a>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>订单ID<br/>(客户订单号)</th>
+														<th>付款账号</th>
+														<th>用户姓名</th>
+														<th>手机号</th>
+														<th>申请金额</th>
+														<th>申请时间</th>
+														<th>入账金额</th>
+														<th>入账时间</th>
+														<th>订单状态</th>
+														<th>操作</th>
+														<th>操作人员</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								<!-- 第二个tab 离岸人民币充值-->
+								<div class="tab-pane fade" id="tab222">
+									<div>
+										<form class="form">
+											<div class="form-group">
+											    <label for="">申请日期</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">--</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">手机号码</label><input type="text">
+											    <label for="">用户姓名</label><input type="text">
+											    <label for="">订单状态</label>
+											    <select class="form-control" style="display: inline-block; width: 10%;">
+													<option>全部</option>
+													<option>美元</option>
+													<option>人民币</option>
+													<option>港币</option>
+												</select>
+											</div>
+											<a class="btn normal_btn">查询</a>
+							  				<a class="btn export_btn">导出Excel</a>
+											<a class="btn normal_btn">记录导入</a>
+							  				<a class="btn export_btn">创建订单</a>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>订单ID<br/>(客户订单号)</th>
+														<th>付款账号</th>
+														<th>用户姓名</th>
+														<th>手机号</th>
+														<th>申请金额</th>
+														<th>申请时间</th>
+														<th>入账金额</th>
+														<th>入账时间</th>
+														<th>订单状态</th>
+														<th>操作</th>
+														<th>操作人员</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								<!-- 第三个tab 美元充值-->
+								<div class="tab-pane fade" id="tab223">
+									<div>
+										<form class="form">
+											<div class="form-group">
+											    <label for="">申请日期</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">--</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">手机号码</label><input type="text">
+											    <label for="">用户姓名</label><input type="text">
+											    <label for="">订单状态</label>
+											    <select class="form-control" style="display: inline-block; width: 10%;">
+													<option>全部</option>
+													<option>美元</option>
+													<option>人民币</option>
+													<option>港币</option>
+												</select>
+											</div>
+											<a class="btn normal_btn">查询</a>
+							  				<a class="btn export_btn">导出Excel</a>
+											<a class="btn normal_btn">记录导入</a>
+							  				<a class="btn export_btn">创建订单</a>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>订单ID<br/>(客户订单号)</th>
+														<th>付款账号</th>
+														<th>用户姓名</th>
+														<th>手机号</th>
+														<th>申请金额</th>
+														<th>申请时间</th>
+														<th>入账金额</th>
+														<th>入账时间</th>
+														<th>订单状态</th>
+														<th>操作</th>
+														<th>操作人员</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								<!-- 第四个tab 港币充值-->
+								<div class="tab-pane fade" id="tab224">
+									<div>
+										<form class="form">
+											<div class="form-group">
+											    <label for="">申请日期</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">--</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">手机号码</label><input type="text">
+											    <label for="">用户姓名</label><input type="text">
+											    <label for="">订单状态</label>
+											    <select class="form-control" style="display: inline-block; width: 10%;">
+													<option>全部</option>
+													<option>美元</option>
+													<option>人民币</option>
+													<option>港币</option>
+												</select>
+											</div>
+											<a class="btn normal_btn">查询</a>
+							  				<a class="btn export_btn">导出Excel</a>
+											<a class="btn normal_btn">记录导入</a>
+							  				<a class="btn export_btn">创建订单</a>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>订单ID<br/>(客户订单号)</th>
+														<th>付款账号</th>
+														<th>用户姓名</th>
+														<th>手机号</th>
+														<th>申请金额</th>
+														<th>申请时间</th>
+														<th>入账金额</th>
+														<th>入账时间</th>
+														<th>订单状态</th>
+														<th>操作</th>
+														<th>操作人员</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								<!-- 第五个tab 外部流水-->
+								<div class="tab-pane fade" id="tab225">
+									<div>
+										<form class="form">
+											<div class="form-group">
+											    <label for="">申请日期</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">--</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">自己账户</label>
+											    <select class="form-control" style="display: inline-block; width: 10%;">
+													<option>全部</option>
+													<option>美元</option>
+													<option>人民币</option>
+													<option>港币</option>
+												</select>
+											    <label for="">流水号:</label><input type="text">
+											    <br />
+											    <p style="margin-bottom: 20px;"></p>
+											    <label for="">流水状态</label>
+											    <select class="form-control" style="display: inline-block; width: 10%;">
+													<option>全部</option>
+													<option>美元</option>
+													<option>人民币</option>
+													<option>港币</option>
+												</select>
+												<label for="">对方账户:</label><input type="text">
+												<label for="">对方名称:</label><input type="text">
+												<a class="btn normal_btn">查询</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>交易时间</th>
+														<th>支付宝流水号</th>
+														<th>收支金额(元)</th>
+														<th>对方账户</th>
+														<th>对方名称</th>
+														<th>支付宝备注</th>
+														<th>流水状态</th>
+														<th>状态确认</th>
+														<th>处理详情</th>
+														<th>操作人员</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>	
+							</div>
+							
+            			</div>
+            		</div>
+				    			
+					
+                </div>
+                 <!-- 第二个   充值审核 end-->
+			</div>
+		</div>
+		<script type="text/javascript">
+		    $(".form_date").datetimepicker({
+	    	  minView: "month", //选择日期后，不会再跳转去选择时分秒 
+		      format: "yyyy-mm-dd",
+		      autoclose: true,
+		      todayBtn: true,
+		      language:'zh-CN',
+		      pickerPosition:"bottom-left",
+		      bootcssVer:3
+		    });
+		    $(".pf-main").height($(window).height()-90);
+		  </script>
+	</body>
+</html>
+

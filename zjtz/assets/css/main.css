@@ -1,0 +1,654 @@
+/* 重置样式 start */
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural 
+elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 
+*/
+th, td { /* table elements 表格元素 */
+margin: 0;
+padding: 0;
+}
+ol, ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+body, button, input, select, textarea {
+font: 12px/1.5 "Microsoft Yahei", Helvetica Neue, Helvetica, 
+STHeiTi, sans-serif;
+}
+a {
+text-decoration: none;
+cursor: pointer;
+}
+h1, h2, h3, h4, h5, h6{ font-weight: normal;}
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+
+img,input{border:0 none;}
+div,a{outline:none}
+a{text-decoration:none;}
+.clear{ clear:both}
+.hide{ display:none}
+body{font-family: "微软雅黑";}
+
+/* 重置样式 end */
+
+
+/*pf-header  样式开始*/
+
+.pf-header{
+	background-color:#313642 ;
+	height: 90px;
+	width: 100%;
+	padding: 0 20px;
+	font-family: "微软雅黑";
+}
+.pf-header .navbar-default{
+	background-color: transparent;
+	border-color: transparent;
+	height: 90px;
+	line-height: 90px;
+	width: 1280px;
+	margin: 0 auto;
+}
+.pf-header .nav{
+	position: absolute;
+	top: 47px;
+	left: 300px;
+}
+.pf-header .nav li{
+	float: left;
+    margin: 0 25px;
+}
+.pf-header .nav li a{
+	font-size: 1pc;
+    color: #ccc;
+    line-height: 26px;
+    padding: 0 5px;
+    display: block;
+}
+.pf-header .navbar-default .navbar-brand{
+	height: 70px;
+	line-height: 70px;
+	color: #fff;
+	font-weight: 300;
+	font-size: 30px;
+}
+.pf-header .user_info{
+	position: absolute;
+	top: 10px;
+	right: 50px;
+}
+.pf-header .user_info li{
+	border-right: 1px solid #ccc;
+	float: left;
+}
+.pf-header .user_info li.no_border{
+	border-right: 0;
+}
+.pf-header .user_info li a{
+	font-size: 9pt;
+    line-height: 9pt;
+    color: #ccc;
+    padding: 0 10px;
+    display: block;
+    outline: none;
+    text-decoration: none;
+}
+
+.pf-header .nav { 
+    color: #fff;
+    font-size: 16px;
+
+}
+.pf-header .nav>li>a { 
+    color: #fff;
+    font-size: 16px;
+
+}
+.pf-header .nav>li:hover a {
+    background-color: transparent;
+    color: #ff5d17;
+    outline: none;
+}
+.pf-header .nav>li:active a {
+    background-color: transparent;
+}
+.pf-header .nav>li:link a {
+    background-color: transparent;
+}
+.pf-header .nav>li:visited a {
+    background-color: transparent;
+}
+.pf-header .nav .active a {
+    background-color: transparent;
+    color: #ff5d17;
+}
+.nav-tabs.nav>li>a{
+	border-bottom: none;
+	display: inline-block;
+}
+/*pf-header  样式结束*/
+
+/*pf-main  样式开始*/
+.pf-main{
+	background-color: #fbfbfb;
+	width: 100%;
+	height:887px ;
+	padding-left: 0;
+	font-family: "微软雅黑";
+	background: #D6D7DB;
+}
+.no-data{
+	font-size: 14px;
+    color: red;
+}
+.pf-main .tabbable{
+	padding: 20px 0 0 20px;
+	background-color: #3e4453;
+	height: 100%;
+}
+.pf-main .row{
+	margin-left: 0;
+	margin-right: 0;
+}
+.pf-main .tabbable{
+	width: 1280px;
+	margin: 0 auto;
+}
+.pf-main .tabbable .nav-left{
+	background-color: #3e4453;
+}
+.pf-main .tabbable .nav-left li {
+	
+}
+.pf-main .tabbable .nav-left li a{
+	color: #fff;
+	width: 125px;
+	margin-left: -20px;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: "微软雅黑";
+}
+.pf-main .tabbable .nav-left li div{
+	background-color: #4e5567;
+	width: 100px;
+	height: 1px;
+	margin-left: -8px;
+}
+.pf-main .tabbable .nav-left li:hover a{
+	background-color: #4e5567;
+	color: #fff;
+}
+
+.pf-main .tabbable .nav-left li.active a{
+	background-color: #ff5d17;
+	color: #fff;
+	border-right: 8px solid #fff;
+}
+.pf-main .tabbable .nav-right{
+	background-color: #f2f2f2;
+	padding: 24px 30px 0;
+	height: 100%;
+}
+.pf-main .tabbable .nav-right table thead th,.pf-main .tabbable .nav-right table tbody td{
+	text-align: center;
+}
+.pf-main .tabbable .nav-right .header{
+	background-color: #FFFFFF;
+}
+.pf-main .tabbable .nav-right .header .breadcrumb{
+	background-color: transparent;
+}
+.pf-main .tabbable .nav-right .header .breadcrumb a{
+	background-color: transparent;
+	font-size: 14px;
+	text-decoration: none;
+	color: #a0a0a0;
+}
+.pf-main .tabbable .nav-right .header .breadcrumb .active{
+	color: #333;
+	font-weight: 500;
+	font-size: 14px;
+}
+.pf-main .tabbable .nav-right .main{
+	color: #333;
+	font-weight: 500;
+	font-size: 12px;
+	background-color: #FFFFFF;
+	padding: 18px 15px;
+}
+.pf-main .tabbable .nav-right .main input{
+	border: 1px solid #d3d3d3;
+	padding: 0 10px;
+	height: 35px;
+	margin: 0 10px;
+}
+.pf-main .tabbable .nav-right .main .btn{
+	color: #fff;
+	padding: 7px 25px;
+	font-size: 14px;
+}
+.pf-main .tabbable .nav-right .main .normal_btn{
+	background-color: #477bf8;
+}
+.pf-main .tabbable .nav-right .main .normal_btn:hover{
+	background-color: #5a88f9;
+}
+.pf-main .tabbable .nav-right .main .normal_btn:visited{
+	background-color: #3f6fe2;
+}
+.pf-main .normal_btn{
+	background-color: #477bf8;
+	color: #fff;
+}
+.pf-main .normal_btn:hover{
+	background-color: #5a88f9;
+	color: #fff;
+}
+.pf-main .main .normal_btn:visited{
+	background-color: #3f6fe2;
+	color: #fff;
+}
+.pf-main .tabbable .nav-right .main .export_btn{
+	background-color: #BEBEBE;
+	color: #333;
+}
+.pf-main .tabbable .nav-right .main .light_btn{
+	background-color: #ff5d17;
+}
+.pf-main .tabbable .nav-right .main .light_btn:hover{
+	background-color: #ff6e2f;
+}
+.pf-main .tabbable .nav-right .main .light_btn:visited{
+	background-color: #eb5615;
+}
+.pf-main .tabbable .nav-right .main .export_btn{
+	background-color: #BEBEBE;
+	color: #333;
+}
+.pf-main .tabbable .nav-right .main .export_btn:hover{
+	background-color: #C0C0C0;
+}
+.pf-main .tabbable .nav-right .main .export_btn:visited{
+	background-color: #C0C0C0;
+}
+.pf-main .tabbable .nav-right .main .leave_btn{
+	background-color: #ff5d17;
+	color: #fff;
+}
+.pf-main .tabbable .nav-right .main .leave_btn:hover{
+	background-color: #ff6e2f;
+}
+.pf-main .tabbable .nav-right .main .leave_btn:visited{
+	background-color: #eb5615;
+}
+.pf-main .tabbable .nav-right .main .table{
+	border: 1px solid #D3D3D3;
+}
+.pf-main .tabbable .nav-right .main .table thead{
+	background-color: #C2C6CB;
+}
+.pf-main .tabbable .nav-right .main input{
+	position: relative;
+}
+.pf-main input[type=checkbox]{
+	vertical-align: middle;
+}
+.pf-main table label{
+	font-weight: 300;
+	margin-bottom: 0;
+}
+
+.pf-main input[type=radio]{
+	vertical-align: middle;
+}
+.pf-main .tab_content{
+	padding: 30px 10px;
+	position: relative;
+	
+}
+.pf-main .tab_content .viewSnapshot{
+	position: absolute;
+	left: 0;
+	top: 0;
+	
+}
+.pf-main .nav-tabs>li.active>a,.pf-main .nav-tabs>li.active>a:hover, .pf-main .nav-tabs>li.active>a:focus{
+	border-top:8px solid #7d90ba;
+}
+.pf-main .nav-tabs>li>a{
+	color: #333;
+}
+.pf-main .nav-tabs>li>a:hover, .pf-main .nav-tabs>li>a:focus{
+	border-top:8px solid #7d90ba;
+	
+}
+.table_nopadding .table-bordered>tbody>tr>td{
+	padding: 0;
+	padding-top:2px ;
+}
+
+/*.pf-main .datetimepicker thead th{
+	background: url(../images/glyphicons-halflings.png) ;
+}*/
+.crease_assets{
+	display: none;
+	border: 1px solid #d3d3d3;
+	margin: auto;
+	width:360px;
+	height: 350px;
+	position: absolute;
+	left:40%;
+	top:50%;
+	background: #fff;
+	text-align: center;
+	padding: 15px;
+}
+.decrease_assets{
+	display: none;
+	border: 1px solid #d3d3d3;
+	margin: auto;
+	width:400px;
+	height: 400px;
+	position: absolute;
+	left:40%;
+	top:50%;
+	background: #fff;
+	text-align: center;
+	padding: 15px;
+}
+/*crease_positions*/
+.crease_positions{
+	display: none;
+	border: 1px solid #d3d3d3;
+	margin: auto;
+	width:450px;
+	height: 400px;
+	position: absolute;
+	left:30%;
+	top:20%;
+	background: #fff;text-align: left;
+	padding: 15px;
+}
+
+/*decrease_positions*/
+.decrease_positions{
+	display: none;
+	border: 1px solid #d3d3d3;
+	margin: auto;
+	width:450px;
+	height: 550px;
+	position: absolute;
+	left:30%;
+	top:20%;
+	background: #fff;
+	text-align: center;
+	padding: 15px;
+	
+}
+
+/*edit_Settings*/
+.editSettings .main .edit_Settings {
+	display: none;
+	border: 1px solid #d3d3d3;
+	margin: auto;
+	width:330px;
+	height: 230px;
+	position: absolute;
+	left:40%;
+	top:50%;
+	background: #fff;
+	text-align: left;
+	padding: 15px;
+}
+/*edits_Settings*/
+.pf-main .tabbable .nav-right .editSettings .main .edits_Settings{
+	display: none;
+	border: 1px solid #d3d3d3;
+	margin: auto;
+	width:330px;
+	height: 230px;
+	position: absolute;
+	left:40%;
+	top:50%;
+	background: #fff;
+	text-align: left;
+	padding: 15px;
+}
+/*setting*/
+.setting{
+	display: none;
+	border: 1px solid #d3d3d3;
+	margin: auto;
+	width:500px;
+	height: 200px;
+	position: absolute;
+	left:30%;
+	top:10%;
+	background: #fff;
+	text-align: left;
+	padding: 15px;
+}
+/*add_new*/
+.add_new{
+	display: none;
+	border: 1px solid #d3d3d3;
+	margin: auto;
+	width:500px;
+	height: 350px;
+	position: absolute;
+	left:30%;
+	bottom:70%;
+	background: #fff;
+	text-align: left;
+	padding: 30px;
+}
+.addUserAccount .main{
+	height: 887px;
+}
+.nav-tabs>li.none{
+	display: none;
+}
+
+#myTab1>li{
+	display: none;
+}
+#myTab1>li.showw{
+	display: block;
+}
+}
+div.addUserAccount .tab-content{
+	position: relative;
+}
+div.addUserAccount .tab-content .showw{
+	display: block;
+	position: absolute;
+}
+/*用户账户新增里  确定 取消 按钮*/
+.text_center_btn_group{
+	position: absolute;
+    bottom: -83px;
+    left: 27%;
+    width: 20%;
+}
+/**/
+/*.addUserAccount .tab-content .tab-pane{
+	display: none;
+}*/
+
+
+/*entryAccount*/
+.accountEntry .form-group label {
+	width: 10%;
+}
+
+.width_label .form-group label{
+	width: 10%;
+}
+/*pf-main  样式结束*/
+
+
+/*login 页面  开始*/
+.bg_color{
+	background-color: #3a4563;
+	height: 100%;
+	width: 100%;
+	color: #fff;
+}
+.bg_color .container{
+	padding-top: 200px;
+}
+.login_div{
+	position: absolute;
+	width: 600px;
+	height: 520px; 
+	margin: auto; 
+	top: 0; 
+	left: 0;
+	bottom: 0; 
+	right: 0; 
+	overflow-x: hidden; 
+	overflow-y: hidden; 
+	padding: 80px 80px; 
+	color: #fff;
+}
+.login_div .btn{
+	color: #fff;
+	padding: 7px 25px;
+	font-size: 14px;
+}
+.login_div .light_btn{
+	background-color: #ff5d17;
+}
+.login_div .light_btn:hover{
+	background-color: #ff6e2f;
+}
+.login_div .light_btn:visited{
+	background-color: #eb5615;
+}
+.login_div .export_btn{
+	background-color: #BEBEBE;
+	color: #333;
+}
+.login_div .export_btn:hover{
+	background-color: #C0C0C0;
+}
+.login_div .export_btn:visited{
+	background-color: #C0C0C0;
+}
+.forget_password{
+	width: 200px;
+	text-align: center;
+	height: 100px;
+	color: red;
+	position: absolute;
+	left: 120px;
+	display: none;
+}
+/*login 页面  结束*/
+
+
+
+/*managedAccount.html 页面 开始*/
+.edit_value{
+	float: left;
+	margin-left: 90px;
+	margin-bottom: 20px;
+	margin-top: -23px;
+}
+.edit_value .ul_box{
+	width: 970px;
+	border: 1px solid #cdcdcd;
+}
+.edit_value ul.border{
+	border-bottom: 1px dashed #cdcdcd;
+}
+.edit_value .ul_box ul{
+	width: 930px;
+    position: relative;
+    padding: 10px 0;
+    margin: 0 20px;
+    font-size: 9pt;
+    line-height: 9pt;
+}
+.edit_value .ul_box ul .ul_title{
+	width: 88px;
+	color: #1bacda;
+}
+.edit_value .ul_box ul li{
+	margin: 10px 0;
+	float: left;
+	line-height: 12px;
+	height: 12px;
+}
+.edit_value .ul_box ul .ul_value{
+	width: 140px;
+	cursor: pointer;
+}
+.edit_value .ul_box ul .ul_value.first{
+	margin-left: 88px;
+}
+.edit_value textarea{
+	border-color:#cdcdcd;
+}
+	
+/*managedAccount.html 页面 结束*/
+
+
+/*account.html 页面 开始*/
+.message_pop{
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1051;
+    overflow: hidden;
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+}
+.message_pop .msg_box{
+    width: 370px;
+    position: relative;
+    margin: 10% auto 0;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.message_pop .msg_box .msg_head{
+	padding: 0 20px;
+    height: 34px;
+    border-bottom: 1px solid #e5e5e5;
+}
+.message_pop .msg_box .msg_head p{
+	font-size: 14px;
+	line-height: 34px;
+}
+.message_pop .msg_box .msg_head .msg_close{
+	width: 9pt;
+    height: 9pt;
+    background-image: url(../images/close.png);
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    cursor: pointer;
+}
+#msgContent {
+    font-family: inherit;
+    font-size: 9pt;
+}
+.message_pop .msg_box .msg_body {
+    padding: 10px 25px 20px;
+    overflow: auto;
+    max-height: 250px;
+}
+.message_pop .msg_box .msg_footer {
+    padding-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+/*account.html 页面 结束*/

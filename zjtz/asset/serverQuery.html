@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<style type="text/css">
+		a{
+			cursor: pointer;
+		}
+		em{
+			color: #ff8500;
+			font-weight: bold;
+		}
+		p{
+			color: #3a87ad;
+		}
+	</style>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="active search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li class="active"><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+					<ul class="nav nav-justified" id="myTab">
+						
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+				<ul class="nav nav-stacked nav-left col-md-1">
+					<li><a href="asset.html">报单账户</a></li>
+					<li><a href="groupAccountDeclaration.html">报单账户分组</a></li>
+					<li class="active"><a href="serverQuery.html">服务器查询</a></li>
+					<li><a href="costStatistics.html">费用统计</a></li>
+				</ul>
+                <!--/sidebar-->
+                <!-- 第三个    服务器查询-->
+                <div class="nav-right col-md-11">
+	
+					<div>
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">资产管理</a></li>
+								<li class="active">服务器查询</li>
+							</ol>
+						</div>
+						<div class="main">
+							<div style="border: 1px solid #23527C;padding: 20px;margin-bottom: 20px;">
+								<p><strong>服务费余额:</strong><em>0.000(余额不足不能下单,务必及时充值)</em>&nbsp;&nbsp;&nbsp;&nbsp;<strong>开始收取时间:</strong><em>未设置</em>&nbsp;&nbsp;下单预扣费用，结算多退少补，详单不含未结算订单</p>
+								<p></p>
+								<p><strong>余额不足提醒:</strong><em>服务费余额低于 1000.00 时报警通知。</em> <a class="setting_click" style="color:#0088CC ;font-weight: bold;">设置</a></p>
+							</div>
+							<!--设置-->
+							<div class="message_pop" id="msgPop">
+								<div class="msg_box">
+									<div class="msg_head clearfix">
+										<p id="msgTitle">余额不足提醒设置</p>
+										<div class="msg_close do_close"></div>
+									</div>
+									<div class="msg_body" id="msgContent">
+											<span>服务费金额低于</span>
+											<input type="number" id="tipFeeAmountInput" style="width: 140px;"/>
+											<span>时报警通知</span>
+									</div>
+									<div class="msg_footer" id="msgBtn">
+										<a class="btn normal_btn" id="submit" href="#tab42">
+											提交
+										</a>
+										<a class="btn export_btn do_close" id="submit">
+											取消
+										</a>
+									</div>
+								</div>
+							</div>
+							
+							<!--设置  end -->
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tab531" data-toggle="tab">扣费记录</a></li>
+								<li><a href="#tab532" data-toggle="tab">充值记录</a></li>
+							</ul>
+							<!--tab pane-->
+							<div class="tab-content tab_content">
+								<!-- 第一个tab 扣费记录-->
+								<div class="tab-pane fade active in" id="tab531">
+									<div>
+										<form class="form">
+											<div class="form-group">
+											    <label for="">日期</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">到</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <a class="btn normal_btn">查询</a>
+												<a class="btn export_btn">导出Excel</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>最后更新时间</th>
+														<th>扣费类型</th>
+														<th>发生用户</th>
+														<th>扣费依据金额</th>
+														<th>技术服务费</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td colspan="5" class="no-data">抱歉，没有您要搜索的信息！</td>
+														
+													</tr>
+													<tr style="display: none;">
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								<!-- 第二个tab 充值记录-->
+								<div class="tab-pane fade" id="tab532">
+									<div>
+										<form class="form">
+											<div class="form-group">
+											    <label for="">日期</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <label for="">到</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <a class="btn normal_btn">查询</a>
+												<a class="btn export_btn">导出Excel</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>充值时间</th>
+														<th>充值金额</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td colspan="5" class="no-data">抱歉，没有您要搜索的信息！</td>
+													</tr>
+													<tr style="display: none;">
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+							</div>
+						</div>
+            		</div>
+				    									
+					
+                </div>
+                 <!-- 第三个    服务器查询    end-->
+			</div>
+		
+		</div>
+		<script type="text/javascript">
+		    $(".form_date").datetimepicker({
+	    	  minView: "month", //选择日期后，不会再跳转去选择时分秒 
+		      format: "yyyy-mm-dd",
+		      autoclose: true,
+		      todayBtn: true,
+		      language:'zh-CN',
+		      pickerPosition:"bottom-left",
+		      bootcssVer:3
+		    });
+		    $(".pf-main").height($(window).height()-90);
+		    /*设置 显示 隐藏*/
+			 /*$(".setting_click").bind('click',function(){
+			 	$(".setting").show();
+			 });
+*/			 $(".setting_click").bind('click',function(){
+			 	$(".message_pop").show();
+			 });
+			  /*cancel 按钮*/
+			$(".cancel").bind('click',function(){
+			 	$(this).parent().parent().hide();
+			 });
+			$(".do_close").bind('click',function(){
+			 	$(".message_pop").hide();
+			 });
+		  </script>
+	</body>
+</html>
+

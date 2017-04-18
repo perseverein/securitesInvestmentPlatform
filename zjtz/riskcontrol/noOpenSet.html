@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<style type="text/css">
+		.pf-main .tabbable .nav-right table thead th,.pf-main .tabbable .nav-right table tbody td{
+			text-align: left;
+		}
+	</style>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li class="active"><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+                <ul class="nav nav-stacked nav-left col-md-1">
+                    <li><a href="riskcontrol.html">止损平仓预警</a><div></div></li>
+					<li class="active"><a href="noOpenSet.html">禁止开仓设置</a><div></div></li>
+					<li><a href="holdingProportionControl.html">持仓比例控制</a><div></div></li>
+                </ul>
+                <!--/sidebar-->
+                <!-- 第二个    禁止开仓设置-->
+                <div class="nav-right col-md-11">
+                	
+					<div>
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">风控管理</a></li>
+								<li class="active">禁止开仓设置</li>
+							</ol>
+						</div>
+						<div class="main">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tab321" data-toggle="tab">批量禁止</a></li>
+								<li><a href="#tab322" data-toggle="tab">个股设置</a></li>
+							</ul>
+							<!--tab pane-->
+							<div class="tab-content tab_content">
+								<!-- 第一个tab 批量禁止-->
+								<div class="tab-pane fade active in" id="tab321">
+									
+									<form>
+										<div class="table_nopadding">	
+										<div class="form-group">
+											<table class="table table-bordered" style="font-size: 14px;">
+												<tbody>
+													<tr>
+														<td><label for="name" style="padding-left: 5px;font-weight: 500;">股票</label></td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label for=""><input type="checkbox" value="" >新股（发行首日）</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label><input type="checkbox" value="">S、ST、*ST、S*ST、SST</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label><input type="checkbox" value="">创业板</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td><label for="name" style="padding-left: 5px;font-weight: 500;">场内基金</label></td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label><input type="checkbox" value="" >指数基金/ETF</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label><input type="checkbox" value="">货币基金</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label><input type="checkbox" value="">分级LOF</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label><input type="checkbox" value="">开放式基金/LOF</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label><input type="checkbox" value="">封闭式基金</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td><label for="name" style="padding-left: 5px;font-weight: 500;">金融期货</label></td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label><input type="checkbox" value="" >恒指期货夜盘（17：00-23：45）</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label><input type="checkbox" value="">小恒指期货夜盘（17：00-23：45）</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label><input type="checkbox" value="">新华富时A50期货夜盘（17：00-23：45）</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label><input type="checkbox" value="">开放式基金/LOF</label>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="check_box">
+																<label><input type="checkbox" value="">封闭式基金</label>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+
+										</div>
+										
+										</div>
+										
+										<div id="myAlert">
+											<a href="#" class="btn normal_btn">保存设置</a>
+										</div>
+									</form>
+								</div>
+								
+								<!-- 第二个tab 个股设置-->
+								<div class="tab-pane fade" id="tab322">
+									<p>沪深A股</p>
+									<ul class="add_ul" style="list-style: none;">
+										<li></li>
+									</ul>
+									<label for="">股票代码<input type="text" placeholder="请输入股票代码" class="add_text"></label>
+									<a type="button" class="btn normal_btn addBtn">添加个股</a>
+								</div>
+								
+							</div>
+							
+            			</div>
+            		</div>
+				    			
+
+                </div>
+                 <!-- 第二个    禁止开仓设置 end-->
+			</div>
+		</div>
+	</body>
+</html>
+

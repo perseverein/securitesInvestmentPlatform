@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<style type="text/css">
+		html{
+			
+		}
+		.table-custom, html {
+		  white-space: nowrap;}
+		.addUserAccount_hide .main .table-custom tr:hover{
+			background-color: #b4c8fa;
+		}
+		.addUserAccount_hide .main .table-custom thead tr:hover{
+			background-color: transparent;
+		}
+	</style>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li class="active"><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+				<ul class="nav nav-stacked nav-left col-md-1">
+					<li class="active"><a href="account.html">用户账户</a><div></div></li>
+					<li class="search_assets"><a href="assetInquiry.html">资产查询</a><div></div></li>
+					<li><a href="userGrouping.html">用户分组</a><div></div></li>
+					<li><a href="managedAccount.html">管理账户</a><div></div></li>
+					<li><a href="managementRecord.html">管理记录</a><div></div></li>
+					<li><a href="passwordModification.html">密码修改</a><div></div></li>
+					<li><a href="accountAudit.html">开户审核</a><div></div></li>
+					<li><a href="customerFollowUp.html">客户跟进</a><div></div></li>
+				</ul>
+                <!--/sidebar-->
+                <!-- 第一个    用户账户-->
+                <div class="nav-right col-md-11">
+                	
+					<div class="addUserAccount_hide">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">账户管理</a></li>
+								<li class="active">用户账户</li>
+							</ol>
+						</div>
+						<div class="main" style="position: relative;">
+							<form class="form">
+								<div class="form-group">
+									<label for="" >搜索条件</label>
+								  	<input size="16" type="text" placeholder="用户编号/开户姓名/备注姓名/登录手机" style="width: 22%;">
+									<label for="">用户编号</label>
+									<select class="form-control" style="display: inline-block; width: 8%;">
+										<option>显示</option>
+										<option>隐藏</option>
+										<option>全部</option>
+									</select>
+									<label for="">用户分组</label>
+									<select class="form-control" style="display: inline-block; width: 10%;">
+										<option>全部分组</option>
+										<option>默认分组</option>
+									</select>
+								    <a class="btn normal_btn">查询</a>
+					  				<a class="btn export_btn">导出Excel</a>
+								</div>
+								<a class="btn btn-info addUserAccount_click">新增</a>
+								<a class="btn btn-info crease_click" href="#">增加资金</a>
+								<a class="btn btn-info decrease_click" href="#">减少资金</a>
+								<a class="btn btn-info find_assets" href="assetInquiry.html">查看资产</a>
+								<a class="btn btn-info find_transaction" href="../index.html">查看委托</a>
+								<a class="btn btn-info find_fund" href="../fund/fund.html">查看流水</a>
+								<a class="btn btn-info edit_click">编辑</a>
+							</form>
+							<br />
+							<!--增加资金-->
+							<div class="crease_assets" style="">
+								<h4 style="text-align: left;">增加资金</h4>
+								<p style="width: 100%;height: 1px;background-color: #d3d3d3;"></p>
+								<div>
+									<p style="margin: 5px;font-weight: bold;">账户名:<span>32410004</span></p>
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">币种账户:</label>
+									<select class="form-control" style="display: inline-block; width: 60%;">
+										<option>人民币账户</option>
+									</select>
+									<p style="margin-bottom: 10px;"></p>
+									<p style="margin: 5px;font-weight: bold;">可提现余额:<span>200000.00&nbsp;&nbsp;元</span></p>
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">增加金额:</label><input type="text" />元
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">备注:</label><textarea></textarea>
+									<p style="margin-bottom: 10px;"></p>
+								</div>
+								<div>
+									<a class="btn normal_btn cancel">确定</a>
+									<a class="btn export_btn cancel">取消</a>
+								</div>
+							</div>
+							<!--减少资金-->
+							<div class="decrease_assets" style="">
+								<h4 style="text-align: left;">减少资金</h4>
+								<p style="width: 100%;height: 1px;background-color: #d3d3d3;"></p>
+								<div>
+									<p style="margin: 5px;font-weight: bold;">账户名:<span>32410004</span></p>
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">币种账户:</label>
+									<select class="form-control" style="display: inline-block; width: 60%;">
+										<option>人民币账户</option>
+									</select>
+									<p style="margin-bottom: 10px;"></p>
+									<p style="margin: 5px;font-weight: bold;">可提现余额:<span>200000.00&nbsp;&nbsp;元</span></p>
+									<p style="margin-bottom: 10px;"></p>
+									<p style="margin: 5px;font-weight: bold;">冻结资金:<span>200000.00&nbsp;&nbsp;元</span></p>
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">减少金额:</label><input type="text" />元
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">备注:</label><textarea></textarea>
+									<p style="margin-bottom: 10px;"></p>
+								</div>
+								<div>
+									<a class="btn normal_btn cancel">确定</a>
+									<a class="btn export_btn cancel">取消</a>
+								</div>
+							</div>
+							
+							<div class="table-responsive">
+								<table class="table table-custom">
+									<thead>
+										<tr>
+											<th></th>
+											<th>用户编号</th>
+											<th>用户类型</th>
+											<th>账户模式</th>
+											<th>币种账户</th>
+											<th>报单账户</th>
+											<th>可提现余额<br/>可用金额</th>
+											<th>买入冻结金额<br/>限制金额</th>
+											<th>融资金额<br/>保证金</th>
+											<th>总资产</th>
+											<th>预警线</th>
+											<th>平仓线</th>
+											<th>参考市值</th>
+											<th>用户状态</th>
+											<th>浮动盈亏</th>
+											<th>盈亏比例(%)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="radio"/></td>
+											<td><a href="assetInquiry.html">32410004</a><br>牛力</td>
+											<td>普通用户</td>
+											<td>分帐户</td>
+											<td>人民币账户</td>
+											<td>众成证券<br>10400148</td>
+											<td>200000.00<br/>200000.00</td>
+											<td>0.00--</td>
+											<td>150000.00<br/>50000.00</td>
+											<td>200000.00</td>
+											<td>175000.00</td>
+											<td>170000.00</td>
+											<td>0.00</td>
+											<td>禁平仓</td>
+											<td>48.940</td>
+											<td>1.740</td>
+										</tr>
+										<tr >
+											<td><input type="radio"/></td>
+											<td>32410002<br>张三</td>
+											<td>普通用户</td>
+											<td>分帐户</td>
+											<td>人民币账户</td>
+											<td>众成证券<br>10400148</td>
+											<td>27186.94<br/>27186.94</td>
+											<td>0.00--</td>
+											<td>20000.00<br/>10000.00</td>
+											<td>30048.00</td>
+											<td>25000.00</td>
+											<td>24000.00</td>
+											<td>2862.00</td>
+											<td>禁撤单</td>
+											<td>48.940</td>
+											<td>1.740</td>
+										</tr>
+									</tbody>
+								</table>
+							</div> 
+						</div>
+            		</div>
+				
+					<!-- 第一个    用户账户新增   -->
+					<div class="addUserAccount" style="display: none;">
+	        			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">账户管理</a></li>
+								<li><a href="#">用户账户</a></li>
+								<li class="active">新增</li>
+							</ol>
+						</div>
+						<div class="main">
+							<form class="form">
+								<div class="form-group">
+									<p style="font-weight: bold;">基本信息:</p>
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">备注姓名:</label><input type="text" style="margin-left: 30px;"><em style="color: #aaa;margin-left: 20px;">记录客户的姓名,可设置为任意字符,不一定是证件姓名</em>
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">备注电话:</label><input type="tel" style="margin-left: 30px;">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="" style="vertical-align: baseline;">备注文字:</label>
+									<textarea class="form-control" rows="3" style="display: inline-block;width: 90%;margin-left: 28px;"maxlength="200" placeholder="最多输入200字"></textarea>
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">用户分组</label>
+									<select class="form-control" style="display: inline-block; width: 10%;margin-left: 30px;">
+										<option>全部分组</option>
+										<option>默认分组</option>
+									</select>
+									<p style="margin-bottom: 10px;"></p>	
+									<label for="">风控模式:</label>
+									    <label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked> 
+											每个资金账户单独风控
+										</label>
+										<label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2"> 
+											所有资金账户联合风控
+										</label>
+									<p style="margin-bottom: 10px;"></p>	
+									<label for="">账户模式:</label>
+									    <label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline2" id="optionsRadios5" value="option1" checked> 
+											分账户
+										</label>
+										<label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline2" id="optionsRadios6"  value="option2"> 
+											独立账户
+										</label>
+									<p style="margin-bottom: 10px;"></p>
+									<p style="font-weight: bold;">资金信息:</p>
+									<p style="margin-bottom: 10px;"></p>
+									<div class="capitalAccount">
+										<label for="">资金账户:</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" id="inlineCheckbox1" value="option1" class="capitalAccoun1" checked> 在岸人民币账户
+										</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" id="inlineCheckbox2" value="option2" class="capitalAccoun2"> 美元账户
+										</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" id="inlineCheckbox3" value="option3" class="capitalAccoun3"> 港币账户
+										</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" id="inlineCheckbox4" value="option4" class="capitalAccoun4"> 离岸人民币账户
+										</label>
+									</div>
+										
+									<p style="margin-bottom: 10px;"></p>
+									<div>
+										<ul class="nav nav-tabs" id="myTab1">
+											<li class="active capitalAccount1"><a href="#tab4111" data-toggle="tab">在岸人民币账户</a></li>
+											<li class="capitalAccount2"><a href="#tab4112" data-toggle="tab">美元账户</a></li>
+											<li class="capitalAccount3"><a href="#tab4113" data-toggle="tab">港币账户</a></li>
+											<li class="capitalAccount4"><a href="#tab4114" data-toggle="tab">离岸人民币账户</a></li>
+										</ul>
+										<!--tab pane-->
+										<div class="tab-content tab_content">
+											<!-- 第一个tab 在岸人民币账户-->
+											<div class="tab-pane fade active in capitalAccou1" id="tab4111">
+												<div class="row">
+													<div class="col-md-4">
+														<p>交易品类:</p>
+														<label class="checkbox-inline">
+															<input type="checkbox" id="inlineCheckbox1" value="option1"> 沪深A股
+														</label>
+		 												<label for="" style="margin-left: 20px;">报单账户:</label>
+		 												<select class="form-control" style="display: inline-block; width: 24%;margin-bottom: 20px;">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+															<option>4</option>
+														</select>
+														<br />
+														<div class="" style="text-align: right;width: 330px;">
+															<label for="">初始金额:</label><input type="text">元(¥)
+															<p style="margin-bottom: 10px;"></p>
+															<label for="">保证金:</label><input type="text">元(¥)
+															<p style="margin-bottom: 10px;"></p>
+															<label for="">融资金额:</label><input type="text">元(¥)
+															<p style="margin-bottom: 10px;"></p>
+															<label for="">交易佣金:</label><input type="text">&nbsp;&nbsp;&nbsp;&nbsp; %
+															<p style="margin-bottom: 10px;"></p>
+														</div>
+														
+														
+													</div>
+													<div class="col-md-8">
+														<strong style="">风控信息:</strong>
+														<p style="margin-bottom: 20px;"></p>
+														<div class="row">
+															<div class="col-md-4 col-lg-4" style="width: 308px;text-align: right;">
+																<label for="">预警线:</label><input type="text">元(¥)
+																<p style="margin-bottom: 10px;"></p>
+																<label for="">平仓线:</label><input type="text">元(¥)
+																<p style="margin-bottom: 10px;"></p>
+																<label for="">限制可用金额:</label><input type="text">元(¥)
+																<p style="margin-bottom: 10px;"></p>
+															</div>
+															<div class="col-md-6 col-lg-6 set">
+																<label for="">持仓比例设置:</label>
+															    <label class="checkbox-inline">
+																	<input type="radio" name="set" id="globalSetting" class="globalSetting_radio" value="option1" checked> 
+																	全局设置
+																</label>
+																<label class="checkbox-inline">
+																	<input type="radio" name="set" id="setAlone" class="setAlone_radio"  value="option2"> 
+																	单独设置
+																</label>
+																<div class="globalSetting">
+																	<div class="table-responsive table-bordered" style="border: none;">
+																		<table class="table">
+																			<thead>
+																				<tr>
+																					<th>资产范围</th>
+																					<th>控制规则</th>
+																					<th>板块分类</th>
+																					<th>持仓比例限制</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>10000.00-<br>20000.00</td>
+																					<td>个股</td>
+																					<td>创业板</td>
+																					<td>50%</td>
+																				</tr>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div> 
+																</div>
+																<p style="margin-bottom: 10px;"></p>
+																<div class="setAlone" style="display: none;">
+																	<a class="btn normal_btn add_new_click">新增</a>
+																	<!--新增-->
+																	<div class="add_new">
+																		<h4 style="text-align: left;">持仓比例单独设置</h4>
+																		<p style="width: 100%;height: 1px;background-color: #d3d3d3;"></p>
+																		<div>
+																			<label for="">资产范围:</label><input type="text" style="width: 20%;margin-left: 36px;" />元&nbsp;-&nbsp;<input type="text" style="width: 20%;" />元
+																			<p style="margin-left: 95px;">*不填写即不限制资产范围</p>
+																			<label for="">控制规则:</label>
+																			<label class="checkbox-inline" style="display: inline-block; width: 20%;margin-left: 2px;">
+																				<input type="radio" name="optionsRadiosinline3" id="optionsRadios7" checked/>个股
+																			</label>
+																			<label class="checkbox-inline" style="display: inline-block; width: 20%;">
+																				<input type="radio" name="optionsRadiosinline3" id="optionsRadios8" />板块
+																			</label>
+																			<p style="margin-bottom: 10px;"></p>
+																			<label for="">生效板块:</label>
+																			<select class="form-control" style="display: inline-block; width: 30%;margin-left: 33px;">
+																				<option>创业板</option>
+																				<option>中小板</option>
+																				<option>主板</option>
+																				<option>所有板块</option>
+																			</select>
+																			<p style="margin-bottom: 10px;"></p>
+																			<label for="">持仓比例限制:</label><input type="text" />%
+																		</div>
+																		<p style="margin-bottom: 30px;"></p>
+																		<div style="margin-left: 98px;">
+																			<a class="btn normal_btn cancel">确定</a>
+																			<a class="btn export_btn cancel">取消</a>
+																		</div>
+																	</div>
+																	<p style="margin-bottom: 10px;"></p>
+																	<div class="table-responsive table-bordered" style="border: none;">
+																		<table class="table">
+																			<thead>
+																				<tr>
+																					<th>资产范围</th>
+																					<th>控制规则</th>
+																					<th>板块分类</th>
+																					<th>持仓比例限制</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>10000.00-<br>20000.00</td>
+																					<td>个股</td>
+																					<td>创业板</td>
+																					<td>50%</td>
+																				</tr>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div> 
+																</div>
+																
+															</div>
+														</div>
+													</div>
+												</div>
+											
+											</div>
+											<!-- 第二个tab 美元账户-->
+											<div class="tab-pane fade capitalAccou2 " id="tab4112">
+												
+												<div class="row">
+													<div class="col-md-4">
+														<p>交易品类:</p>
+														<label class="checkbox-inline">
+															<input type="checkbox" id="inlineCheckbox1" value="option1"> 沪深A股
+														</label>
+		 												<label for="" style="margin-left: 20px;">报单账户:</label>
+		 												<select class="form-control" style="display: inline-block; width: 24%;margin-bottom: 20px;">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+															<option>4</option>
+														</select>
+														<br />
+														<div class="" style="text-align: right;width: 330px;">
+															<label for="">初始金额:</label><input type="text">元(¥)
+															<p style="margin-bottom: 10px;"></p>
+															<label for="">保证金:</label><input type="text">元(¥)
+															<p style="margin-bottom: 10px;"></p>
+															<label for="">融资金额:</label><input type="text">元(¥)
+															<p style="margin-bottom: 10px;"></p>
+															<label for="">交易佣金:</label><input type="text">&nbsp;&nbsp;&nbsp;&nbsp; %
+															<p style="margin-bottom: 10px;"></p>
+														</div>
+														
+														
+													</div>
+													<div class="col-md-8">
+														<strong style="">风控信息:</strong>
+														<p style="margin-bottom: 20px;"></p>
+														<div class="row">
+															<div class="col-md-4 col-lg-4" style="width: 308px;text-align: right;">
+																<label for="">预警线:</label><input type="text">元(¥)
+																<p style="margin-bottom: 10px;"></p>
+																<label for="">平仓线:</label><input type="text">元(¥)
+																<p style="margin-bottom: 10px;"></p>
+																<label for="">限制可用金额:</label><input type="text">元(¥)
+																<p style="margin-bottom: 10px;"></p>
+															</div>
+															<div class="col-md-6 col-lg-6 set">
+																<label for="">持仓比例设置:</label>
+															    <label class="checkbox-inline">
+																	<input type="radio" name="set" id="globalSetting" class="globalSetting_radio" value="option1" checked> 
+																	全局设置
+																</label>
+																<label class="checkbox-inline">
+																	<input type="radio" name="set" id="setAlone" class="setAlone_radio"  value="option2"> 
+																	单独设置
+																</label>
+																<div class="globalSetting">
+																	<div class="table-responsive table-bordered" style="border: none;">
+																		<table class="table">
+																			<thead>
+																				<tr>
+																					<th>资产范围</th>
+																					<th>控制规则</th>
+																					<th>板块分类</th>
+																					<th>持仓比例限制</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>10000.00-<br>20000.00</td>
+																					<td>个股</td>
+																					<td>创业板</td>
+																					<td>50%</td>
+																				</tr>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div> 
+																</div>
+																<p style="margin-bottom: 10px;"></p>
+																<div class="setAlone" style="display: none;">
+																	<a class="btn normal_btn add_new_click">新增</a>
+																	<!--新增-->
+																	<div class="add_new">
+																		<h4 style="text-align: left;">持仓比例单独设置</h4>
+																		<p style="width: 100%;height: 1px;background-color: #d3d3d3;"></p>
+																		<div>
+																			<label for="">资产范围:</label><input type="text" style="width: 20%;margin-left: 36px;" />元&nbsp;-&nbsp;<input type="text" style="width: 20%;" />元
+																			<p style="margin-left: 95px;">*不填写即不限制资产范围</p>
+																			<label for="">控制规则:</label>
+																			<label class="checkbox-inline" style="display: inline-block; width: 20%;margin-left: 2px;">
+																				<input type="radio" name="optionsRadiosinline3" id="optionsRadios7" checked/>个股
+																			</label>
+																			<label class="checkbox-inline" style="display: inline-block; width: 20%;">
+																				<input type="radio" name="optionsRadiosinline3" id="optionsRadios8" />板块
+																			</label>
+																			<p style="margin-bottom: 10px;"></p>
+																			<label for="">生效板块:</label>
+																			<select class="form-control" style="display: inline-block; width: 30%;margin-left: 33px;">
+																				<option>创业板</option>
+																				<option>中小板</option>
+																				<option>主板</option>
+																				<option>所有板块</option>
+																			</select>
+																			<p style="margin-bottom: 10px;"></p>
+																			<label for="">持仓比例限制:</label><input type="text" />%
+																		</div>
+																		<p style="margin-bottom: 30px;"></p>
+																		<div style="margin-left: 98px;">
+																			<a class="btn normal_btn cancel">确定</a>
+																			<a class="btn export_btn cancel">取消</a>
+																		</div>
+																	</div>
+																	<p style="margin-bottom: 10px;"></p>
+																	<div class="table-responsive table-bordered" style="border: none;">
+																		<table class="table">
+																			<thead>
+																				<tr>
+																					<th>资产范围</th>
+																					<th>控制规则</th>
+																					<th>板块分类</th>
+																					<th>持仓比例限制</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>10000.00-<br>20000.00</td>
+																					<td>个股</td>
+																					<td>创业板</td>
+																					<td>50%</td>
+																				</tr>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div> 
+																</div>
+																
+															</div>
+														</div>
+													</div>
+												</div>
+											
+											</div>
+											<!-- 第三个tab 港币账户-->
+											<div class="tab-pane fade capitalAccou3" id="tab4113">
+												
+												<div class="row">
+													<div class="col-md-4">
+														<p>交易品类:</p>
+														<label class="checkbox-inline">
+															<input type="checkbox" id="inlineCheckbox1" value="option1"> 沪深A股
+														</label>
+		 												<label for="" style="margin-left: 20px;">报单账户:</label>
+		 												<select class="form-control" style="display: inline-block; width: 24%;margin-bottom: 20px;">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+															<option>4</option>
+														</select>
+														<br />
+														<div class="" style="text-align: right;width: 330px;">
+															<label for="">初始金额:</label><input type="text">元(¥)
+															<p style="margin-bottom: 10px;"></p>
+															<label for="">保证金:</label><input type="text">元(¥)
+															<p style="margin-bottom: 10px;"></p>
+															<label for="">融资金额:</label><input type="text">元(¥)
+															<p style="margin-bottom: 10px;"></p>
+															<label for="">交易佣金:</label><input type="text">&nbsp;&nbsp;&nbsp;&nbsp; %
+															<p style="margin-bottom: 10px;"></p>
+														</div>
+														
+														
+													</div>
+													<div class="col-md-8">
+														<strong style="">风控信息:</strong>
+														<p style="margin-bottom: 20px;"></p>
+														<div class="row">
+															<div class="col-md-4" style="width: 308px;text-align: right;">
+																<label for="">预警线:</label><input type="text">元(¥)
+																<p style="margin-bottom: 10px;"></p>
+																<label for="">平仓线:</label><input type="text">元(¥)
+																<p style="margin-bottom: 10px;"></p>
+																<label for="">限制可用金额:</label><input type="text">元(¥)
+																<p style="margin-bottom: 10px;"></p>
+															</div>
+															<div class="col-md-6 set">
+																<label for="">持仓比例设置:</label>
+															    <label class="checkbox-inline">
+																	<input type="radio" name="set" id="globalSetting" class="globalSetting_radio" value="option1" checked> 
+																	全局设置
+																</label>
+																<label class="checkbox-inline">
+																	<input type="radio" name="set" id="setAlone" class="setAlone_radio"  value="option2"> 
+																	单独设置
+																</label>
+																<div class="globalSetting">
+																	<div class="table-responsive table-bordered" style="border: none;">
+																		<table class="table">
+																			<thead>
+																				<tr>
+																					<th>资产范围</th>
+																					<th>控制规则</th>
+																					<th>板块分类</th>
+																					<th>持仓比例限制</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>10000.00-<br>20000.00</td>
+																					<td>个股</td>
+																					<td>创业板</td>
+																					<td>50%</td>
+																				</tr>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div> 
+																</div>
+																<p style="margin-bottom: 10px;"></p>
+																<div class="setAlone" style="display: none;">
+																	<a class="btn normal_btn add_new_click">新增</a>
+																	<!--新增-->
+																	<div class="add_new">
+																		<h4 style="text-align: left;">持仓比例单独设置</h4>
+																		<p style="width: 100%;height: 1px;background-color: #d3d3d3;"></p>
+																		<div>
+																			<label for="">资产范围:</label><input type="text" style="width: 20%;margin-left: 36px;" />元&nbsp;-&nbsp;<input type="text" style="width: 20%;" />元
+																			<p style="margin-left: 95px;">*不填写即不限制资产范围</p>
+																			<label for="">控制规则:</label>
+																			<label class="checkbox-inline" style="display: inline-block; width: 20%;margin-left: 2px;">
+																				<input type="radio" name="optionsRadiosinline3" id="optionsRadios7" checked/>个股
+																			</label>
+																			<label class="checkbox-inline" style="display: inline-block; width: 20%;">
+																				<input type="radio" name="optionsRadiosinline3" id="optionsRadios8" />板块
+																			</label>
+																			<p style="margin-bottom: 10px;"></p>
+																			<label for="">生效板块:</label>
+																			<select class="form-control" style="display: inline-block; width: 30%;margin-left: 33px;">
+																				<option>创业板</option>
+																				<option>中小板</option>
+																				<option>主板</option>
+																				<option>所有板块</option>
+																			</select>
+																			<p style="margin-bottom: 10px;"></p>
+																			<label for="">持仓比例限制:</label><input type="text" />%
+																		</div>
+																		<p style="margin-bottom: 30px;"></p>
+																		<div style="margin-left: 98px;">
+																			<a class="btn normal_btn cancel">确定</a>
+																			<a class="btn export_btn cancel">取消</a>
+																		</div>
+																	</div>
+																	<p style="margin-bottom: 10px;"></p>
+																	<div class="table-responsive table-bordered" style="border: none;">
+																		<table class="table">
+																			<thead>
+																				<tr>
+																					<th>资产范围</th>
+																					<th>控制规则</th>
+																					<th>板块分类</th>
+																					<th>持仓比例限制</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>10000.00-<br>20000.00</td>
+																					<td>个股</td>
+																					<td>创业板</td>
+																					<td>50%</td>
+																				</tr>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div> 
+																</div>
+																
+															</div>
+														</div>
+													</div>
+												</div>
+											
+											</div>
+											<!-- 第四个tab 离岸人民币账户-->
+											<div class="tab-pane fade capitalAccou4" id="tab4114">
+												
+												<div class="row">
+													<div class="col-md-4">
+														<p>交易品类:</p>
+														<label class="checkbox-inline">
+															<input type="checkbox" id="inlineCheckbox1" value="option1"> 沪深A股
+														</label>
+		 												<label for="" style="margin-left: 20px;">报单账户:</label>
+		 												<select class="form-control" style="display: inline-block; width: 24%;margin-bottom: 20px;">
+															<option>1</option>
+															<option>2</option>
+															<option>3</option>
+															<option>4</option>
+														</select>
+														<br />
+														<div class="" style="text-align: right;width: 330px;">
+															<label for="">初始金额:</label><input type="text">元(¥)
+															<p style="margin-bottom: 10px;"></p>
+															<label for="">保证金:</label><input type="text">元(¥)
+															<p style="margin-bottom: 10px;"></p>
+															<label for="">融资金额:</label><input type="text">元(¥)
+															<p style="margin-bottom: 10px;"></p>
+															<label for="">交易佣金:</label><input type="text">&nbsp;&nbsp;&nbsp;&nbsp; %
+															<p style="margin-bottom: 10px;"></p>
+														</div>
+														
+														
+													</div>
+													<div class="col-md-8">
+														<strong style="">风控信息:</strong>
+														<p style="margin-bottom: 20px;"></p>
+														<div class="row">
+															<div class="col-md-4" style="width: 308px;text-align: right;">
+																<label for="">预警线:</label><input type="text">元(¥)
+																<p style="margin-bottom: 10px;"></p>
+																<label for="">平仓线:</label><input type="text">元(¥)
+																<p style="margin-bottom: 10px;"></p>
+																<label for="">限制可用金额:</label><input type="text">元(¥)
+																<p style="margin-bottom: 10px;"></p>
+															</div>
+															<div class="col-md-6 col-lg-6 set">
+																<label for="">持仓比例设置:</label>
+															    <label class="checkbox-inline">
+																	<input type="radio" name="set" id="globalSetting" class="globalSetting_radio" value="option1" checked> 
+																	全局设置
+																</label>
+																<label class="checkbox-inline">
+																	<input type="radio" name="set" id="setAlone" class="setAlone_radio"  value="option2"> 
+																	单独设置
+																</label>
+																<div class="globalSetting">
+																	<div class="table-responsive table-bordered" style="border: none;">
+																		<table class="table">
+																			<thead>
+																				<tr>
+																					<th>资产范围</th>
+																					<th>控制规则</th>
+																					<th>板块分类</th>
+																					<th>持仓比例限制</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>10000.00-<br>20000.00</td>
+																					<td>个股</td>
+																					<td>创业板</td>
+																					<td>50%</td>
+																				</tr>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div> 
+																</div>
+																<p style="margin-bottom: 10px;"></p>
+																<div class="setAlone" style="display: none;">
+																	<a class="btn normal_btn add_new_click">新增</a>
+																	<!--新增-->
+																	<div class="add_new">
+																		<h4 style="text-align: left;">持仓比例单独设置</h4>
+																		<p style="width: 100%;height: 1px;background-color: #d3d3d3;"></p>
+																		<div>
+																			<label for="">资产范围:</label><input type="text" style="width: 20%;margin-left: 36px;" />元&nbsp;-&nbsp;<input type="text" style="width: 20%;" />元
+																			<p style="margin-left: 95px;">*不填写即不限制资产范围</p>
+																			<label for="">控制规则:</label>
+																			<label class="checkbox-inline" style="display: inline-block; width: 20%;margin-left: 2px;">
+																				<input type="radio" name="optionsRadiosinline3" id="optionsRadios7" checked/>个股
+																			</label>
+																			<label class="checkbox-inline" style="display: inline-block; width: 20%;">
+																				<input type="radio" name="optionsRadiosinline3" id="optionsRadios8" />板块
+																			</label>
+																			<p style="margin-bottom: 10px;"></p>
+																			<label for="">生效板块:</label>
+																			<select class="form-control" style="display: inline-block; width: 30%;margin-left: 33px;">
+																				<option>创业板</option>
+																				<option>中小板</option>
+																				<option>主板</option>
+																				<option>所有板块</option>
+																			</select>
+																			<p style="margin-bottom: 10px;"></p>
+																			<label for="">持仓比例限制:</label><input type="text" />%
+																		</div>
+																		<p style="margin-bottom: 30px;"></p>
+																		<div style="margin-left: 98px;">
+																			<a class="btn normal_btn cancel">确定</a>
+																			<a class="btn export_btn cancel">取消</a>
+																		</div>
+																	</div>
+																	<p style="margin-bottom: 10px;"></p>
+																	<div class="table-responsive table-bordered" style="border: none;">
+																		<table class="table">
+																			<thead>
+																				<tr>
+																					<th>资产范围</th>
+																					<th>控制规则</th>
+																					<th>板块分类</th>
+																					<th>持仓比例限制</th>
+																				</tr>
+																			</thead>
+																			<tbody>
+																				<tr>
+																					<td>10000.00-<br>20000.00</td>
+																					<td>个股</td>
+																					<td>创业板</td>
+																					<td>50%</td>
+																				</tr>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div> 
+																</div>
+																
+															</div>
+														</div>
+													</div>
+												</div>
+											
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="text-center text_center_btn_group" style="left: 8%;">
+									<a class="btn normal_btn back_click" style="margin-right: 5%;">确定</a>
+									<a class="btn export_btn back_click">取消</a>
+								</div>
+								
+							</form>
+							<br />
+							
+						</div>
+	        		</div>
+											
+					<!-- 第一个    用户账户新增结束     -->
+					<!--  新增 资金账户 弹出框 开始-->
+					<div class="message_pop" id="msgPop" >
+						<div class="msg_box">
+							<div class="msg_head clearfix">
+								<p id="msgTitle">消息提示</p>
+								<div class="msg_close do_close"></div>
+							</div>
+							<div class="msg_body" id="msgContent">
+								资金账户至少选择一项
+							</div>
+							<div class="msg_footer" id="msgBtn">
+								<a class="btn normal_btn pop_box_hide do_close">确定</a>
+							</div>
+						</div>
+						
+						
+					</div>
+					<!--  新增 资金账户 弹出框 结束-->
+                </div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(".addUserAccount_click").bind("click",function(){
+				$(".addUserAccount").show();
+				$(".addUserAccount_hide").hide();
+				
+			});
+			$(".back_click").bind("click",function(){
+				$(".addUserAccount").hide();
+				$(".addUserAccount_hide").show();
+				
+			})
+			$(".edit_click").bind("click",function(){
+				$(".addUserAccount").show();
+				$(".addUserAccount_hide").hide();
+				
+			});
+			$(".back_click").bind("click",function(){
+				$(".addUserAccount").hide();
+				$(".addUserAccount_hide").show();
+				
+			});
+			/*用户账户   新增  资金信息   资金账户信息设置  */
+			if ($('.capitalAccoun1').prop("checked") == true ) {
+				//alert(1);
+				$('#myTab1 a[href="#tab4111"]').tab('show');
+				$('.capitalAccount1').addClass('showw');
+				/*$('.capitalAccou1').addClass('showw');*/
+			};
+			$('.capitalAccoun1').bind("click", function () {
+				var indexNum = $(this).parents(".capitalAccount label").index();
+			if ($(this).prop("checked") == true ) {
+				$('#myTab1 a[href="#tab4111"]').tab('show');
+				$('.capitalAccount1').addClass('showw');
+             	}
+			else {
+				$('.capitalAccount1').removeClass('showw');
+				if ($('.capitalAccoun2').prop("checked") == true && $('.capitalAccoun3').prop("checked") == true && $('.capitalAccoun4').prop("checked") == true ) {
+					$('#myTab1 a[href="#tab4112"]').tab('show');
+				}else if ($('.capitalAccoun3').prop("checked") == true && $('.capitalAccoun4').prop("checked") == true ) {
+					$('#myTab1 a[href="#tab4113"]').tab('show');
+				}else if ($('.capitalAccoun4').prop("checked") == true ) {
+					$('#myTab1 a[href="#tab4114"]').tab('show');
+				}else if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == false && $('.capitalAccoun3').prop("checked") == false && $('.capitalAccoun4').prop("checked") == false ){
+	            	$('.message_pop').css('display','block');
+	            	$('.do_close').click(function(){
+	            		$('.message_pop').css('display','none');
+	            	});
+	            	$(".capitalAccount label").eq(indexNum).find("input").prop("checked",true);
+	            	$('.capitalAccount1').addClass('showw');
+	            };
+				
+				
+				
+				
+            }
+		 	});
+			//点击之后变为不是打钩时触发
+            
+			$('.capitalAccoun2').bind('click',function( ) {
+				var indexNum = $(this).parents(".capitalAccount label").index();
+				if ($('.capitalAccoun2').prop("checked") == true ) {
+				$('#myTab1 a[href="#tab4112"]').tab('show');
+				$('.capitalAccount2').addClass('showw');
+				
+	           }//点击之后变为不是打钩时触发
+				else{
+	           	$('.capitalAccount2').removeClass('showw');
+	           	if ($('.capitalAccoun1').prop("checked") == true ){
+           			$('#myTab1 a[href="#tab4111"]').tab('show');
+	           	};
+	           	if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun3').prop("checked") == true ){
+           			$('#myTab1 a[href="#tab4113"]').tab('show');
+	           	};
+	           	if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun3').prop("checked") == false && $('.capitalAccoun4').prop("checked") == true ){
+           			$('#myTab1 a[href="#tab4114"]').tab('show');
+	           	};
+	           	if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == false && $('.capitalAccoun3').prop("checked") == false && $('.capitalAccoun4').prop("checked") == false ){
+		            	$('.message_pop').css('display','block');
+		            	$('.do_close').click(function(){
+		            		$('.message_pop').css('display','none');
+		            	});
+		            	$(".capitalAccount label").eq(indexNum).find("input").prop("checked",true);
+		            	$('.capitalAccount2').addClass('showw');
+	            };
+	           
+	           }
+            })
+			
+            $('.capitalAccoun3').bind('click',function( ) {
+            	var indexNum = $(this).parents(".capitalAccount label").index();
+            	if ($(this).prop("checked") == true) {
+                	$('#myTab1 a[href="#tab4113"]').tab('show');
+                	$('.capitalAccount3').addClass('showw');
+                	
+                }
+            	else{
+            		$('.capitalAccount3').removeClass('showw');
+            		if ($('.capitalAccoun1').prop("checked") == true){
+           				$('#myTab1 a[href="#tab4111"]').tab('show');
+	           		};
+            		if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == true ){
+           				$('#myTab1 a[href="#tab4112"]').tab('show');
+	           		};
+            		if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == false && $('.capitalAccoun4').prop("checked") == true ){
+           				$('#myTab1 a[href="#tab4114"]').tab('show');
+	           		};
+	           		if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == false && $('.capitalAccoun3').prop("checked") == false && $('.capitalAccoun4').prop("checked") == false ){
+		            	$('.message_pop').css('display','block');
+		            	$('.do_close').click(function(){
+		            		$('.message_pop').css('display','none');
+		            	});
+		            	$(".capitalAccount label").eq(indexNum).find("input").prop("checked",true);
+		            	$('.capitalAccount3').addClass('showw');
+		            };
+            	}
+            })
+            $('.capitalAccoun4').bind('click',function( ) {
+            	console.log();
+            	var indexNum = $(this).parents(".capitalAccount label").index();
+            	if ($(this).prop("checked") == true) {
+                	$('#myTab1 a[href="#tab4114"]').tab('show');
+                	$('.capitalAccount4').addClass('showw');
+                }
+            	else{
+            		$('.capitalAccount4').removeClass('showw');
+            		if ($('.capitalAccoun1').prop("checked") == true){
+           				$('#myTab1 a[href="#tab4111"]').tab('show');
+	           		};
+            		if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == true){
+           				$('#myTab1 a[href="#tab4112"]').tab('show');
+	           		};
+            		if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == false && $('.capitalAccoun3').prop("checked") == true ){
+           				$('#myTab1 a[href="#tab4113"]').tab('show');
+	           		};
+	           		if ($('.capitalAccoun1').prop("checked") == false && $('.capitalAccoun2').prop("checked") == false && $('.capitalAccoun3').prop("checked") == false && $('.capitalAccoun4').prop("checked") == false ){
+   		            	$('.message_pop').css('display','block');
+		            	$('.do_close').click(function(){
+		            		$('.message_pop').css('display','none');
+		            	});
+		            	//console.log(indexNum);
+		            	//console.log($(".capitalAccount label").eq(indexNum).find("input"));
+		            	$(".capitalAccount label").eq(indexNum).find("input").prop("checked",true);
+		            	$('.capitalAccount4').addClass('showw');
+		            };
+            	}
+            });
+           
+		
+			
+			/*用户账户 增加资金 显示 隐藏*/
+			 $(".crease_click").bind('click',function(){
+			 	$(".crease_assets").show();
+			 });
+			 /*用户账户 减少资金 显示 隐藏*/
+			 $(".decrease_click").bind('click',function(){
+			 	$(".decrease_assets").show();
+			 });
+			 /*新增  里  单独设置  新增*/
+			$('.add_new_click').bind("click",function(){
+				$(".add_new").show();
+			})
+			
+			/*选择单独设置radio*/
+			$('.setAlone_radio').bind("change",function(){
+				$('.setAlone').show();
+				$('.globalSetting').hide();
+				
+			})
+			/*选择全局设置radio*/
+			$('.globalSetting_radio').bind("change",function(){
+				$('.setAlone').hide();
+				$('.globalSetting').show();
+				
+			})
+			
+			 /*cancel 按钮*/
+			$(".cancel").bind('click',function(){
+			 	$(this).parent().parent().hide();
+			 });
+		</script>
+		<script>
+		    $(function () {
+		    	$()
+			})
+		</script>
+	</body>
+</html>

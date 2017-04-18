@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li class="active"><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+                <ul class="nav nav-stacked nav-left col-md-1">
+                    <li class="active"><a href="riskcontrol.html">止损平仓预警</a><div></div></li>
+					<li><a href="noOpenSet.html">禁止开仓设置</a><div></div></li>
+					<li><a href="holdingProportionControl.html">持仓比例控制</a><div></div></li>
+                </ul>
+                <!--/sidebar-->
+                <!-- 第一个    止损平仓预警-->
+                <div class="nav-right col-md-11">
+                	
+					<div class="viewSnapshot_hide">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">风控管理</a></li>
+								<li class="active">止损平仓预警</li>
+							</ol>
+						</div>
+						<div class="main">
+							<div style="border: 1px solid #23527C;padding: 10px ;margin-bottom: 20px;">
+								<p>1.用户记录有"停牌"的标志表示该用户持有停牌证券</p>
+								<p>2.用户记录有"分红送股"的标志表示该用户有红股红利没有派发完成</p>
+							</div>
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tab311" data-toggle="tab">风控报警</a></li>
+								<li><a href="#tab312" data-toggle="tab">预警记录</a></li>
+								<li><a href="#tab313" data-toggle="tab">执行中的一键平仓</a></li>
+								<li><a href="#tab314" data-toggle="tab">平仓操作记录</a></li>
+								<li><a href="#tab315" data-toggle="tab">一键平仓策略</a></li>
+							</ul>
+							<!--tab pane-->
+							<div class="tab-content">
+								<!-- 第一个tab 风控报警-->
+								<div class="tab-pane fade active in" id="tab311">
+									<div class="tab_content">
+										<form class="form">
+											<div class="form-group">
+											    <label for="">用户编号:</label><input type="text">
+											    <label for="">风控状态</label>
+											    <select class="form-control" style="display: inline-block; width: 8%;">
+													<option>全部</option>
+													<option>触发预警</option>
+													<option>触发平仓</option>
+													<option>触发强平</option>
+												</select>
+											    <label for="">账户类型</label>
+											    <select class="form-control" style="display: inline-block; width: 8%;">
+													<option>全部</option>
+													<option>分账户</option>
+													<option>独立账户</option>
+												</select>
+											    <label for="">显示状态</label>
+											    <select class="form-control" style="display: inline-block; width: 8%;">
+													<option>全部</option>
+													<option>显示</option>
+													<option>隐藏</option>
+												</select>
+											    <label for=""><input type="checkbox">只显示持有停牌账户</label>
+											    <label for=""><input type="checkbox">只显示未派发分红送股账户</label>
+											    <a class="btn normal_btn">查询</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>用户编号</th>
+														<th>账户类型</th>
+														<th>币种账户</th>
+														<th>融资资金<br/>融资比例</th>
+														<th>总资产<br/>参考市值</th>
+														<th>预警线<br/>平仓线</th>
+														<th>强平线</th>
+														<th>风控状态</th>
+														<th>限制状态</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>32410004</td>
+														<td>分帐户</td>
+														<td>人民币账户</td>
+														<td>150000.000<br/>3.000</td>
+														<td>200000.000<br/>0.000</td>
+														<td>175000.000<br/>170000.000</td>
+														<td>--</td>
+														<td>正常</td>
+														<td>正常</td>
+														<td>禁开仓&nbsp;&nbsp;&nbsp;&nbsp;禁开仓&nbsp;&nbsp;&nbsp;&nbsp;禁撤单&nbsp;&nbsp;&nbsp;&nbsp;平仓处理</td>
+													</tr>	
+													<tr>
+														<td>32410004</td>
+														<td>分帐户</td>
+														<td>人民币账户</td>
+														<td>150000.000<br/>3.000</td>
+														<td>200000.000<br/>0.000</td>
+														<td>175000.000<br/>170000.000</td>
+														<td>--</td>
+														<td>正常</td>
+														<td>禁撤单</td>
+														<td>禁开仓&nbsp;&nbsp;&nbsp;&nbsp;禁开仓&nbsp;&nbsp;&nbsp;&nbsp;禁撤单&nbsp;&nbsp;&nbsp;&nbsp;平仓处理</td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								<!-- 第二个tab 预警记录-->
+								<div class="tab-pane fade" id="tab312">
+									<div class="tab_content">
+										<form class="form">
+											<div class="form-group">
+											    <label for="">用户编号：</label><input type="text">
+											    <a class="btn normal_btn">查询</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>用户编号</th>
+														<th>币种账户</th>
+														<th>总资产</th>
+														<th>预警线</th>
+														<th>平仓线</th>
+														<th>资产状态</th>
+														<th>时间</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								<!-- 第三个tab 执行中的一键平仓-->
+								<div class="tab-pane fade" id="tab313">
+									<div  class="tab_content">
+										<form class="form">
+											<div class="form-group">
+											    <label for="">用户编号：</label><input type="text">
+											    <label for="">预警状态</label>
+											    <select class="form-control" style="display: inline-block; width: 8%;">
+													<option>全部</option>
+													<option>待平仓</option>
+													<option>平仓中</option>
+												</select>
+											    <a class="btn normal_btn">查询</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>用户编号</th>
+														<th>币种账户</th>
+														<th>总资产</th>
+														<th>预警线</th>
+														<th>平仓线</th>
+														<th>参考市值</th>
+														<th>平仓触发时间</th>
+														<th>状态</th>
+														<th>平仓前快照</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								<!-- 第四个tab 平仓操作记录-->
+								<div class="tab-pane fade" id="tab314">
+									<div class="tab_content">
+										<form class="form">
+											<div class="form-group">
+											    <label for="">用户编号：</label><input type="text">
+											    <a class="btn normal_btn">查询</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>日期</th>
+														<th>用户编号</th>
+														<th>币种账户</th>
+														<th>平仓操作记录</th>
+														<th>操作人员</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>2017-01-20<br/>18：52：01</td>
+														<td>32410002<br/>张三</td>
+														<td>人民币账户</td>
+														<td>执行批量委托平仓</td>
+														<td>32410000</td>
+														<!--查看快照-->
+														<td style="color: #0088CC;"><a class="viewSnapshot_click">查看快照</a></td>
+														
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+										
+								</div>
+								<!-- 第五个tab 一键平仓策略-->
+								<div class="tab-pane fade" id="tab315">
+									<div class="row tab_content" style="margin-bottom: 2px;">
+										<div class="left-stratage col-md-3" style="width: 300px;height: 200px;line-height:200px;text-align:center;background-color:#C0C0C0;">
+											委托策略
+										</div>
+										<div class="right-text col-md-8">
+											<p>中国A股：循环买五价委托</p>
+											<p>美股：循环市价1.1买入，市价*0.9卖出委托</p>
+											<p>港股：循环市价1.1买入，市价*0.9卖出委托</p>
+											<p>股指期货：循环市价1.1买入，市价*0.9卖出委托</p>
+										</div>
+									</div>
+									<div class="row" style="padding-left: 10px;">
+										<div class="left-stratage col-md-3" style="width: 300px;height: 200px;line-height:200px;text-align:center;background-color:#C0C0C0;">
+											说明事项
+										</div>
+										<div class="right-text col-md-8">
+											<p>1.本系统只提供平仓自动委托功能，无法确保最后成交价格。因自动平仓而产生的损失，需自行承担。</p>
+											<p>2.循环委托，如果60秒内不成交，就再进行委托。</p>
+											<p>3.触发自动平仓，用户被禁止委托和撤单。</p>
+											<p>4.触发自动平仓，用户所有证券将被全部平仓。</p>
+											<p>5.证券处于停牌期间不进行平仓处理，复牌后按委托策略继续进行平仓。</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+            			</div>
+            		</div>
+
+
+					<!-- 第一个tab 止损平仓预警 中的 第四个tab 平仓操作记录 中的tab 查看快照-->
+					<div class="viewSnapshot" style="display: none;">
+						<div>
+	            			<div class="header row" style="height: 38px;margin-bottom: 20px;">
+								<ol class="breadcrumb col-md-10">
+									<li><a href="#">风控管理</a></li>
+									<li><a href="#">禁止开仓设置</a></li>
+									<li class="active">查看快照</li>
+								</ol>
+								<a class="btn btn-primary col-md-2 back_click" style="width: 5%;">返回</a>
+							</div>
+							<div class="main">
+								<p>平仓前<time>2017-01-20&nbsp;18:52:01</time></p>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>用户编号</th>
+												<th>证券市场</th>
+												<th>平仓线</th>
+												<th>总资产</th>
+												<th>预警线</th>
+												<th>手机号</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>32410002<br/>张三</td>
+												<td>2780.0000</td>
+												<td>24000.0000</td>
+												<td>29966.9400</td>
+												<td>25000.0000</td>
+												<td>13900000000</td>
+											</tr>	
+										</tbody>
+									</table>
+								</div> 
+								<p>持仓</p>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>证券代码</th>
+												<th>证券名称</th>
+												<th>可用数量</th>
+												<th>冻结数量</th>
+												<th>成本价</th>
+												<th>市价</th>
+												<th>市值</th>
+												<th>浮动盈亏</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>600967</td>
+												<td>北方创业</td>
+												<td>0</td>
+												<td>200</td>
+												<td>12.4573</td>
+												<td>13.9000</td>
+												<td>2780.0000</td>
+												<td>288.5500</td>
+											</tr>	
+										</tbody>
+									</table>
+								</div> 
+							</div>
+							
+	            		</div>
+	    			</div>
+	                </div>
+             	<!--第一个    止损平仓预警 end-->
+               
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(".viewSnapshot_click").bind("click",function(){
+				$(".viewSnapshot").show();
+				$(".viewSnapshot_hide").hide();
+				
+			});
+			$(".back_click").bind("click",function(){
+				$(".viewSnapshot").hide();
+				$(".viewSnapshot_hide").show();
+				
+			})
+		</script>
+	</body>
+</html>
+

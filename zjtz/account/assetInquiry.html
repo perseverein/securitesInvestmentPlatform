@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<style type="text/css">
+		.message_pop .msg_box{
+			width: 425px;
+		}
+		#msgContent{
+			max-height: none;
+		}
+		#msgContent .list{
+		    margin-top: 5px;
+    		line-height: 25px;
+		}
+		#msgContent .list .name_label{
+		    width: 110px;
+		    height: 25px;
+		    text-align: right;
+		}
+		.floatLeft{
+			float: left;
+		}
+		#msgContent label{
+			font-weight: 510;
+		}
+		#msgContent .list .value_label {
+		    padding-left: 15px;
+		    display: inline-block;
+		    width: 250px;
+		}
+		#msgContent .list .code_result {
+		    color: #ccc;
+		    background-color: transparent;
+		    text-align: right;
+		}
+		.pf-main .tabbable .nav-right .main input{
+		    border: 1px solid #d3d3d3;
+		    padding:0;
+		    height: 25px;
+		    margin: 0;
+		}
+		#msgContent .list .add_code {
+		    margin: -25px 0 0 125px;
+		    background: url(../assets/images/transparent.png);
+		}
+		#msgContent .list .input_global, #msgContent .list .select_global {
+		    margin-left: 15px;
+		    width: 173px;
+		    margin-right: 5px;
+		    background-color: white;
+		}
+		input.input_global {
+		    width: 5pc;
+		    padding: 0 0 0 5px;
+		    height: 23px;
+		    font-size: 9pt;
+		    line-height: 23px;
+		    color: #707070;
+		    border: 1px solid #cdcdcd;
+		    border-radius: 1px;
+		}
+		select.select-global {
+		    width: 103px;
+		    padding: 3px 0 3px 5px;
+		    border: 1px solid #cdcdcd;
+		}
+	</style>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li class="active"><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+				<div class="tabbable row">
+				<!--sidebar-->
+				<ul class="nav nav-stacked nav-left col-md-1">
+					<li><a href="account.html">用户账户</a><div></div></li>
+					<li class="search_assets active"><a href="assetInquiry.html">资产查询</a><div></div></li>
+					<li><a href="userGrouping.html">用户分组</a><div></div></li>
+					<li><a href="managedAccount.html">管理账户</a><div></div></li>
+					<li><a href="managementRecord.html">管理记录</a><div></div></li>
+					<li><a href="passwordModification.html">密码修改</a><div></div></li>
+					<li><a href="accountAudit.html">开户审核</a><div></div></li>
+					<li><a href="customerFollowUp.html">客户跟进</a><div></div></li>
+				</ul>
+                <!--/sidebar-->
+                <!-- 第一个    用户账户-->
+                <div class="nav-right col-md-11">
+                	
+					<div>
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">账户管理</a></li>
+								<li class="active">资产查询</li>
+							</ol>
+						</div>
+						<div class="main">
+							<form class="form">
+								<div class="form-group">
+									<label for="" >用户编号</label>
+								  	<input size="16" type="text">
+									<label for="">币种账户</label>
+									<select class="form-control" style="display: inline-block; width: 11%;">
+										<option>人民币账户</option>
+										<option>美元账户</option>
+										<option>港币账户</option>
+									</select>
+								    <a class="btn normal_btn hide_table_click">查询</a>
+								</div>
+							</form>
+							<div class="table-responsive show_table">
+								<table class="table">
+									<td colspan="11" class="no-data">您还未查询，请输入用户进行查询</td>
+								</table>
+							</div> 
+							<div class="hide_table" style="display: none;">
+								
+							
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>用户编号</th>
+											<th>手机号码</th>
+											<th>币种账户</th>
+											<th>总资产</th>
+											<th>预警线</th>
+											<th>强平线</th>
+											<th>姓名</th>
+											<th>备注</th>
+											<th>可操盘余额</th>
+											<th>证券市值</th>
+											<th>平仓线</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>32410002</td>
+											<td>139000000000</td>
+											<td>人民币账户</td>
+											<td>30048.94</td>
+											<td>25000.00</td>
+											<td>--</td>
+											<td>张三</td>
+											<td>无</td>
+											<td>27186.94</td>
+											<td>2862.00</td>
+											<td>24000.00</td>
+										</tr>
+									</tbody>
+								</table>
+							</div> 
+							<a type="submit" class="btn btn-info increase_positions">增加持仓</a>
+					  		<a type="submit" class="btn btn-info decrease_position">减少持仓</a>
+					  		<a type="submit" class="btn btn-info bulk_liquidation ">批量平仓</a>
+							<p style="margin-bottom: 20px;"></p>
+							<!--增加持仓-->
+							<div class="message_pop increase_positionss" id="msgPop">
+								<div class="msg_box">
+									<div class="msg_head clearfix">
+										<p id="msgTitle">增加持仓</p>
+										<div class="msg_close do_close"></div>
+									</div>
+									<div class="msg_body" id="msgContent">
+										<div class="list clearfix">
+											<label class="floatLeft name_label">用户编号:</label>
+											<label class="floatLeft value_label">32410000</label>
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label">证券代码:</label>
+											<input type="text" class="floatLeft input_global code_result" disabled="disabled"/>
+											<input type="text" class="floatLeft input_global add_code" id="stockCode"/>
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label">报单账户:</label>
+											<select class="floatLeft select_global" id="addSecurityAccountID"></select>
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label">增加股数:</label>
+											<input type="text" class="floatLeft input_global" id="addStockNumber"/>
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label">每股成本:</label>
+											<input type="text" class="floatLeft input_global" id="perCost"/>元
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label">份额类型:</label>
+											<input type="radio" name="status" id="canSell" value="00" style="margin-left: 15px;" checked="checked"/>
+											<label for="canSell">可卖</label>
+											<input type="radio" name="status" id="canNotSell" value="01" />
+											<label for="canNotSell">冻结(当日不可卖出)</label>
+										</div>
+									</div>
+									<div class="msg_footer" id="msgBtn">
+										<a class="btn normal_btn" id="submit" href="#tab42">
+											提交
+										</a>
+										<a class="btn export_btn do_close" id="submit">
+											取消
+										</a>
+									</div>
+								</div>
+								<!--<div style="text-align: center;margin-top: 20px;">
+									<a href="#tab42" class="btn normal_btn cancel">提交</a>
+									<a class="btn export_btn cancel">取消</a>
+								</div>-->
+							</div>
+							<!--减少持仓-->
+							
+							<!--<div class="decrease_positions">-->
+							<div class="message_pop decrease_positionss" id="msgPop">
+								<div class="msg_box">
+									<div class="msg_head clearfix">
+										<p id="msgTitle">减少持仓</p>
+										<div class="msg_close do_close"></div>
+									</div>
+									<div class="msg_body" id="msgContent">
+										<div class="list clearfix">
+											<label class="floatLeft name_label">用户编号:</label>
+											<label class="floatLeft value_label">32410000</label>
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label">证券代码:</label>
+											<input type="text" class="floatLeft input_global code_result" disabled="disabled"/>
+											<input type="text" class="floatLeft input_global add_code" id="stockCode"/>
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label">用户持仓总数量:</label>
+											<label class="value_label" id="canSellCount">--</label>
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label">报单账户:</label>
+											<select class="floatLeft select_global" id="subSecurityAccountID"></select>
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label"></label>
+											<label class="value_label">该账单账户用户持仓数量(冻结):</label>
+											<span class="freezeCount"></span>
+											<label class="floatLeft name_label"></label>
+											<label class="value_label">该账单账户用户持仓数量(可卖):</label>
+											<span class="canSellCount"></span>
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label">减少股数:</label>
+											<input type="text" class="floatLeft input_global" id="subtractNumber"/>
+											<label class="error" id="subtractNumberError"></label>
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label">每股成本:</label>
+											<input type="text" class="floatLeft input_global" id="subtractPerCost"/>元
+											<label class="error" id="subtractPerCostError"></label>
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label">份额类型:</label>
+											<input type="radio" name="status" id="canSell" value="00" style="margin-left: 15px;" checked="checked"/>
+											<label for="canSell">可卖</label>
+											<input type="radio" name="status" id="canNotSell" value="01"/>
+											<label for="canNotSell">冻结(当日不可卖出)</label>
+										</div>
+										<div class="list clearfix">
+											<label class="floatLeft name_label">更新成本:</label>
+											<input type="radio" name="updateOpt" id="updateCost" value="1" style="margin-left: 15px;" checked/>
+											<label for="updateCost">更新</label>
+											<input type="radio" name="updateOpt" id="notUpdateCost" value="01"/>
+											<label for="notUpdateCost">不更新</label>
+										</div>
+									</div>
+									<div class="msg_footer" id="msgBtn">
+										<a class="btn normal_btn" id="submit" href="#tab42">
+											提交
+										</a>
+										<a class="btn export_btn do_close" id="submit">
+											取消
+										</a>
+									</div>
+								</div>
+							</div>
+							<!--</div>-->
+							
+							<div class="table-responsive bulk_liquidation_hide">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>证券代码</th>
+											<th>证券名称</th>
+											<th>总数量</th>
+											<th>可卖数量</th>
+											<th>冻结数量</th>
+											<th>委托中数量</th>
+											<th>成本价（元）</th>
+											<th>总成本（元）</th>
+											<th>市价（元）</th>
+											<th>市值（元）</th>
+											<th>浮动盈亏</th>
+											<th>盈亏比例（%）</th>
+											<th>详情</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="13" class="no-data">暂无持仓信息</td>
+										</tr>
+									</tbody>
+									<tbody style="display: none;">
+										<tr>
+											<td>6000967</td>
+											<td>北方创业</td>
+											<td>200</td>
+											<td>200</td>
+											<td>0</td>
+											<td>0</td>
+											<td>14.065</td>
+											<td>2813.06</td>
+											<td>14.310</td>
+											<td>2862.00</td>
+											<td>48.940</td>
+											<td>1.740</td>
+											<td>详情</td>
+										</tr>
+									</tbody>
+								</table>
+							</div> 
+							<!--批量平仓-->
+							<div class="bulk_liquidation_show" style="display: none;margin-top: 50px;">
+								<a class="btn btn-info">买一价</a>
+								<a class="btn btn-info">买二价</a>
+								<a class="btn btn-info">买三价</a>
+								<a class="btn btn-info">买四价</a>
+								<a class="btn btn-info">买五价</a>
+								<a class="btn btn-warning">跌停价</a>
+								<a class="btn btn-info">市价</a>
+								<p style="margin-bottom: 20px;"></p>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>证券代码</th>
+												<th>证券名称</th>
+												<th>总数量</th>
+												<th>可卖数量</th>
+												<th>冻结数量</th>
+												<th>委托中数量</th>
+												<th>成本价（元）</th>
+												<th>总成本（元）</th>
+												<th>市价（元）</th>
+												<th>市值（元）</th>
+												<th>浮动盈亏</th>
+												<th>盈亏比例（%）</th>
+												<th>详情</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>6000967</td>
+												<td>北方创业</td>
+												<td>200</td>
+												<td>200</td>
+												<td>0</td>
+												<td>0</td>
+												<td>14.065</td>
+												<td>2813.06</td>
+												<td>14.310</td>
+												<td>2862.00</td>
+												<td>48.940</td>
+												<td>1.740</td>
+												<td>详情</td>
+											</tr>
+										</tbody>
+									</table>
+									<label for="">委托数量：</label><input type="text" />
+									<label for="">委托价：</label><input type="text" />
+								</div>
+								<div style="text-align: center;margin-top: 20px;">
+									<a href="#tab42" class="btn normal_btn bulk_liquidation_cancel" data-toggle="tab">提交</a>
+									<a class="btn export_btn bulk_liquidation_cancel">取消</a>
+								</div>
+							</div>
+						</div>
+            		</div>									
+
+                </div>
+                 <!-- 第一个    用户账户  end-->
+			</div>
+		
+		</div>
+		<script type="text/javascript">
+			/*查询按钮*/
+			 $(".hide_table_click").bind('click',function(){
+			 	$(".hide_table").show();
+			 	$(".show_table").hide();
+			 });
+			/*增加持仓 显示 隐藏*/
+			 $(".increase_positions").bind('click',function(){
+			 	$(".increase_positionss").show();
+			 });
+			 /*减少持仓 显示 隐藏*/
+			/* $(".decrease_position").bind('click',function(){
+			 	$(".decrease_positions").show();
+			 });*/
+			 $(".decrease_position").bind('click',function(){
+			 	$(".decrease_positionss").show();
+			 });
+			 /*批量平仓 显示 隐藏*/
+			 $(".bulk_liquidation").bind('click',function(){
+			 	$(".bulk_liquidation_show").show();
+			 	$(".bulk_liquidation_hide").hide();
+			 	
+			 });
+			 $(".bulk_liquidation_cancel").bind('click',function(){
+			 	$(".bulk_liquidation_hide").show();
+			 	$(".bulk_liquidation_show").hide();
+			 	
+			 });
+			 $(".do_close").bind('click',function(){
+			 	$(".message_pop").hide();
+			 });
+		</script>
+	</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!-- Bootstrap 分页 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap-paginator.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li class="active"><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			
+				<div class="tabbable row">
+				<!--sidebar-->
+				<ul class="nav nav-stacked nav-left col-md-1">
+					<li><a href="account.html">用户账户</a><div></div></li>
+					<li class="search_assets"><a href="assetInquiry.html">资产查询</a><div></div></li>
+					<li><a href="userGrouping.html">用户分组</a><div></div></li>
+					<li><a href="managedAccount.html">管理账户</a><div></div></li>
+					<li><a href="managementRecord.html">管理记录</a><div></div></li>
+					<li><a href="passwordModification.html">密码修改</a><div></div></li>
+					<li><a href="accountAudit.html">开户审核</a><div></div></li>
+					<li class="active"><a href="customerFollowUp.html">客户跟进</a><div></div></li>
+				</ul>
+                <!--/sidebar-->
+                <!-- 第八个    客户跟进-->
+                <div class="nav-right col-md-11">
+	
+					<div>
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">账户管理</a></li>
+								<li class="active">客户跟进</li>
+							</ol>
+						</div>
+						<div class="main">
+							<div style="border: 1px solid #23527C;padding: 10px ;margin-bottom: 20px;">
+								<p>截止到目前,注册人数为5人,申请开户人数0人,成功开户人数0人</p>
+							</div>
+							<form class="form">
+					  			<label for="name">注册时间</label>
+					  			<input size="16" type="text" value="" class="form_date time" readonly>
+					  			<label for="name">--</label>
+					  			<input size="16" type="text" value="" class="form_date time" readonly>
+					  			<label for="name">手机号</label><input type="tel"/>
+					  			<a class="btn normal_btn">查询</a>
+					  			<a class="btn export_btn">导出Excel</a>
+							</form>
+							<p style="margin-bottom: 20px;"></p>
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>手机号</th>
+											<th>用户编号</th>
+											<th>姓名</th>
+											<th>注册时间</th>
+											<th>开户时间</th>
+											<th>联络次数</th>
+											<th>上次联络时间</th>
+											<th>联络人</th>
+											<th>客户跟进日志</th>
+											<th>是否需要回访</th>
+											<th>客户意向</th>
+											<th>详情</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="15" class="no-data">抱歉，没有您要搜索的信息！</td>
+										</tr>
+										<tr style="display: none;">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<ul class="pager" style="width: ;margin-left: 38%;" id="page">
+								<!--<li class="previous disabled"><a href="#">&larr; 上一页</a></li>
+								<li class="next"><a href="#">下一页 &rarr;</a></li>-->
+							</ul>
+						</div>
+            		</div>
+				    						  											
+					
+                </div>
+                 <!-- 第八个    客户跟进  end-->
+			</div>
+		
+		</div>
+		<script type="text/javascript">
+		    $(".form_date").datetimepicker({
+	    	  minView: "month", //选择日期后，不会再跳转去选择时分秒 
+		      format: "yyyy-mm-dd",
+		      autoclose: true,
+		      todayBtn: true,
+		      language:'zh-CN',
+		      pickerPosition:"bottom-left",
+		      bootcssVer:3
+		    });
+		    $(".pf-main").height($(window).height()-90);
+		  </script>
+		  <script type="text/javascript">
+    	  	$(function(){
+	            var options={
+	                bootstrapMajorVersion:3,    //版本
+	                currentPage:1,    //当前页数
+	                numberOfPages:1,    //最多显示Page页
+	                totalPages:10,    //所有数据可以显示的页数
+	                onPageClicked:function(e,originalEvent,type,page){
+	                    console.log("e");
+	                    console.log(e);
+	                    console.log("originalEvent");
+	                    console.log(originalEvent);
+	                    console.log("type");
+	                    console.log(type);
+	                    console.log("page");
+	                    console.log(page);
+	                }
+	            }
+            	$("#page").bootstrapPaginator(options);
+        	})
+	    </script>
+	</body>
+</html>

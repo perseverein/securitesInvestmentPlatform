@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap-validator/0.5.3/css/bootstrapValidator.min.css">
+		<!-- jQuery文件 -->
+		<script src="assets/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+		<script src="//cdn.bootcss.com/bootstrap-validator/0.5.3/js/bootstrapValidator.min.js"></script>
+		<script src="//cdn.bootcss.com/bootstrap-validator/0.5.3/js/language/zh_CN.min.js"></script>
+	</head>
+	<body class="bg_color">
+			 <div class="container">
+		        <div class="row">
+		            <!-- form: -->
+		            <section>
+		                <div class="col-lg-8 col-lg-offset-2">
+		
+		                    <form id="defaultForm" method="post" class="form-horizontal" action="target.php">
+		
+		                        <div class="form-group">
+		                            <label class="col-lg-3 control-label">用户名</label>
+		                            <div class="col-lg-5">
+		                                <input type="text" class="form-control" name="username" placeholder="请输入用户名"/>
+		                            </div>
+		                        </div>
+		
+		                        <div class="form-group">
+		                            <label class="col-lg-3 control-label">密码</label>
+		                            <div class="col-lg-5">
+		                                <input type="password" class="form-control" name="password" placeholder="请输入密码" />
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-lg-3 control-label">用户权限</label>
+		                            <div class="col-lg-5">
+										<select class="form-control">
+											<option>普通用户</option>
+											<option>管理员</option>
+											<option>超级管理员</option>
+										</select>
+		                            </div>
+		                        </div>
+		                        <div class="form-group">
+		                            <label class="col-lg-3 control-label"></label>
+		                            <div class="col-lg-5">
+		                                <div class="radio" style="display: inline; width: 20px;">
+		                                    <label>
+		                                        <input type="radio" name="gender" value="remember" /> 记住密码
+		                                    </label>
+		                                    
+		                                </div>
+		                                <a class="forget_password_click"  style="margin-left: 30%;position: relative;">
+	                                        	忘记密码
+	                                    </a>
+		                                <div class="forget_password">
+		                                	<p>请联系相关工作人员！</p>
+		                                </div>
+		                            </div>
+		                        </div>
+                        
+		                        <div class="form-group">
+		                            <div class="col-lg-9 col-lg-offset-3">
+		                                <button type="button" class="btn btn-info" id="validateBtn">登录</button>
+		                                <button type="button" class="btn btn-info" id="resetBtn" style="margin-left: 13.7%;">重置</button>		                            </div>
+	                               </div>
+		                        </div>
+		                    </form>
+		                </div>
+		            </section>
+		            <!-- :form -->
+            	</div>
+   			</div>
+ 
+
+		</div>
+		<script type="text/javascript">
+	$(document).ready(function() {
+	    // Generate a simple captcha
+	    function randomNumber(min, max) {
+	        return Math.floor(Math.random() * (max - min + 1) + min);
+	    };
+	    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+	
+	    $('#defaultForm').bootstrapValidator({
+	//        live: 'disabled',
+	        message: 'This value is not valid',
+	        feedbackIcons: {
+	            valid: 'glyphicon glyphicon-ok',
+	            invalid: 'glyphicon glyphicon-remove',
+	            validating: 'glyphicon glyphicon-refresh'
+	        },
+	        fields: {
+	            username: {
+	                message: '用户名无效',
+	                validators: {
+	                    notEmpty: {
+	                        message: '用户名不能为空'
+	                    },
+	                    stringLength: {
+	                        min: 6,
+	                        max: 30,
+	                        message: '用户名 必须大于6个字符小于30个字符'
+	                    },
+	                    regexp: {
+	                        regexp: /^[a-zA-Z0-9_\.]+$/,
+	                        message: 'The username can only consist of alphabetical, number, dot and underscore'
+	                    },
+	                    remote: {
+	                        type: 'POST',
+	                        url: 'remote.php',
+	                        message: 'The username is not available'
+	                    },
+	                    different: {
+	                        field: 'password,confirmPassword',
+	                        message: 'The username and password cannot be the same as each other'
+	                    }
+	                }
+	            },
+	            password: {
+	                validators: {
+	                    notEmpty: {
+	                        message: '密码不能为空'
+	                    },
+	                    identical: {
+	                        field: 'confirmPassword',
+	                        message: '密码不一致'
+	                    },
+	                    different: {
+	                        field: 'username',
+	                        message: '密码输入错误'
+	                    }
+	                }
+	            },
+	            confirmPassword: {
+	                validators: {
+	                    notEmpty: {
+	                        message: 'The confirm password is required and cannot be empty'
+	                    },
+	                    identical: {
+	                        field: 'password',
+	                        message: 'The password and its confirm are not the same'
+	                    },
+	                    different: {
+	                        field: 'username',
+	                        message: 'The password cannot be the same as username'
+	                    }
+	                }
+	            },
+	            gender: {
+	                validators: {
+	                    notEmpty: {
+	                        message: '要记住密码吗?'
+	                    }
+	                }
+	            }
+	        }
+	    });
+	
+	    // Validate the form manually
+	    $('#validateBtn').click(function() {
+	        $('#defaultForm').bootstrapValidator('validate');
+	    });
+	
+	    $('#resetBtn').click(function() {
+	        $('#defaultForm').data('bootstrapValidator').resetForm(true);
+	    });
+	});
+	</script>
+		<script type="text/javascript">
+			$(".forget_password_click").bind("click",function(){
+				$(".forget_password").show();
+			})
+			$(".forget_password").bind("click",function(){
+				$(".forget_password").hide();
+			})
+			$("#resetBtn").bind("click",function(){
+				$(".forget_password").hide();
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../kindeditor/themes/default/default.css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+		<!-- kindeditor 核心 JavaScript 文件 -->
+		<script src="../kindeditor/kindeditor.js"></script>
+		<!-- kindeditor 核心 JavaScript 文件 -->
+		<script src="../kindeditor/kindeditor-all.js"></script>
+		<!-- kindeditor 核心 JavaScript 文件 -->
+		<script src="../kindeditor/lang/zh_CN.js"></script>
+		<!-- kindeditor 核心 JavaScript 文件 -->
+		<script src="../kindeditor/plugins/emoticons/emoticons.js"></script>
+		<!-- kindeditor 核心 JavaScript 文件 -->
+		<script src="../kindeditor/plugins/link/link.js"></script>
+	</head>
+	<style type="text/css">
+		.main_body {
+		    width: 810pt;
+		    padding: 10px;
+		    background-color: #fff;
+		    position: relative;
+		}
+		.main_body .list_line {
+		    border: 1px solid #cdcdcd;
+		    border-bottom: none;
+		    line-height: 2pc;
+		    font-size: 9pt;
+		}
+		.main_body .list_line:last-child {
+		    border-bottom: 1px solid #cdcdcd;
+		    padding: 10px 0;
+		}
+		.main_body .list_line .list_title {
+		    margin-left: 30px;
+		    float: left;
+		}
+		.main_body .list_line .list_value {
+		    margin-left: 50px;
+    		float: left;
+		}
+		.main_body .list_line .btn_list {
+		    width: 185px;
+		    float: right;
+		}
+		.main_body .list_line .btn_list i {
+		    margin-right: 30px;
+		    display: inline-block;
+		}
+		i{
+			font-style: normal;
+			color: #337ab7;
+			cursor: pointer;
+		}
+		.main_body .list_line .list_info:first-child {
+		    margin-left: 30px;
+		}
+		.main_body .list_line .list_info {
+		    line-height: 20px;
+    		margin-left: 54px;
+		}
+		.main_body .list {
+		    margin-bottom: 10px;
+		    line-height: 25px;
+		    font-size: 9pt;
+		    position: relative;
+		}
+		.main_body .list .name_label {
+		    width: 130px;
+		}
+		.floatLeft {
+		    float: left;
+		}
+		.main_body .list .input_global {
+		    width: 168px;
+		    color: #000;
+		}
+		input.input_global {
+		    width: 5pc;
+		    padding: 0 0 0 5px;
+		    height: 23px;
+		    font-size: 9pt;
+		    line-height: 23px;
+		    color: #707070;
+		    border: 1px solid #cdcdcd;
+		    border-radius: 1px;
+		}
+		.main_body .list label.error {
+		    display: none;
+		    position: absolute;
+		    margin-left: 20px;
+		    font-size: 9pt;
+		    line-height: 25px;
+		    height: 25px;
+		}
+		
+		label.error, label.success {
+		    position: absolute;
+		    height: 30px;
+		    font-size: 14px;
+		    line-height: 30px;
+		    padding-left: 30px;
+		    z-index: 2;
+		}
+		label.error {
+		    color: red;
+		    background: url(/css/images/error-icon-2.png) left 4px no-repeat;
+		}
+		.main_body .list .tipInfo {
+		    float: left;
+		    color: #ccc;
+		    margin-left: 10px;
+		}
+		.main_body .list label.error {
+		    display: none;
+		    position: absolute;
+		    margin-left: 20px;
+		    font-size: 9pt;
+		    line-height: 25px;
+		    height: 25px;
+		}
+		.main_body .list .file_global {
+		    opacity: 0;
+		    position: absolute;
+		    color: #000;
+		    z-index: 2;
+		    width: 168px;
+		}
+		.main_body .list .agreementName, .main_body .list .file_div, .main_body .list .file_div .file_box, .main_body .list .file_global {
+		    padding: 0 0 0 5px;
+		    height: 23px;
+		    line-height: 23px;
+		    font-size: 9pt;
+		}
+		.main_body .list .file_div {
+		    float: left;
+		    left: 140px;
+		    position: absolute;
+		    width: 168px;
+		    cursor: pointer;
+		}
+		.main_body .list .file_div .file_box {
+		    position: absolute;
+		    color: #00f;
+		    z-index: 1;
+		    width: 174px;
+		}
+		.main_body .list .file_div .file_box .file_btn {
+		    float: left;
+		}
+		.main_body .list .file_div .file_box .uploadImg, .main_body .list .file_div .file_box .uploadLogo {
+		    color: #000;
+		    display: inline-block;
+		    margin-left: 10px;
+		    width: 110px;
+		    text-overflow: ellipsis;
+		    overflow: hidden;
+		    white-space: nowrap;
+		}
+		
+	</style>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li class="active"><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+				<ul class="nav nav-stacked nav-left col-md-1">
+					<li><a href="system.html">用户默认设置</a><div></div></li>
+					<li><a href="fundManagementSettings.html">资金管理设置</a><div></div></li>
+					<li class="active"><a href="systemNameManagement.html">系统名称管理</a><div></div></li>
+				</ul>
+                <!--/sidebar-->
+                <!-- 第三个    系统名称-->
+                <div class="nav-right col-md-11">
+	
+					<div class="systemNameEditor_hide">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">系统管理</a></li>
+								<li class="active">系统名称设置</li>
+							</ol>
+						</div>
+						<div class="main">
+							<div class="main_body">
+								<div class="list_line clearfix">
+									<div class="list_title">
+										系统名称
+									</div>
+									<div class="btn_list">
+										<i><a id="editTitleBtn" class="systemNameEditor_click">编辑</a></i>
+									</div>
+								</div>
+								<div class="list_line clearfix">
+									<div class="list_value">
+										管理系统名称：大赢家投资管理平台
+									</div>
+								</div>
+								<div class="list_line clearfix">
+									<div class="list_value">
+										交易系统名称：大赢家投资管理平台
+									</div>
+								</div>
+								<div class="list_line clearfix">
+									<div class="list_value">
+										交易系统logo：大赢家投资管理平台
+									</div>
+								</div>
+								<div class="list_line clearfix">
+									<div class="list_value">
+										客服电话：
+									</div>
+								</div>
+								<div class="list_line clearfix">
+									<div class="list_value">
+										客服QQ：
+									</div>
+								</div>
+								<div class="list_line clearfix">
+									<div class="list_value">
+										交易系统口号：
+									</div>
+								</div>
+								<div class="list_line clearfix">
+									<div class="list_title">
+										系统协议
+									</div>
+								</div>
+								<div class="list_line clearfix">
+									<div class="list_value">
+										《协议名称》
+									</div>
+									<div class="btn_list">
+										<i class="viewAgreementBtn"><a href="../agreementPage/agreementPage1.html" target="_Blank">查看</a></i>
+										<i class="editAgreementBtn"><a class="editAgreementBox_click">编辑</a></i>
+										<i class="stopAgreementBtn1">停用</i>
+										<i class="stopAgreementBtn11" style="display: none;">启用</i>
+										<div class="message_pop stopAgreement1" id="msgPop">
+											<div class="msg_box">
+												<div class="msg_head clearfix">
+													<p id="msgTitle">消息提示</p>
+													<div class="msg_close do_close"></div>
+												</div>
+												<div class="msg_body" id="msgContent">
+														成功
+												</div>
+												<div class="msg_footer" id="msgBtn">
+													<a class="btn normal_btn do_close stopAgreementBtn_sure1" id="submit">
+														确定
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+								<div class="list_line clearfix">
+									<div class="list_value">
+										《协议名称》
+									</div>
+									<div class="btn_list">
+										<i class="viewAgreementBtn"><a href="">查看</a></i>
+										<i class="editAgreementBtn"><a href="">编辑</a></i>
+										<i class="stopAgreementBtn2">停用</i>
+										<i class="stopAgreementBtn21" style="display: none;">启用</i>
+										<div class="message_pop stopAgreement2" id="msgPop">
+											<div class="msg_box">
+												<div class="msg_head clearfix">
+													<p id="msgTitle">消息提示</p>
+													<div class="msg_close do_close"></div>
+												</div>
+												<div class="msg_body" id="msgContent">
+														成功
+												</div>
+												<div class="msg_footer" id="msgBtn">
+													<a class="btn normal_btn do_close stopAgreementBtn_sure2" id="submit">
+														确定
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="list_line clearfix">
+									<div class="list_value">
+										《协议名称》
+									</div>
+									<div class="btn_list">
+										<i class="viewAgreementBtn"><a href="">查看</a></i>
+										<i class="editAgreementBtn"><a href="">编辑</a></i>
+										<i class="stopAgreementBtn3">停用</i>
+										<i class="stopAgreementBtn31" style="display: none;">启用</i>
+										<div class="message_pop stopAgreement3" id="msgPop">
+											<div class="msg_box">
+												<div class="msg_head clearfix">
+													<p id="msgTitle">消息提示</p>
+													<div class="msg_close do_close"></div>
+												</div>
+												<div class="msg_body" id="msgContent">
+														成功
+												</div>
+												<div class="msg_footer" id="msgBtn">
+													<a class="btn normal_btn do_close stopAgreementBtn_sure3" id="submit">
+														确定
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="list_line clearfix">
+									<div class="list_value">
+										《协议名称》
+									</div>
+									<div class="btn_list">
+										<i class="viewAgreementBtn"><a href="">查看</a></i>
+										<i class="editAgreementBtn"><a href="">编辑</a></i>
+										<i class="stopAgreementBtn4">停用</i>
+										<i class="stopAgreementBtn41" style="display: none;">启用</i>
+										<div class="message_pop stopAgreement4" id="msgPop">
+											<div class="msg_box">
+												<div class="msg_head clearfix">
+													<p id="msgTitle">消息提示</p>
+													<div class="msg_close do_close"></div>
+												</div>
+												<div class="msg_body" id="msgContent">
+														成功
+												</div>
+												<div class="msg_footer" id="msgBtn">
+													<a class="btn normal_btn do_close stopAgreementBtn_sure4" id="submit">
+														确定
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="list_line clearfix">
+									<div class="list_value">
+										《协议名称》
+									</div>
+									<div class="btn_list">
+										<i class="viewAgreementBtn"><a href="">查看</a></i>
+										<i class="editAgreementBtn"><a href="">编辑</a></i>
+										<i class="stopAgreementBtn5">停用</i>
+										<i class="stopAgreementBtn51" style="display: none;">启用</i>
+										<div class="message_pop stopAgreement5" id="msgPop">
+											<div class="msg_box">
+												<div class="msg_head clearfix">
+													<p id="msgTitle">消息提示</p>
+													<div class="msg_close do_close"></div>
+												</div>
+												<div class="msg_body" id="msgContent">
+														成功
+												</div>
+												<div class="msg_footer" id="msgBtn">
+													<a class="btn normal_btn do_close stopAgreementBtn_sure5" id="submit">
+														确定
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="list_line clearfix">
+									<div class="list_info">
+										注：1. 系统名称修改范围为pc版浏览器标签页名称与登录后显示系统名称
+									</div>
+									<div class="list_info">
+    									2. 系统协议只适用于交易系统包括pc与app。当用户第一次登录系统时，会自动弹窗显示。
+    									之后，pc显示链接于交易系统页面最下方。app显示在用户下拉框中。
+									</div>
+									<div class="list_info">
+    									3.系统同时支持5个，系统默认设置了2个。如有需要请自行编辑并启用。
+									</div>
+								</div>
+								
+								
+							</div>
+							
+							<!--tab pane-->
+							
+						</div>
+            		</div>
+				    											 									
+                	<!-- 第四个    系统名称设置 系统名称编辑 -->
+					<div class="systemNameEditor" style="display: none;">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">系统管理</a></li>
+								<li><a href="#">系统名称设置</a></li>
+								<li class="active">系统名称编辑</li>
+							</ol>
+						</div>
+						<div class="main">
+							<div class="main_body">
+								<form id="SystemEdit" method="post">
+									<div class="list clearfix">
+										<label class="name_label floatLeft">管理系统名称：</label>
+										<input type="text" class="input_global floatLeft" id="managementSystemName" name="managementSystemName" value="投资管理平台"/>
+										<label class="error" id="managementSystemNameError" style="display: none;"></label>
+									
+									</div>
+									<div class="list clearfix">
+										<label class="name_label floatLeft">交易系统名称：</label>
+										<input type="text" class="input_global floatLeft" id="tradeSystemName" name="tradeSystemName" value="投资管理平台"/>
+										<sapn class="tipInfo">注：交易系统名称将统一作为该机构app客户端，PC交易客户端，管理系统名称。</sapn>
+										<label class="error" id="tradeSystemNameError" style="display: none;"></label>
+									
+									</div>
+									<div class="list clearfix">
+										<label class="name_label floatLeft">交易系统LOGO：：</label>
+										<input type="file" class="file_global floatLeft" id="tradeSystemLogo" name="customLogo" value/>
+										<div class="file_div">
+											<div class="file_box">
+												<span class="file_btn">点击上传</span>
+												<span class="uploadLogo"> 未选择任何文件</span>
+											</div>
+										</div>
+										<sapn class="tipInfo">注：请上传长宽比为1:1的清晰图片，最大不超过50k。</sapn>
+									
+									</div>
+									<div class="list clearfix">
+										<label class="name_label floatLeft">客服电话：</label>
+										<input type="text" class="input_global floatLeft" id="tradeSystemPhone" name="customerServicePhone" value/>
+									
+									</div>
+									<div class="list clearfix">
+										<label class="name_label floatLeft">客服QQ：</label>
+										<input type="text" class="input_global floatLeft" id="tradeSystemQQ" name="customerServiceQQ" value/>
+									
+									</div>
+									<div class="list clearfix">
+										<label class="name_label floatLeft">交易系统口号:</label>
+										<input type="text" class="input_global floatLeft" id="tradeSystemSlogan" name="tradeSystemSlogan" value/>
+									
+									</div>
+									<div class="list clearfix" style="display: none;">
+										<label class="name_label floatLeft">安卓客户端启动图片：</label>
+										<input type="file" class="file_global floatLeft" id="AndroidOpenImg" name="startPageForAndriod" value/>
+										<div class="file_div">
+											<div class="file_box">
+												<span class="file_btn">点击上传</span>
+												<span class="uploadImg"> 未选择任何文件</span>
+											</div>
+											
+										</div>
+										<span class="tipInfo">注：请上传尺寸为1242px*2208px的图片。</span>
+									</div>
+									
+								</form>
+								<a class="btn normal_btn set_sure" style="text-align: center;margin-left:13.2%;">确定</a>
+								<a class="btn export_btn back_click">取消</a>
+							
+							</div>
+		                 		<div class="message_pop sure_QQ" id="msgPop">
+										<div class="msg_box">
+											<div class="msg_head clearfix">
+												<p id="msgTitle">确认客服QQ是否正确</p>
+												<div class="msg_close do_close"></div>
+											</div>
+											<div class="msg_body" id="msgContent">
+													当前客服QQ可能存在错误，请确认QQ：是否正确？如有错误取消重新填写
+											</div>
+											<div class="msg_footer" id="msgBtn">
+												<a class="btn normal_btn set_success_click" id="submit">
+													确定
+												</a>
+												<a class="btn export_btn do_close" id="submit">
+													取消
+												</a>
+											</div>
+										</div>
+									</div>
+		                 		<div class="message_pop set_success" id="msgPop">
+										<div class="msg_box">
+											<div class="msg_head clearfix">
+												<p id="msgTitle">消息提示</p>
+												<div class="msg_close do_close"></div>
+											</div>
+											<div class="msg_body" id="msgContent">
+													修改成功
+											</div>
+											<div class="msg_footer" id="msgBtn">
+												<a class="btn normal_btn tosystemNameEditor" id="submit" href="#tab42">
+													确定
+												</a>
+											</div>
+										</div>
+									</div>
+		                 	
+							<!--tab pane-->
+							
+							
+						</div>
+						
+            		</div>
+                 	<!-- 第四个    系统名称管理   end-->
+                 	
+                	<!-- 第五个    系统名称设置 协议编辑 -->
+					<div class="editAgreementBox" style="display: none;">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">系统管理</a></li>
+								<li><a href="#">系统名称设置</a></li>
+								<li class="active">协议编辑</li>
+							</ol>
+						</div>
+						<div class="main">
+							<div class="main_body">
+								<div class="list clearfix">
+									<label class="floatLeft">管理系统名称：</label>
+									<input type="text" class="agreementName  floatLeft" id="agreementName" placeholder="协议最多输入30字" maxlength="30" style="width: 90.19%;"/>
+								
+								</div>
+								<div class="list clearfix">
+									<label class="floatLeft">协议状态：</label>
+									<input type="radio" class="agreementStatus inline-block" id="startAgreement" name="agreementStatus" value="0" checked/>
+									启用
+									<input type="radio" class="agreementStatus inline-block" id="stopAgreement" name="agreementStatus" value="1"/>
+									停用
+								
+								</div>
+								<div class="list" style="margin-bottom: 20px;">
+									<textarea id="" name="editor1" cols="100" rows="20" style="width: 100%; height: 446px; display: none;"></textarea>
+									</div>
+								</div>
+								
+								<a class="btn normal_btn set_success_sure" style="text-align: center;margin-left:0;">确定</a>
+								<a class="btn export_btn back_click">取消</a>
+							
+							</div>
+                 			<div class="message_pop _success" id="msgPop">
+								<div class="msg_box">
+									<div class="msg_head clearfix">
+										<p id="msgTitle">消息提示</p>
+										<div class="msg_close do_close"></div>
+									</div>
+									<div class="msg_body" id="msgContent">
+											成功
+									</div>
+									<div class="msg_footer" id="msgBtn">
+										<a class="btn normal_btn to_prev" id="submit">
+											确定
+										</a>
+									</div>
+								</div>
+							</div>
+		                 	
+							<!--tab pane-->
+							
+							
+						</div>
+						
+            		</div>
+                 	<!-- 第五个    协议编辑   end-->
+                 	
+                </div>
+				
+			</div>
+		
+		</div>
+		<!--<div class="easyui-panel" style ="height: 100%;" title="编辑商品"> <div> 
+			<p>商品名：<input type="text" value="新产品名1" id="goodsName" name="goodsName"/></p> 
+			</div> 
+			<form> 
+				<textarea name="easyui_editor" id="easyui_editor" class="easyui-kindeditor" style="width: 100%; height: 200px; ">
+					在此输入新产品的介绍内容
+				</textarea> 
+			</form> 
+			<input type="file" id="editSavedGoodsContent" />
+			<button onclick="submitGoodsContent()">提交当前页面</button>
+		</div>-->
+		<!--<script> 
+			function readSingleFile(e) { 
+				var file = e.target.files[0]; 
+				if (!file) {
+					return; 
+				} 
+				var reader = new FileReader(); 
+				reader.onload = function(e) {
+					var contents = reader.result; 
+					displayContents(contents); 
+				};
+				reader.readAsText(file); 
+			} 
+			function displayContents(contents) {
+				var kindeditor = window.editor; 
+				kindeditor.html(contents); 
+			} 
+			document.getElementById('editSavedGoodsContent') .addEventListener('change', readSingleFile, false);
+			function submitGoodsContent() {
+				var kindeditor = window.editor; // 取得HTML内容 html = kindeditor.html(); console.log(html); 
+			} 
+		</script> -->
+		
+		
+		<script type="text/javascript">
+			KindEditor.ready(function(K) {
+				window.editor = K.create('textarea', {
+					resizeType : 1,
+					allowFileManager : true,
+					langType : 'zh-CN',
+					//autoHeightMode : true,
+					items : [
+						'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+						'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+						'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+				});
+				var kindeditor = window.editor;
+				// 加载之前已保存的页面的HTML内容
+				html = kindeditor.html('<p class="person">投资人昵称：点买人昵称:</p><p class="person">投资人账户：点买人ID ：</p><div class="info-detail">本次交易合作由投资管理平台提供居间服务。在投资管理平台的撮合下，投资人与点买人协商一致，就双方秉承共享收益共担风险之原则，由点买人提供交易策略，由投资人利用自有账户和账户内资金进行交易合作事宜订立如下协议，以兹共守：</div><div class="info-head">一、定义</div><div class="info-detail"><p>本协议中，除非上下文另有解释，下列词语具有如下含义：</p><p>1. 投资管理平台：指运营方运营的证券（金融）交易信息服务中介平台，面向运营方的注册用户提供包括但不限于沪深所A股 、美股、港股、中金所期指、上期所贵金属期货交易合作信息发布、交易合作撮合、交易指令通讯、交易风控管理、交易清结算等服务的中介服务平台。</p><p>2. 点买人：指通过投资管理平台注册成为点买人的用户，作为投资人的交易合作方，负责向投资人提供交易策略的自然人。</p><p>3. 投资人：指通过与投资管理平台运营方签订协议成为投资人的用户，作为点买人的交易合作方，负责按点买人交易策略并利用自有账户和账户内资金进行交易的自然人或法人。</p><p>4. 买入指令：指点买人向投资人发出买入指令，买入指令指点买人要求投资人按照指定的价格委托买入指定交易品种。</p><p>5. 卖出指令：指点买人向投资人发出卖出指令，卖出指令指点买人要求投资人按照指定的价格委托卖出指定交易品种。</p><p>6. 浮动盈亏与浮动盈亏率：浮动盈亏＝（最新价－买入均价）＊成交数量。计算结果为正值（含零）时即为浮盈金额，计算结果为负值时即为浮亏金额。浮动盈亏率＝浮动盈亏／交易本金 ×100％。</p><p>7. 触发平仓线：当合作交易的浮动盈亏率达到特定数值时，由投资人即时卖出交易品种全部持有数量进行止损，此时该浮动盈亏率即为触发平仓线。</p><p>8. 平仓线由投资人和点买人协商确定。</p></div><div class="info-head">二、本次交易合作基本信息</div><div class="info-detail"><p class="clearfix">1. 交易本金：<span class="spanUnderline"></span> </p><p class="clearfix">2. 交易品种：<span class="spanUnderline"></span> </p><p class="clearfix">3. 交易数量：<span class="spanUnderline"></span> </p><p class="clearfix">4. 持仓时间：<span class="spanUnderline"></span> </p><p class="clearfix">5. 触发平仓线：<span class="spanUnderline"></span> </p></div><div class="info-head">三、投资人权利与义务</div><div class="info-detail"><p>1. 投资人负责提供用于本次交易合作的账户和资金。</p><p>2. 投资人承担本次交易产生的佣金、印花税和过户费，但投资人可根据事先与点买人的约定比例从点买人款项中收回相应补偿款。</p><p>3. 投资人按照点买人的买入指令/卖出指令执行交易品种的买入/卖出。</p></div><div class="info-head">四、点买人权利与义务</div><div class="info-detail"><p>1. 点买人负责提供本次交易合作的交易策略，即买入指令／卖出指令。</p><p>2. 点买人应按照事先与投资人的约定，向投资人支付相关费用，补偿投资人交易过程中发生的佣金、印花税和过户费等。</p><p>3. 点买人应按照事先与投资人的约定，支付保证金，作为履行交易亏损赔付义务的保证。</p><p>4. 在交易亏损时按协议相关约定，投资人有权从点买人的履约保证金中扣回相应亏损赔付款。</p></div><div class="info-head">五、交易清结算和盈亏分配约定</div><div class="info-detail"><p>投资人和点买人共同委托投资管理平台按照以下规则对本次交易合作进行清结算，双方同意以投资管理平台的清结算数据作为双方盈亏分配的共同依据：</p><p>1. 买入成交金额与买入成交均价：买入成交金额来自交易所回报数据，不含佣金、印花税和过户费。买入成交均价＝买入成交金额／交易数量。</p><p>2. 卖出成交金额与卖出成交均价：卖出成交金额来自交易所回报数据，不含佣金、印花税和过户费。卖出成交均价＝卖出成交金额／交易数量。</p><p>3. 交易盈亏：交易盈亏＝卖出成交金额－买入成交金额。计算结果为正值（含零）时即为交易盈利，计算结果为负值时即为交易亏损 。</p><p>4. 盈利分配：点买人与投资人共同享有本次交易盈利。盈利分配由投资人和点买人事先约定。</p><p>5. 亏损赔付：点买人与投资人共同承担本次交易亏损。亏损承担由投资人和点买人事先约定。</p></div><div class="info-head">六、特别约定</div><div class="info-detail"><p>1. 因投资管理平台清结算数据错误造成双方盈利分配或亏损赔付出现数额差错的，双方约定在投资管理平台规定时限内将异议提交至投资管理平台，通过投资管理平台向对方索取差额补差。如异议一方未在规定时限内将提交异议，视同放弃通过投资管理平台向对方索取差额补差之权利。</p><p>2. 因不可抗力导致投资管理平台系统故障，引发交易指令通讯失败或交易指令执行失败，双方约定以投资管理平台系统恢复就近时间重新执行并以执行的最终结果进行交易清结算。</p></div><div class="info-head">七、协议的签订、成立和生效</div><div class="info-detail"><p>1. 签订：本协议由投资人和点买人通过投资管理平台以网络页面点击确认的方式签署。</p><p>2. 成立：本协议自点买人或投资人签订本协议之日（以两者孰后签订时间为准）成立。</p><p>3. 生效：本协议一经双方签订即生效。</p></div><div class="info-head">八、其他事项</div><div class="info-detail"><p>1. 点买人和投资人必须通过本协议约定的方式或其他投资管理平台认可的方式进行交易合作,否则由此引起的法律后果及违约责任由投资人或点买人自行承担。</p><p>2. 本协议项下的双方非个人隐私信息，如昵称等，均为公开信息。</p><p>3. 本协议项下双方交易信息归属投资管理平台所有，投资管理平台可根据自身经营需求商业化无偿使用。</p><p>4. 本协议受中华人民共和国法律管辖并按中华人民共和国法律解释。协议履行中发生争议，可由各方协商解决，协商不成可向运营方所在地人民法院提起诉讼。</p></div>');
+				console.log(html);
+				var kindeditor = window.editor;
+				// 取得HTML内容
+				html = kindeditor.html();
+				//console.log(html);
+				kindeditor.sync()
+					})
+		</script>
+		<!--<script>
+			var editor;
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea', {
+					resizeType : 1,
+					allowFileManager : true,
+					langType : 'zh-CN',
+					allowPreviewEmoticons : false,
+					allowImageUpload : false,
+					autoHeightMode : true,
+					items : [
+						'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+						'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+						'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+				});
+			});
+		</script>-->
+		
+		<script type="text/javascript">
+			$(".systemNameEditor_click").bind("click",function(){
+				$(".systemNameEditor").show();
+				$(".systemNameEditor_hide").hide();
+				
+			});
+			$(".back_click").bind("click",function(){
+				$(".systemNameEditor").hide();
+				$(".systemNameEditor_hide").show();
+				
+			})
+			/*编辑*/
+			$(".editAgreementBox_click").bind("click",function(){
+				$(".editAgreementBox").show();
+				$(".systemNameEditor_hide").hide();
+				
+			});
+			$(".back_click").bind("click",function(){
+				$(".editAgreementBox").hide();
+				$(".systemNameEditor_hide").show();
+				
+			})
+			/*确定按钮*/
+			$(".set_sure").bind("click",function(){
+				$(".sure_QQ").show();
+				//$(".sure_QQ_hide").hide();
+				
+			})
+			/*确定按钮 确定按钮*/
+			$(".set_success_click").bind("click",function(){
+				$(".set_success").show();
+				$(".sure_QQ").hide();
+				
+			})
+			/*确定按钮 确定按钮  修改成功确定*/
+			$(".tosystemNameEditor").bind('click',function(){
+			 	$(".message_pop").hide();
+			 	$(".systemNameEditor").hide();
+			 	$(".systemNameEditor_hide").show();
+			 });
+			/*关闭 取消 按钮*/
+			$(".do_close").bind('click',function(){
+			 	$(".message_pop").hide();
+			 });
+			
+			/*1.----*/
+			/*停用  按钮*/
+			$(".stopAgreementBtn1").bind('click',function(){
+			 	$(".stopAgreement1").show();
+				$(".stopAgreementBtn_sure1").bind('click',function(){
+					$(".stopAgreementBtn1").hide();
+					$(".stopAgreementBtn11").show();
+				})
+			 	
+			 });
+			
+			 /*启用  按钮*/
+			$(".stopAgreementBtn11").bind('click',function(){
+			 	$(".stopAgreement1").show();
+				$(".stopAgreementBtn_sure1").bind('click',function(){
+					$(".stopAgreementBtn11").hide();
+					$(".stopAgreementBtn1").show();
+				})
+			 	
+			});
+			/*1.----  结束*/
+			/*2.----*/
+			/*停用  按钮*/
+			$(".stopAgreementBtn2").bind('click',function(){
+			 	$(".stopAgreement2").show();
+				$(".stopAgreementBtn_sure2").bind('click',function(){
+					$(".stopAgreementBtn2").hide();
+					$(".stopAgreementBtn21").show();
+				})
+			 	
+			 });
+			 /*启用  按钮*/
+			$(".stopAgreementBtn21").bind('click',function(){
+			 	$(".stopAgreement2").show();
+				$(".stopAgreementBtn_sure2").bind('click',function(){
+					$(".stopAgreementBtn21").hide();
+					$(".stopAgreementBtn2").show();
+				})
+			 	
+			});
+			/*2.----  结束*/
+			/*3.----*/
+			/*停用  按钮*/
+			$(".stopAgreementBtn3").bind('click',function(){
+			 	$(".stopAgreement3").show();
+				$(".stopAgreementBtn_sure3").bind('click',function(){
+					$(".stopAgreementBtn3").hide();
+					$(".stopAgreementBtn31").show();
+				})
+			 	
+			 });
+			 /*启用  按钮*/
+			$(".stopAgreementBtn31").bind('click',function(){
+			 	$(".stopAgreement3").show();
+				$(".stopAgreementBtn_sure3").bind('click',function(){
+					$(".stopAgreementBtn31").hide();
+					$(".stopAgreementBtn3").show();
+				})
+			 	
+			});
+			/*3.----  结束*/
+			/*4.----*/
+			/*停用  按钮*/
+			$(".stopAgreementBtn4").bind('click',function(){
+			 	$(".stopAgreement4").show();
+				$(".stopAgreementBtn_sure4").bind('click',function(){
+					$(".stopAgreementBtn4").hide();
+					$(".stopAgreementBtn41").show();
+				})
+			 	
+			 });
+			 /*启用  按钮*/
+			$(".stopAgreementBtn41").bind('click',function(){
+			 	$(".stopAgreement4").show();
+				$(".stopAgreementBtn_sure4").bind('click',function(){
+					$(".stopAgreementBtn41").hide();
+					$(".stopAgreementBtn4").show();
+				})
+			 	
+			});
+			/*4.----  结束*/
+			/*5.----*/
+			/*停用  按钮*/
+			$(".stopAgreementBtn5").bind('click',function(){
+			 	$(".stopAgreement5").show();
+				$(".stopAgreementBtn_sure5").bind('click',function(){
+					$(".stopAgreementBtn5").hide();
+					$(".stopAgreementBtn51").show();
+				})
+			 	
+			 });
+			 /*启用  按钮*/
+			$(".stopAgreementBtn51").bind('click',function(){
+			 	$(".stopAgreement5").show();
+				$(".stopAgreementBtn_sure5").bind('click',function(){
+					$(".stopAgreementBtn51").hide();
+					$(".stopAgreementBtn5").show();
+				})
+			 	
+			});
+			/*5.----  结束*/
+			/*协议编辑  确定  按钮*/
+			$(".set_success_sure").bind('click',function(){
+			 	$("._success").show();
+			 	
+			 });
+			 /*确定 按钮*/
+			$(".to_prev").bind('click',function(){
+			 	$(".message_pop").hide();
+			 	$(".systemNameEditor_hide").show();
+			 	$(".editAgreementBox").hide();
+			 	
+			 	
+			 });
+		</script>
+		<!--<script type="text/javascript">
+			$(function(){
+				
+				var options = {
+					cssPath:'./css/index.css',
+					filterMode:true
+				};
+				var editor = K.create('textarea[name="content"]',options);
+				KindEditor.ready(function(K){
+					window.editor = K.create('#editor_id')
+				});
+				
+				//取得HTML内容
+				html = editor.html();
+				
+				//同步数据后可以直接取得textarea的value
+				editor.sync();
+				html = document.getElementById("editor_id").value;//原生API
+				html = K('#editor_id').val();  //kindEditor  Node API
+				html = $('#editor_id').val();   //  jquery
+				
+				
+				//设置内容
+				editor.html('html内容');
+			})
+		</script>-->
+	</body>
+</html>
+

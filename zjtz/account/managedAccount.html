@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!-- Bootstrap 分页 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap-paginator.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li class="active"><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+				<div class="tabbable row">
+				<!--sidebar-->
+				<ul class="nav nav-stacked nav-left col-md-1">
+					<li><a href="account.html">用户账户</a><div></div></li>
+					<li class="search_assets"><a href="assetInquiry.html">资产查询</a><div></div></li>
+					<li><a href="userGrouping.html">用户分组</a><div></div></li>
+					<li class="active"><a href="managedAccount.html">管理账户</a><div></div></li>
+					<li><a href="managementRecord.html">管理记录</a><div></div></li>
+					<li><a href="passwordModification.html">密码修改</a><div></div></li>
+					<li><a href="accountAudit.html">开户审核</a><div></div></li>
+					<li><a href="customerFollowUp.html">客户跟进</a><div></div></li>
+				</ul>
+                <!--/sidebar-->
+                <!-- 第四个    管理账户-->
+                <div class="nav-right col-md-11">
+                	
+					<div class="editSettings_hide">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">账户管理</a></li>
+								<li class="active">管理账户</li>
+							</ol>
+						</div>
+						<div class="main">
+							<form class="form">
+								<a class="btn light_btn edit_Settings_click">新建管理账户</a>
+					  			<a class="btn normal_btn">编辑管理账户</a>
+					  			<label for="name" style="margin-left: 44%;">管理账户</label><input type="text"/>
+					  			<a class="btn normal_btn">查询</a>
+					  			<p style="margin-bottom: 20px;"></p>
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr>
+											<th></th>
+											<th>管理账户</th>
+											<th>用户分组</th>
+											<th style="width: 40%;">备注姓名</th>
+											<th>权限</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="radio" /></td>
+											<td>001</td>
+											<td>默认分组</td>
+											<td>张三</td>
+											<td>展示管理权限面板中账户所选的所有权限</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<ul class="pager" style="width: ;margin-left: 38%;" id="page">
+								<!--<li class="previous disabled"><a href="#">&larr; 上一页</a></li>
+								<li class="next"><a href="#">下一页 &rarr;</a></li>-->
+							</ul>
+						</div>
+            		</div>
+				    					
+					<!-- 第四个tab 管理账户  中的 编辑设置-->
+    				<div class="editSettings" style="display: none;">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">账户管理</a></li>
+								<li><a href="#">管理账户</a></li>
+								<li class="active">编辑设置</li>
+							</ol>
+						</div>
+						<div class="main">
+							<form class="form">
+								<label for="">登录密码:</label><input type="text" style="margin-left: 40px;"/>
+								<label for="" style="margin-left: 40%;">管理账户</label><input type="text" />
+								<a class="btn btn-primary">查询</a>
+								<p style="margin-bottom: 10px;"></p>
+								<label for="">备注手机:</label><input type="text" style="margin-left: 40px;"/>
+								<p style="margin-bottom: 10px;"></p>
+								<label for="">备注姓名:</label><textarea rows="2"  maxlength="200" placeholder="最多输入字200字" style="margin-left: 40px;margin-top: 5px; width: 90.5%;display: inline-block;"></textarea>
+								<p style="margin-bottom: 10px;"></p>
+								<label for="">管理的用户分组:</label>
+								<select class="form-control" style="display: inline-block; width: 10%;">
+									<option>全部分组</option>
+									<option>默认分组</option>
+								</select>
+								<p style="margin-bottom: 10px;"></p>
+								<label for="">权限设置:</label>
+								<div>
+									
+									<div class="edit_value">
+										<div class="ul_box">
+											<ul class="clearfix border">
+												<li class="ul_title">交易管理</li>
+												<li class="ul_value"><input type="checkbox" />委托查询</li>
+												<li class="ul_value"><input type="checkbox" />持仓查询</li>
+												<li class="ul_value"><input type="checkbox" />持仓对比</li>
+												<li class="ul_value"><input type="checkbox" />交易费率设置</li>
+												<li class="ul_value"><input type="checkbox" />交易费率查询</li>
+												<li class="ul_value"><input type="checkbox" />权益变动</li>
+												<li class="ul_value first"><input type="checkbox" />异常订单</li>
+												<li class="ul_value"><input type="checkbox" />交易对账</li>
+											</ul>
+											<ul class="clearfix border">
+												<li class="ul_title">资金管理</li>
+												<li class="ul_value"><input type="checkbox" />资金流水查询</li>
+												<li class="ul_value"><input type="checkbox" />充值查询</li>
+												<li class="ul_value"><input type="checkbox" />充值审核</li>
+												<li class="ul_value"><input type="checkbox" />提现查询</li>
+												<li class="ul_value"><input type="checkbox" />提现审核</li>
+											</ul>
+											<ul class="clearfix border">
+												<li class="ul_title">风控管理</li>
+												<li class="ul_value"><input type="checkbox" />风控查询</li>
+												<li class="ul_value"><input type="checkbox" />禁买/禁卖/禁撤设置</li>
+												<li class="ul_value"><input type="checkbox" />批量委托</li>
+												<li class="ul_value"><input type="checkbox" />风控设置</li>
+											</ul>
+											<ul class="clearfix border">
+												<li class="ul_title">风控管理</li>
+												<li class="ul_value"><input type="checkbox" />账户管理</li>
+												<li class="ul_value"><input type="checkbox" />用户查询</li>
+												<li class="ul_value"><input type="checkbox" />增加/减少资金</li>
+												<li class="ul_value"><input type="checkbox" />减少持仓</li>
+												<li class="ul_value"><input type="checkbox" />资产查询</li>
+												<li class="ul_value"><input type="checkbox" />增加持仓</li>
+												<li class="ul_value first"><input type="checkbox" />添加用户</li>
+												<li class="ul_value"><input type="checkbox" />编辑用户</li>
+												<li class="ul_value"><input type="checkbox" />开户查询</li>
+												<li class="ul_value"><input type="checkbox" />开户审核</li>
+												<li class="ul_value"><input type="checkbox" />客户跟进</li>
+											</ul>
+											<ul class="clearfix">
+												<li class="ul_title">资产管理</li>
+												<li class="ul_value"><input type="checkbox" />报单账户查询</li>
+												<li class="ul_value"><input type="checkbox" />报单账户添加</li>
+												<li class="ul_value"><input type="checkbox" />报单账户编辑</li>
+												<li class="ul_value"><input type="checkbox" />报单账户组查询</li>
+												<li class="ul_value"><input type="checkbox" />报单账户组添加</li>
+												<li class="ul_value"><input type="checkbox" />报单账户组编辑</li>
+												<li class="ul_value first"><input type="checkbox" />服务费查询</li>
+												<li class="ul_value"><input type="checkbox" />费用统计查询</li>
+												<li class="ul_value"><input type="checkbox" />开户查询</li>
+												<li class="ul_value"><input type="checkbox" />开户审核</li>
+												<li class="ul_value"><input type="checkbox" />客户跟进</li>
+												<li class="ul_value"><input type="checkbox" />业务监控</li>
+											</ul>
+											<ul class="clearfix">
+												<li class="ul_title">系统管理</li>
+												<li class="ul_value"><input type="checkbox" />用户默认配置</li>
+												<li class="ul_value"><input type="checkbox" />资金设置</li>
+												<li class="ul_value"><input type="checkbox" />系统名称配置</li>
+												<li class="ul_value"><input type="checkbox" />业务监控设置</li>
+											</ul>
+										</div>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<label for="" style="margin-bottom: 20px; margin-right: 17px;">报单账户列表:</label><a class="btn btn-info edit_Settings_edit" >编辑</a>
+								<br />
+								
+								<!--报单账户列表  编辑显示-->
+								<div class="message_pop edits_Settingss" id="msgPop">
+									<div class="msg_box">
+										<div class="msg_head clearfix">
+											<p id="msgTitle">报单账户列表</p>
+											<div class="msg_close do_close"></div>
+										</div>
+										<div class="msg_body" id="msgContent">
+												<input type="checkbox" id="selectAll" style="margin-right: 10px;">
+												<label for="selectAll">全选</label>
+												<ul class="clearfix">
+													<li class="floatLeft" id="1445" style="width: 165px;cursor: default;">
+														<input type="checkbox" style="margin-right: 10px;" value="1445" />
+														众成证券-10400148
+													</li>
+												</ul>
+										</div>
+										<div class="msg_footer" id="msgBtn">
+											<a class="btn normal_btn" id="submit" href="#tab42">
+												提交
+											</a>
+											<a class="btn export_btn do_close" id="submit">
+												取消
+											</a>
+										</div>
+									</div>
+								</div>
+								<!--报单账户组列表  编辑显示-->
+								<label for="" style="margin-bottom: 20px; margin-right: 5px;">报单账户组列表:</label><a class="btn btn-info edits_Settings_edit">编辑</a>
+								<div class="message_pop edits_Settingss2" id="msgPop">
+									<div class="msg_box">
+										<div class="msg_head clearfix">
+											<p id="msgTitle">报单账户组列表</p>
+											<div class="msg_close do_close"></div>
+										</div>
+										<div class="msg_body" id="msgContent">
+												<input type="checkbox" id="selectAll" style="margin-right: 10px;">
+												<label for="selectAll">全选</label>
+												<ul class="clearfix">
+													<li class="floatLeft" id="1445" style="width: 165px;cursor: default;">
+														<input type="checkbox" style="margin-right: 10px;" value="1445" />
+														众成证券-10400148
+													</li>
+												</ul>
+										</div>
+										<div class="msg_footer" id="msgBtn">
+											<a class="btn normal_btn" id="submit" href="#tab42">
+												提交
+											</a>
+											<a class="btn export_btn do_close" id="submit">
+												取消
+											</a>
+										</div>
+									</div>
+								</div>
+								
+							</form>
+							<div style="text-align: center;margin-top: 20px;">
+									<a class="btn normal_btn edit_Settings_cancel">确定</a>
+									<a class="btn export_btn edit_Settings_cancel">取消</a>
+							</div>
+						</div>
+            		</div>
+    			
+                </div>
+                 <!-- 第四个    管理账户  end-->
+			</div>
+		
+		</div>
+		<script type="text/javascript">
+			 /*管理账户 显示 隐藏 */
+			$(".edit_Settings_click").bind('click',function(){
+			 	$(".editSettings").show();
+			 	$(".editSettings_hide").hide();
+			 	
+			});
+			$(".edit_Settings_cancel").bind('click',function(){
+			 	$(".editSettings").hide();
+			 	$(".editSettings_hide").show();
+			 	
+			 });
+			  /*报单账户列表 显示 隐藏 */
+			$(".edit_Settings_edit").bind('click',function(){
+			 	$(".edits_Settingss").show();
+			 });
+			  /*报单账户组列表 显示 隐藏 */
+			 $(".edits_Settings_edit").bind('click',function(){
+			 	$(".edits_Settingss2").show();
+			 });
+			 /*增加持仓 显示 隐藏*/
+			 
+			
+		  	$(".cancel").bind('click',function(){
+			 	$(this).parent().parent().hide();
+			 });
+		  	$(".do_close").bind('click',function(){
+			 	$('.message_pop').hide();
+			 });
+		</script>
+		<script type="text/javascript">
+    	  	$(function(){
+	            var options={
+	                bootstrapMajorVersion:3,    //版本
+	                currentPage:1,    //当前页数
+	                numberOfPages:1,    //最多显示Page页
+	                totalPages:10,    //所有数据可以显示的页数
+	                onPageClicked:function(e,originalEvent,type,page){
+	                    console.log("e");
+	                    console.log(e);
+	                    console.log("originalEvent");
+	                    console.log(originalEvent);
+	                    console.log("type");
+	                    console.log(type);
+	                    console.log("page");
+	                    console.log(page);
+	                }
+	            }
+            	$("#page").bootstrapPaginator(options);
+        	})
+	    </script>
+	</body>
+</html>

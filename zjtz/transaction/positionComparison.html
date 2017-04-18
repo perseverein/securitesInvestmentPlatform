@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="active search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+                <ul class="nav nav-stacked nav-left col-md-1">
+                    <li><a href="../index.html">委托查询</a><div></div></li>
+                    <li><a href="transactionRecord.html">成交记录</a><div></div></li>
+                    <li><a href="positionInquiry.html">持仓查询</a><div></div></li>
+                    <li class="active"><a href="#">持仓对比</a><div></div></li>
+                    <li><a href="chargingScheme.html">收费方案</a><div></div></li>
+                    <li><a href="equityChange.html">权益变动</a><div></div></li>
+                    <li><a href="abnormalOrder.html">异常订单</a><div></div></li>
+                    <li><a href="transactionReconciliation.html">交易对账</a><div></div></li>
+                </ul>
+                <!--/sidebar-->
+                <!-- 第四个    持仓对比-->
+                <div class="nav-right col-md-11">
+                	<div>
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">交易管理</a></li>
+								<li class="active">持仓对比</li>
+							</ol>
+						</div>
+						<div class="main">
+							<div style="border: 1px solid #23527C;padding: 10px ;margin-bottom: 20px;">
+								<p><strong>券商持仓数据系统获取时间:</strong><span style="color: red;">2017-01-23&nbsp;15:37:01(交易日:09:00-16:00 每5分钟更新)</span></p>
+								<p>券商与系统股票解冻时间存在差异,因而会出现休市之后部分股票冻结与可用数量不一致的现象,该现象属于正常现象。</p>
+								<p>该数据只用于统计,不影响正常交易。</p>
+							</div>
+							<form class="form">
+								<div class="form-group">
+								    <label for="">报单账户</label><input type="text">
+								    <label for="">证券代码</label><input type="text">
+								    <input type="checkbox"><label for="">只显示回收零股数量大于零的证券</label>
+								    <a class="btn normal_btn">查询</a>
+							  		<a class="btn export_btn">导出Excel</a>
+								</div>
+							  	
+							</form>
+							<br />
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>序号</th>
+											<th>报单账户</th>
+											<th>证券代码</th>
+											<th>证券名称</th>
+											<th>券商持仓数量<br/>总数/可用/冻结</th>
+											<th>用户持仓数量<br/>总数/可用/冻结</th>
+											<th>持仓数量差额<br/>总数/可用/冻结</th>
+											<th>回收零股数量</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>众成证券<br/>10400148</td>
+											<td>600967</td>
+											<td>北方创业</td>
+											<td>0/0/0</td>
+											<td>-200/-200/0</td>
+											<td>200/200/0</td>
+											<td>0</td>
+											<td>增加零股&nbsp;&nbsp;减少零股&nbsp;&nbsp;详情</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>众成证券<br/>10400148</td>
+											<td>600967</td>
+											<td>农业银行</td>
+											<td>100/100/0</td>
+											<td>0/0/0</td>
+											<td>100/100/0</td>
+											<td>0</td>
+											<td>增加零股&nbsp;&nbsp;减少零股&nbsp;&nbsp;详情</td>
+										</tr>	
+									</tbody>
+								</table>
+							</div> 
+						</div>
+            		</div>
+	                                            
+                </div>
+                 <!-- 第四个    持仓对比 end-->
+			</div>
+		</div>
+	</body>
+</html>

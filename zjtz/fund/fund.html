@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="active search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+                <ul class="nav nav-stacked nav-left col-md-1">
+                    <li class="active"><a href="fund.html">资金流水</a><div></div></li>
+					<li><a href="chargeAudit.html">充值审核</a><div></div></li>
+					<li><a href="cashAudit.html">提现审核</a><div></div></li>
+                </ul>
+                <!--/sidebar-->
+                <!-- 第七个    异常订单-->
+                <div class="nav-right col-md-11">
+                	
+					<div>
+	        			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">资金管理</a></li>
+								<li class="active">资金流水</li>
+							</ol>
+						</div>
+						<div class="main">
+							<form class="form">
+								<div class="form-group">
+									<label for="" >日期</label>
+								  	<input size="16" type="text" value="" class="form_date time" readonly>
+									<label for="">--</label>
+								    <input size="16" type="text" value="" class="form_date time" readonly>
+								    <label for="">用户编号</label><input type="text">
+								    <label for="">币种账户</label>
+								    <select class="form-control" style="display: inline-block;width: 10%;">
+										<option>全部</option>
+										<option>美元</option>
+										<option>人民币</option>
+										<option>港币</option>
+									</select>
+									<a class="btn normal_btn">查询</a>
+							  		<a class="btn export_btn">导出Excel</a>
+								</div>
+							</form>
+							<br />
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>最后更新时间</th>
+											<th>操作类型</th>
+											<th>用户编号</th>
+											<th>收入(元)</th>
+											<th>支出(元)</th>
+											<th>状态</th>
+											<th>币种账户</th>
+											<th>备注</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>2017-01-20<br>18:52:01</td>
+											<td>资金划转</td>
+											<td>32410002<br>张三</td>
+											<td>200000.00</td>
+											<td>0.00</td>
+											<td>成功</td>
+											<td>人民币账户</td>
+											<td>--</td>
+											<td>--</td>
+										</tr>
+										<tr>
+											<td>2017-01-20</td>
+											<td>证券买入</td>
+											<td>32410002<br>张三</td>
+											<td>0.00</td>
+											<td>7673.15</td>
+											<td>撤销</td>
+											<td>人民币账户</td>
+											<td>--</td>
+											<td>详情</td>
+										</tr>
+										<tr>
+											<td>2017-01-20</td>
+											<td>证券买入</td>
+											<td>32410002<br>张三</td>
+											<td>0.00</td>
+											<td>1406.03</td>
+											<td>成交</td>
+											<td>人民币账户</td>
+											<td>--</td>
+											<td>详情</td>
+										</tr>
+										<tr>
+											<td>2017-01-20</td>
+											<td>证券买入</td>
+											<td>32410002<br>张三</td>
+											<td>0.00</td>
+											<td>1407.03</td>
+											<td>成交</td>
+											<td>人民币账户</td>
+											<td>--</td>
+											<td>详情</td>
+										</tr>
+									</tbody>
+								</table>
+							</div> 
+						</div>
+	        		</div>
+
+
+                </div>
+                 <!-- 第七个    异常订单end-->
+			</div>
+		</div>
+		<script type="text/javascript">
+		    $(".form_date").datetimepicker({
+	    	  minView: "month", //选择日期后，不会再跳转去选择时分秒 
+		      format: "yyyy-mm-dd",
+		      autoclose: true,
+		      todayBtn: true,
+		      language:'zh-CN',
+		      pickerPosition:"bottom-left",
+		      bootcssVer:3
+		    });
+		    $(".pf-main").height($(window).height()-90);
+		  </script>
+	</body>
+</html>
+

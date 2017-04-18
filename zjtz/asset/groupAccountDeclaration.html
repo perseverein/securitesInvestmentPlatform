@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<style type="text/css">
+		.pf-main .tabbable .nav-right table tbody td .text_left{
+		    width: 57px;
+		    padding-left: 5px;
+		    text-align: left;
+		    float: left;
+		}
+		.pf-main .tabbable .nav-right table tbody td .text_right{
+		    padding-left: 5px;
+		    text-align: right;
+		    float: right;
+		}
+		.table>thead:first-child>tr:first-child>th {
+		    border-top: 0;
+		    border-right: 0;
+		    border-left: 0;
+		}
+		.table>tbody>tr>td{
+		    vertical-align: middle;
+		    line-height: 16px;
+		}
+	</style>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="active search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li class="active"><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+					<ul class="nav nav-justified" id="myTab">
+						
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+				<ul class="nav nav-stacked nav-left col-md-1">
+					<li><a href="asset.html">报单账户</a></li>
+					<li class="active"><a href="groupAccountDeclaration.html">报单账户分组</a></li>
+					<li><a href="serverQuery.html">服务器查询</a></li>
+					<li><a href="costStatistics.html">费用统计</a></li>
+				</ul>
+                <!--/sidebar-->
+                
+                <div class="nav-right col-md-11">
+					<!-- 第二个    报单账户分组-->
+					<div class="groupAccount_hide">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">资产管理</a></li>
+								<li class="active">报单账户分组</li>
+							</ol>
+						</div>
+						<div class="main">
+							<form class="form">
+					  			<a class="btn btn-info groupAccount_click" href="#">新增</a>
+							</form>
+							<p style="margin-bottom: 20px;"></p>
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>分组名称</th>
+											<th>报单账户</th>
+											<th>状态</th>
+											<th>用户数</th>
+											<th>币种</th>
+											<th>可用余额</th>
+											<th>可提现余额</th>
+											<th>参考市值</th>
+											<th>总资产</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>众成证券10400148</td>
+											<td>有效</td>
+											<td>0</td>
+											<td>人民币账户</td>
+											<td >
+												<div class="clearfix">
+													<p class="text_left">报单账户:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">用户账户:</p>
+													<p class="text_right">0.0000</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">比例:</p>
+													<p class="text_right">--</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">差额:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+											</td>
+											<td >
+												<div class="clearfix">
+													<p class="text_left">报单账户:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">用户账户:</p>
+													<p class="text_right">0.0000</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">比例:</p>
+													<p class="text_right">--</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">差额:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+											</td>
+											<td >
+												<div class="clearfix">
+													<p class="text_left">报单账户:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">用户账户:</p>
+													<p class="text_right">0.0000</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">比例:</p>
+													<p class="text_right">--</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">差额:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+											</td>
+											<td >
+												<div class="clearfix">
+													<p class="text_left">报单账户:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">用户账户:</p>
+													<p class="text_right">0.0000</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">比例:</p>
+													<p class="text_right">--</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">差额:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+											</td>
+											<td><a class="groupAccount_click1">编辑</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+            		</div>
+				    						
+					<!-- 第二个    报单账户分组    end-->	
+					<!-- 第二个    报单账户分组   新增   -->
+					<div class="groupAccount" style="display: none;">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">资产管理</a></li>
+								<li><a href="#">报单账户分组</a></li>
+								<li class="active">新增</li>
+							</ol>
+						</div>
+						<div class="main">
+							<form class="form">
+								<div class="form-group">
+									<label for="">分组名称:</label><input type="text" style="margin-left: 30px;">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">报单账户:</label>
+									    <label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked> 
+											众成证券-10400148
+										</label>
+									<p style="margin-bottom: 10px;"></p>	
+									<label for="">报单策略&nbsp;注:</label>
+									<p style="text-indent: 80px;">1.不同账号可设置相同或不同的优先级，优先级高的账户优先报单；</p>
+									<p style="text-indent: 80px;">2.当订单的报单金额大于最高优先级的报单账户的可用金额时（可用金额=min(账户实际可用余额,证券账号单票限制比例计算后可用余额）），订单会拆分到下一优先等级的报单账户中；</p>
+									<p style="text-indent: 80px;">3.同一优先级的报单账户，用户订单按系统计算最小笔数拆单后报单；</p>
+									<p style="text-indent: 80px;">4.同一优先级的报单账户，多个账户都满足单笔报单时，系统随机选择账户报单；</p>
+									<p style="text-indent: 80px;">5.所有的证券账户合计可用资金不满足当笔订单报单时，该笔订单会全部废单。</p>
+								</div>
+								<p style="margin-bottom: 10px;"></p>
+								<div class="table-responsive show_number" style="display: none;padding:0 5%;">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>顺序报单</th>
+												<th>报单账户</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="text" /></td>
+												<td>众成证券10400148</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<p style="margin-bottom: 20px;"></p>
+								<div class="">
+									<a class="btn normal_btn back_click" style="margin-left: 5%;">确定</a>
+									<a class="btn export_btn back_click">取消</a>
+								</div>
+								
+							</form>
+							<br />
+							
+						</div>
+            		</div>
+										
+					<!-- 第二个    报单账户分组   新增   -->
+                </div>
+                 
+                 
+			</div>
+		
+		</div>
+		<script type="text/javascript">
+			$(".groupAccount_click").bind("click",function(){
+				$(".show_number").hide();
+				$(".groupAccount").show();
+				$(".groupAccount_hide").hide();
+				
+			});
+			$(".groupAccount_click1").bind("click",function(){
+				$(".groupAccount").show();
+				$(".show_number").show();
+				$(".groupAccount_hide").hide();
+				
+			});
+			$(".back_click").bind("click",function(){
+				$(".groupAccount").hide();
+				$(".groupAccount_hide").show();
+				
+			})
+
+		</script>
+	</body>
+</html>
+

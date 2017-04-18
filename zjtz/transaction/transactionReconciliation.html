@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="active search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+                <ul class="nav nav-stacked nav-left col-md-1">
+                    <li><a href="../index.html">委托查询</a><div></div></li>
+                    <li><a href="transactionRecord.html">成交记录</a><div></div></li>
+                    <li><a href="positionInquiry.html">持仓查询</a><div></div></li>
+                    <li><a href="positionComparison.html">持仓对比</a><div></div></li>
+                    <li><a href="chargingScheme.html">收费方案</a><div></div></li>
+                    <li><a href="equityChange.html">权益变动</a><div></div></li>
+                    <li><a href="abnormalOrder.html">异常订单</a><div></div></li>
+                    <li class="active"><a href="transactionReconciliation.html">交易对账</a><div></div></li>
+                </ul>
+                <!--/sidebar-->
+                <!-- 第八个    交易对账-->
+                <div class="nav-right col-md-11">
+                	                            	
+                	<div>
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">交易管理</a></li>
+								<li class="active">交易对账</li>
+							</ol>
+						</div>
+						<div class="main">
+							<form class="form">
+								<div class="form-group">
+									<label for="">委托编号</label><input type="text">
+								    <label for="">子账户</label><input type="text">
+									<label for="" >委托时间(北京)</label>
+								  	<input size="16" type="text" value="" class="form_date time" readonly>
+									<label for="">--</label>
+								    <input size="16" type="text" value="" class="form_date time" readonly>
+								    <label for="">股票代码</label><input type="text">
+								    </br>
+								    <p style="margin-bottom: 20px;"></p>
+								    <label for="name" style="">对账类型</label>
+									<select class="form-control" style="width: 10%;display: inline-block;">
+										<option value="全部">全部</option>
+										<option>股票交易对账</option>
+										<option>增减持仓对账</option>
+										<option>股票事件对账</option>
+									</select>
+								    <label for="name" style="">对账状态</label>
+									<select class="form-control" style="width: 10%;display: inline-block;">
+										<option value="全部">全部</option>
+										<option>股票交易对账</option>
+										<option>增减持仓对账</option>
+										<option>股票事件对账</option>
+									</select>
+									<label class="checkbox-inline"><input type="radio" name="optionsRadiosinline" checked/>内部视角查询</label>
+									<label class="checkbox-inline"><input type="radio" name="optionsRadiosinline" />外部视角查询</label>
+									<a class="btn normal_btn">查询</a>
+								</div>
+							  	
+							</form>
+							<br />
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<tr>
+											<th>序号</th>
+											<th>视角</th>
+											<th>数据源</th>
+											<th>委托编号</th>
+											<th>用户编号</th>
+											<th>委托时间(北京)</th>
+											<th>交易通道</th>
+											<th>证券代码</th>
+											<th>证券名称</th>
+											<th>操作类型</th>
+											<th>成交数量</th>
+											<th>成交金额</th>
+											<th>对账状态</th>
+											<th>操作</th>
+											<th>操作人</th>
+											<th>备注</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>内部数据</td>
+											<td>交易订单</td>
+											<td>2044337</td>
+											<td>32410002</td>
+											<td>2017-01-20<br>18:52:01</td>
+											<td>众成证券<br/>10400148</td>
+											<td>600967</td>
+											<td>北方创业</td>
+											<td>卖出</td>
+											<td>0.0000</td>
+											<td>0</td>
+											<td>正常</td>
+											<td>无</td>
+											<td>无</td>
+											<td>无</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>外部数据</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>正常</td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>内部数据</td>
+											<td>交易订单</td>
+											<td>2040349</td>
+											<td>32410002</td>
+											<td>2017-01-20<br>18:52:01</td>
+											<td>众成证券<br/>10400148</td>
+											<td>600967</td>
+											<td>北方创业</td>
+											<td>买入</td>
+											<td>100.0000</td>
+											<td>1399</td>
+											<td>正常</td>
+											<td>无</td>
+											<td>无</td>
+											<td>无</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td>外部数据</td>
+											<td>券商记录</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>	
+									</tbody>
+								</table>
+							</div> 
+						</div>
+            		</div>
+	
+                </div>
+                 <!-- 第八个    交易对账 end-->
+			</div>
+		</div>
+		<script type="text/javascript">
+		    $(".form_date").datetimepicker({
+	    	  minView: "month", //选择日期后，不会再跳转去选择时分秒 
+		      format: "yyyy-mm-dd",
+		      autoclose: true,
+		      todayBtn: true,
+		      language:'zh-CN',
+		      pickerPosition:"bottom-left",
+		      bootcssVer:3
+		    });
+		    $(".pf-main").height($(window).height()-90);
+		  </script>
+	</body>
+</html>

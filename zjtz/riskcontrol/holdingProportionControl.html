@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li class="active"><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			
+			<div class="tabbable row">
+				<!--sidebar-->
+                <ul class="nav nav-stacked nav-left col-md-1">
+                    <li><a href="riskcontrol.html">止损平仓预警</a><div></div></li>
+					<li><a href="noOpenSet.html">禁止开仓设置</a><div></div></li>
+					<li class="active"><a href="holdingProportionControl.html">持仓比例控制</a><div></div></li>
+                </ul>
+                <!--/sidebar-->
+                <!-- 第三个    持仓比例控制-->
+                <div class="nav-right col-md-11">
+                	
+					<div>
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">风控管理</a></li>
+								<li class="active">持仓比例控制</li>
+							</ol>
+						</div>
+						<div class="main">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tab331" data-toggle="tab">持仓比例控制</a></li>
+							</ul>
+							<!--tab pane-->
+							<div class="tab-content tab_content">
+								<!-- 第一个tab 持仓比例控制-->
+								<div class="tab-pane fade active in" id="tab331">
+									<form>
+										<a class="btn btn-info add_click" style="margin-bottom: 20px;">添加规则</a>
+									</form>
+									<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>资产范围</th>
+														<th>控制规则</th>
+														<th>生效板块</th>
+														<th>持仓比例限制</th>
+														<th>是否生效</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>10000.000-<br/>20000.000</td>
+														<td>个股（生效板块内任<br/>一股票）张三</td>
+														<td>创业板</td>
+														<td>50%</td>
+														<td>是</td>
+														<td style="color: #0088CC;"><a class="add_click333">编辑</a><span style="margin-left: 5px;"></span><a class="delete_info_click">删除</a></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+								</div>
+								<!-- 第二个tab 隐藏的添加规则-->
+								<div class="tab-pane fade active in" id="tab332" style="display: none;">
+									<form>
+										<div class="form-group">
+											<label for="name">资产范围：<input type="text" style="margin-left: 34px;"/>元</label>
+											<label for="">-<input type="text"/>元</label>
+											<p style="margin-bottom: 10px;"></p>
+											<label for="name">控制规则：</label>
+											<label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked> 个股（生效板块内任一股票）
+											</label>
+											<label class="checkbox-inline">
+												<input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2"> 板块（生效板块内全部股票）
+											</label>
+											<p style="margin-bottom: 10px;"></p>
+											<label for="name">板块分类：</label>
+											<select class="form-control" style="width: 10%;margin-left: 34px;display: inline-block;">
+												<option>所有板块</option>
+												<option>创业板</option>
+												<option>中小板</option>
+												<option>主板</option>
+											</select>
+											<p style="margin-bottom: 10px;"></p>
+											<label for="name">持仓比例限制：<input type="text"/>%</label>
+											<p style="margin-bottom: 10px;"></p>
+											<label for="name">是否生效：</label>
+											<label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline2" id="optionsRadios5" value="option1" checked> 是
+											</label>
+											<label class="checkbox-inline">
+												<input type="radio" name="optionsRadiosinline2" id="optionsRadios6"  value="option2"> 否
+											</label>
+											<p style="margin-bottom: 20px;"></p>
+										</div>
+										<a class="btn normal_btn submit_click" type="submit">提交</a>
+										<a class="btn export_btn cancel_click">取消</a>
+									</form>
+									
+								</div>
+							
+								<!-- 第三个个tab 编辑-->
+								<div class="tab-pane fade active in" id="tab333" style="display: none;">
+									<form>
+										<div class="form-group">
+											<label for="name">资产范围：<input type="text" style="margin-left: 34px;"/>元</label>
+											<label for="">-<input type="text"/>元</label>
+											<p style="margin-bottom: 10px;"></p>
+											<label for="name">控制规则：</label>
+											<label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked> 个股（生效板块内任一股票）
+											</label>
+											<label class="checkbox-inline">
+												<input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2"> 板块（生效板块内全部股票）
+											</label>
+											<p style="margin-bottom: 10px;"></p>
+											<label for="name">板块分类：</label>
+											<select class="form-control" style="width: 10%;margin-left: 34px;display: inline-block;">
+												<option>所有板块</option>
+												<option>创业板</option>
+												<option>中小板</option>
+												<option>主板</option>
+											</select>
+											<p style="margin-bottom: 10px;"></p>
+											<label for="name">持仓比例限制：<input type="text"/>%</label>
+											<p style="margin-bottom: 10px;"></p>
+											<label for="name">是否生效：</label>
+											<label class="checkbox-inline">
+											<input type="radio" name="optionsRadiosinline2" id="optionsRadios5" value="option1" checked> 是
+											</label>
+											<label class="checkbox-inline">
+												<input type="radio" name="optionsRadiosinline2" id="optionsRadios6"  value="option2"> 否
+											</label>
+											<p style="margin-bottom: 20px;"></p>
+										</div>
+										<a class="btn normal_btn add_click333_submit" type="submit">提交</a>
+										<a class="btn export_btn cancel_click333">取消</a>
+									</form>
+									
+								</div>
+								<div class="message_pop delete_info" id="msgPop">
+								<div class="msg_box">
+									<div class="msg_head clearfix">
+										<p id="msgTitle">消息提示</p>
+										<div class="msg_close do_close"></div>
+									</div>
+									<div class="msg_body" id="msgContent">
+											确认删除此规则？
+									</div>
+									<div class="msg_footer" id="msgBtn">
+										<a class="btn normal_btn totab331" id="submit" href="#tab42">
+											确定
+										</a>
+										<a class="btn export_btn do_close" id="submit" href="#tab42">
+											取消
+										</a>
+									</div>
+								</div>
+							</div>
+							
+							</div>
+							
+            			</div>
+            		</div>
+				    						
+
+                </div>
+                 <!-- 第三个    持仓比例控制 end-->
+			</div>
+		
+		</div>
+		<script type="text/javascript">
+			$(".add_click").click(function(){
+				$("#tab331").hide();
+				$("#tab332").show();
+			});
+			$(".add_click333").click(function(){
+				$("#tab331").hide();
+				$("#tab333").show();
+			});
+			$(".cancel_click").click(function(){
+				$("#tab331").show();
+				$("#tab332").hide();
+			});
+			$(".totab331").click(function(){
+				$("#tab331").show();
+				$(".delete_info").hide();
+				$(this).parent().parent().delete()
+			
+				
+			});
+			$(".do_close").click(function(){
+				$("#tab331").show();
+				$(".delete_info").hide();
+			});
+			$(".add_click333_submit").click(function(){
+				$("#tab331").show();
+				$("#tab333").hide();
+			})
+			$(".cancel_click333").click(function(){
+				$("#tab331").show();
+				$("#tab333").hide();
+			});
+			$(".delete_info_click").bind("click",function(){
+				$(".delete_info").show();
+				alert($(this).parent())
+			});	
+		</script>
+	</body>
+</html>

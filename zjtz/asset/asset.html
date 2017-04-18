@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<style type="text/css">
+		.pf-main .tabbable .nav-right table tbody td .text_left{
+		    width: 57px;
+		    padding-left: 5px;
+		    text-align: left;
+		    float: left;
+		}
+		.pf-main .tabbable .nav-right table tbody td .text_right{
+		    padding-left: 5px;
+		    text-align: right;
+		    float: right;
+		}
+		.table>thead:first-child>tr:first-child>th {
+		    border-top: 0;
+		    border-right: 0;
+		    border-left: 0;
+		}
+		.table>tbody>tr>td{
+		    vertical-align: middle;
+		    line-height: 16px;
+		}
+		.edit-step-introduce {
+		    width: 60pc;
+		    padding: 0 1px;
+		    height: 5pc;
+		    background-color: #396ba7;
+		    margin-bottom: 10px;
+		}
+		.edit-step-introduce li {
+		    width: 190px;
+		    height: 5pc;
+		    position: relative;
+		    padding-right: 24px;
+		    background: url(../assets/images/right-arrow-L.png) top right no-repeat;
+		    float: left;
+		}
+		.edit-step-introduce li.five {
+		    padding-right: 0;
+		    background: 0 0;
+		}
+		.edit-step-introduce li.one .num-img {
+		    width: 10px;
+		    background-position: 0 0;
+		}
+		.edit-step-introduce li.two .num-img {
+		    width: 15px;
+		    background-position: -9pt 0;
+		}
+		.edit-step-introduce li.three .num-img {
+		    width: 14px;
+		    background-position: -29px 0;
+		}
+		.edit-step-introduce li.four .num-img {
+		    width: 1pc;
+		    background-position: -45px 0;
+		}
+		.edit-step-introduce li.five .num-img {
+		    width: 15px;
+		    background-position: -63px 0;
+		}
+
+
+
+
+
+
+
+		 .edit-step-introduce li .num-img {
+		    height: 18px;
+		    position: absolute;
+		    top: 30px;
+		    left: 10px;
+		    background: url(../assets/images/number.png) no-repeat;
+		}
+		.edit-step-introduce li .introduce-content {
+		    width: 135px;
+		    height: 5pc;
+		    position: relative;
+		    left: 35px;
+		    font-size: 9pt;
+		    line-height: 20px;
+		    color: #fff;
+		    display: table-cell;
+		    vertical-align: middle;
+		}
+		.edit-step-introduce li .introduce-content .orange {
+		    color: #ffb848;
+		}
+		a{
+			cursor: pointer;
+		}
+		
+
+
+
+
+
+
+
+
+
+
+	</style>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li class="active"><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+					<ul class="nav nav-justified" id="myTab">
+						
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+				<ul class="nav nav-stacked nav-left col-md-1">
+					<li class="active"><a href="asset.html">报单账户</a></li>
+					<li><a href="groupAccountDeclaration.html">报单账户分组</a></li>
+					<li><a href="serverQuery.html">服务器查询</a></li>
+					<li><a href="costStatistics.html">费用统计</a></li>
+				</ul>
+                <!--/sidebar-->
+                <!-- 第一个    报单账户-->
+                <div class="nav-right col-md-11">
+	
+					<div class="entryAccount_hide">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">资产管理</a></li>
+								<li class="active">报单账户</li>
+							</ol>
+						</div>
+						<div class="main">
+							<div style="border: 1px solid #23527C;padding: 20px;margin-bottom: 20px;">
+								<p>1.报单账户数据可能会有延时，交易日09:00到16:00每隔5分钟自动更新</p>
+								<p>2.参考市值中回收零股为系统买卖成交时回收到机构账号的零股合计部分</p>
+								<p>3.该数据只用于统计，不影响正常交</p>
+							</div>
+							<form class="form">
+					  			<a class="btn btn-info entryAccount_click">新增</a>
+					  			<label for="name" style="margin-left: 40%;">状态</label>
+					  			<select name="" style="width: 20%;display: inline-block;">
+					  				<option value="">全部</option>
+					  				<option value="">禁用</option>
+					  				<option value="">待审核</option>
+					  				<option value="">有效-启用</option>
+					  				<option value="">有效-停用</option>
+					  				<option value="">有效-删除</option>
+					  			</select>
+					  			<a class="btn normal_btn">查询</a>
+							</form>
+							<p style="margin-bottom: 20px;"></p>
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>报单账户</th>
+											<th>状态</th>
+											<th>用户数</th>
+											<th>币种</th>
+											<th>可用余额</th>
+											<th>可提现余额</th>
+											<th>参考市值</th>
+											<th>总资产</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>模拟券商<br />普通账户<br />1665</td>
+											<td>有效-启用</td>
+											<td>0</td>
+											<td>人民币账户</td>
+											<td >
+												<div class="clearfix">
+													<p class="text_left">报单账户:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">用户账户:</p>
+													<p class="text_right">0.0000</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">比例:</p>
+													<p class="text_right">--</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">差额:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+											</td>
+											<td >
+												<div class="clearfix">
+													<p class="text_left">报单账户:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">用户账户:</p>
+													<p class="text_right">0.0000</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">比例:</p>
+													<p class="text_right">--</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">差额:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+											</td>
+											<td >
+												<div class="clearfix">
+													<p class="text_left">报单账户:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">用户账户:</p>
+													<p class="text_right">0.0000</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">比例:</p>
+													<p class="text_right">--</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">差额:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+											</td>
+											<td >
+												<div class="clearfix">
+													<p class="text_left">报单账户:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">用户账户:</p>
+													<p class="text_right">0.0000</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">比例:</p>
+													<p class="text_right">--</p>
+												</div>
+												<div class="clearfix">
+													<p class="text_left">差额:</p>
+													<p class="text_right">11828.4500</p>
+												</div>
+											</td>
+											<td>
+												<div><a class="entryAccount_setting_click">编辑</a></div>
+												<div><a href="../transaction/positionComparison.html">详情</a></div>
+												<div><a class="viewOrder_click">查看订单</a></div>
+											</td>
+											
+											
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+            		</div>
+								
+					<!-- 第一个 报单账户 新增-->
+					<div class="accountEntry entryAccount" style="display: none;">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">资产管理</a></li>
+								<li><a href="#">报单账户</a></li>
+								<li class="active">新增</li>
+							</ol>
+						</div>
+						<div class="main">
+							<form class="form">
+								<div class="form-group">
+									<label for="">报单公司:</label>
+									<select class="form-control" style="display: inline-block; width:10.85%;margin-left: 7px;">
+										<option></option>
+									</select>
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">营业部:</label><input type="text">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">资金账号:</label><input type="tel">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">账号类型:</label>
+									    <label class="checkbox-inline" style="width: 92px">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked style="margin-left: -13px;"> 
+											普通账户
+										</label>
+										<label class="checkbox-inline" style="width: 115px">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2"> 
+											融资证券
+										</label>
+										<label class="checkbox-inline" style="width: 116px">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios5"  value="option3"> 
+											产品一型
+										</label>
+									<p style="margin-bottom: 10px;"></p>	
+									<label for="">沪A股东代码:</label><input type="text">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">深A股东代码:</label><input type="text">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">交易密码:</label><input type="text">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">通讯密码:</label><input type="text">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">佣金比例:</label><input type="text">%(百分之)
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">最低佣金:</label><input type="text">元
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">单证券持仓比例限制:</label><input type="text">%(百分之)
+									<p style="margin-bottom: 10px;"></p>
+								</div>
+								<div class="">
+									<a class="btn normal_btn back_click" style="margin-left: 10.6%;">确定</a>
+									<a class="btn export_btn back_click">取消</a>
+								</div>
+								
+							</form>
+							<br />
+							
+						</div>
+        			</div>
+					
+					<!-- 第二个 报单账户 编辑-->
+					<div class="accountEntry entryAccount_setting" style="display: none;">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">资产管理</a></li>
+								<li><a href="#">报单账户</a></li>
+								<li class="active">编辑</li>
+							</ol>
+						</div>
+						<div class="main">
+							<p class="edit-step-introduce-title">有效状态资金账号密码修改方法：</p>
+							<ul class="edit-step-introduce clearfix">
+								<li class="one">
+									<p class="num-img"></p>
+									<div class="introduce-content"><span>资管平台中，将资金账号状态改为<em class="orange">停用,并提交</em></span></div>
+								</li>
+								<li class="two">
+									<p class="num-img"></p>
+									<div class="introduce-content"><span>登录券商客户端，设置<em class="orange">资金账号</em>新交易密码或通讯密码</span></div>
+								</li>
+								<li class="three">
+									<p class="num-img"></p>
+									<div class="introduce-content"><span>登录资管平台，设置<em class="orange">资金账号</em>相同的交易密码或通讯密码</span></div>
+								</li>
+								<li class="four">
+									<p class="num-img"></p>
+									<div class="introduce-content"><span>资管平台中，将资金账号状态改为<em class="orange">启用,并提交</em></span></div>
+								</li>
+								<li class="five">
+									<p class="num-img"></p>
+									<div class="introduce-content"><span>交易时间即时自动生效</span></div>
+								</li>
+							</ul>
+							<div style="border: 1px solid #23527C;padding: 10px ;margin-bottom: 20px;">
+								<em class="bold-orange" style="color: orange;font-weight: bold;">温馨提醒：</em>
+								<p>1.建议在休市之后进行资金账号密码修改。</p>
+								<p>2.交易时间，如果子账号有未完结的订单，资金账号停用将可能产生异常订单。此时，请联系资管平台客服。</p>
+								<p>3.如不按上述流程操作，可能会因为交易密码或通讯密码错误导致资金账号被锁定，从而影响用户的正常交易。</p>
+							</div>
+							<form class="form">
+								<div class="form-group">
+									<label for="">报单公司:</label>
+									<select class="form-control" style="display: inline-block; width:10.85%;margin-left: 7px;">
+										<option></option>
+									</select>
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">营业部:</label><input type="text">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">资金账号:</label><input type="tel">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">账号类型:</label>
+									    <label class="checkbox-inline" style="width: 92px">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios3" value="option1" checked style="margin-left: -13px;"> 
+											普通账户
+										</label>
+										<label class="checkbox-inline" style="width: 115px">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios4"  value="option2"> 
+											融资证券
+										</label>
+										<label class="checkbox-inline" style="width: 116px">
+											<input type="radio" name="optionsRadiosinline" id="optionsRadios5"  value="option3"> 
+											产品一型
+										</label>
+									<p style="margin-bottom: 10px;"></p>	
+									<label for="">沪A股东代码:</label><input type="text">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">深A股东代码:</label><input type="text">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">交易密码:</label><input type="text">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">通讯密码:</label><input type="text">
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">佣金比例:</label><input type="text">%(百分之)
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">最低佣金:</label><input type="text">元
+									<p style="margin-bottom: 10px;"></p>
+									<label for="">单证券持仓比例限制:</label><input type="text">%(百分之)
+									<p style="margin-bottom: 10px;"></p>
+								</div>
+								<div class="">
+									<a class="btn normal_btn set_success_click" style="margin-left: 10.6%;">确定</a>
+									<a class="btn export_btn back_click">取消</a>
+								</div>
+								
+							</form>
+							<br />
+							<div class="message_pop set_success" id="msgPop">
+								<div class="msg_box">
+									<div class="msg_head clearfix">
+										<p id="msgTitle">消息提示</p>
+										<div class="msg_close do_close"></div>
+									</div>
+									<div class="msg_body" id="msgContent">
+											修改成功
+									</div>
+									<div class="msg_footer" id="msgBtn">
+										<a class="btn normal_btn toEntryAccount" id="submit" href="#tab42">
+											确定
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+        			</div>
+					
+					<!-- 第三个 报单账户 查看订单-->
+					<div class="viewOrder" style="display: none;">
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">资产管理</a></li>
+								<li><a href="#">报单账户</a></li>
+								<li class="active">查看订单</li>
+							</ol>
+						</div>
+						<div class="main">
+							<a class="btn normal_btn goback_click">返回</a>
+							<p style="margin-bottom: 20px;"></p>
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tab511" data-toggle="tab">待审核</a></li>
+								<li><a href="#tab512" data-toggle="tab">有效-启用</a></li>
+								<li><a href="#tab513" data-toggle="tab">有效-禁用</a></li>
+								<li><a href="#tab514" data-toggle="tab">删除</a></li>
+								<li><a href="#tab515" data-toggle="tab">禁用</a></li>
+							</ul>
+							<!--tab pane-->	
+							<div class="tab-content">
+								<!-- 第一个tab 待审核-->
+								<div class="tab-pane fade active in" id="tab511">
+									<div class="tab_content">
+										<form class="form">
+											<div class="form-group">
+											    <label for="">报单账户:</label><input type="text">
+											    <label for="">订单状态</label>
+											    <select class="form-control" style="display: inline-block; width: 8%;">
+													<option>全部</option>
+													<option>废单</option>
+													<option>未知</option>
+													<option>已报</option>
+													<option>已撤</option>
+													<option>部成</option>
+													<option>已成</option>
+													<option>部撤</option>
+													<option>已报待撤</option>
+													<option>过期废单</option>
+													<option>撤单失败</option>
+												</select>
+											    <label for="">日期</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+								  				<span class="add-on"><i class="icon-th"></i></span>
+											    <label for="">-</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <a class="btn normal_btn">查询</a>
+											    <a class="btn normal_btn">导出Excel</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>订单编号</th>
+														<th>委托时间</th>
+														<th>证券名称</th>
+														<th>证券代码</th>
+														<th>完成时间</th>
+														<th>委托数量<br/>成交数量</th>
+														<th>委托价格<br/>成交均价</th>
+														<th>操作类型</th>
+														<th>订单状态</th>
+														<th>成交金额</th>
+													</tr>
+												</thead>
+												<tbody>
+													
+													<tr>
+														<td colspan="10" class="no-data">抱歉，没有您要搜索的信息！</td>
+													</tr>	
+													<tr style="display: none;">
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								<!-- 第二个tab 有效-启用-->
+								<div class="tab-pane fade" id="tab512">
+									<div class="tab_content">
+										<form class="form">
+											<div class="form-group">
+											    <label for="">报单账户:</label><input type="text" placeholder="模拟券商-1665">
+											    <label for="">订单状态</label>
+											    <select class="form-control" style="display: inline-block; width: 8%;">
+													<option>全部</option>
+													<option>废单</option>
+													<option>未知</option>
+													<option>已报</option>
+													<option>已撤</option>
+													<option>部成</option>
+													<option>已成</option>
+													<option>部撤</option>
+													<option>已报待撤</option>
+													<option>过期废单</option>
+													<option>撤单失败</option>
+												</select>
+											    <label for="">日期</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+								  				<span class="add-on"><i class="icon-th"></i></span>
+											    <label for="">-</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <a class="btn normal_btn">查询</a>
+											    <a class="btn normal_btn">导出Excel</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>订单编号</th>
+														<th>委托时间</th>
+														<th>证券名称</th>
+														<th>证券代码</th>
+														<th>完成时间</th>
+														<th>委托数量<br/>成交数量</th>
+														<th>委托价格<br/>成交均价</th>
+														<th>操作类型</th>
+														<th>订单状态</th>
+														<th>成交金额</th>
+													</tr>
+												</thead>
+												<tbody>
+													
+													<tr>
+														<td colspan="10" class="no-data">抱歉，没有您要搜索的信息！</td>
+													</tr>	
+													<tr style="display: none;">
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								<!-- 第三个tab 有效-禁用-->
+								<div class="tab-pane fade" id="tab513">
+									<div class="tab_content">
+										<form class="form">
+											<div class="form-group">
+											    <label for="">报单账户:</label><input type="text">
+											    <label for="">订单状态</label>
+											    <select class="form-control" style="display: inline-block; width: 8%;">
+													<option>全部</option>
+													<option>废单</option>
+													<option>未知</option>
+													<option>已报</option>
+													<option>已撤</option>
+													<option>部成</option>
+													<option>已成</option>
+													<option>部撤</option>
+													<option>已报待撤</option>
+													<option>过期废单</option>
+													<option>撤单失败</option>
+												</select>
+											    <label for="">日期</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+								  				<span class="add-on"><i class="icon-th"></i></span>
+											    <label for="">-</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <a class="btn normal_btn">查询</a>
+											    <a class="btn normal_btn">导出Excel</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>订单编号</th>
+														<th>委托时间</th>
+														<th>证券名称</th>
+														<th>证券代码</th>
+														<th>完成时间</th>
+														<th>委托数量<br/>成交数量</th>
+														<th>委托价格<br/>成交均价</th>
+														<th>操作类型</th>
+														<th>订单状态</th>
+														<th>成交金额</th>
+													</tr>
+												</thead>
+												<tbody>
+													
+													<tr>
+														<td colspan="10" class="no-data">抱歉，没有您要搜索的信息！</td>
+													</tr>	
+													<tr style="display: none;">
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+								<!-- 第四个tab 删除-->
+								<div class="tab-pane fade" id="tab514">
+									<div class="tab_content">
+										<form class="form">
+											<div class="form-group">
+											    <label for="">报单账户:</label><input type="text">
+											    <label for="">订单状态</label>
+											    <select class="form-control" style="display: inline-block; width: 8%;">
+													<option>全部</option>
+													<option>废单</option>
+													<option>未知</option>
+													<option>已报</option>
+													<option>已撤</option>
+													<option>部成</option>
+													<option>已成</option>
+													<option>部撤</option>
+													<option>已报待撤</option>
+													<option>过期废单</option>
+													<option>撤单失败</option>
+												</select>
+											    <label for="">日期</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+								  				<span class="add-on"><i class="icon-th"></i></span>
+											    <label for="">-</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <a class="btn normal_btn">查询</a>
+											    <a class="btn normal_btn">导出Excel</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>订单编号</th>
+														<th>委托时间</th>
+														<th>证券名称</th>
+														<th>证券代码</th>
+														<th>完成时间</th>
+														<th>委托数量<br/>成交数量</th>
+														<th>委托价格<br/>成交均价</th>
+														<th>操作类型</th>
+														<th>订单状态</th>
+														<th>成交金额</th>
+													</tr>
+												</thead>
+												<tbody>
+													
+													<tr>
+														<td colspan="10" class="no-data">抱歉，没有您要搜索的信息！</td>
+													</tr>	
+													<tr style="display: none;">
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								
+								</div>
+								<!-- 第五个tab 禁用-->
+								<div class="tab-pane fade" id="tab515">
+									<div class="tab_content">
+										<form class="form">
+											<div class="form-group">
+											    <label for="">报单账户:</label><input type="text" placeholder="众成证券-10400148">
+											    <label for="">订单状态</label>
+											    <select class="form-control" style="display: inline-block; width: 8%;">
+													<option>全部</option>
+													<option>废单</option>
+													<option>未知</option>
+													<option>已报</option>
+													<option>已撤</option>
+													<option>部成</option>
+													<option>已成</option>
+													<option>部撤</option>
+													<option>已报待撤</option>
+													<option>过期废单</option>
+													<option>撤单失败</option>
+												</select>
+											    <label for="">日期</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+								  				<span class="add-on"><i class="icon-th"></i></span>
+											    <label for="">-</label>
+											    <input size="16" type="text" value="" class="form_date time" readonly>
+											    <a class="btn normal_btn">查询</a>
+											    <a class="btn normal_btn">导出Excel</a>
+											</div>
+										</form>
+										<br />
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>订单编号</th>
+														<th>委托时间</th>
+														<th>证券名称</th>
+														<th>证券代码</th>
+														<th>完成时间</th>
+														<th>委托数量<br/>成交数量</th>
+														<th>委托价格<br/>成交均价</th>
+														<th>操作类型</th>
+														<th>订单状态</th>
+														<th>成交金额</th>
+													</tr>
+												</thead>
+												<tbody>
+													
+													<tr>
+														<td colspan="10" class="no-data">抱歉，没有您要搜索的信息！</td>
+													</tr>	
+													<tr style="display: none;">
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+									</div>
+								</div>
+							
+							
+						</div>
+        			</div>
+					
+                </div>
+                 
+                 	
+                 <!-- 第一个    报单账户  end-->
+			</div>
+		
+		</div>
+		<script type="text/javascript">
+			$(".form_date").datetimepicker({
+	    	  minView: "month", //选择日期后，不会再跳转去选择时分秒 
+		      format: "yyyy-mm-dd",
+		      autoclose: true,
+		      todayBtn: true,
+		      language:'zh-CN',
+		      pickerPosition:"bottom-left",
+		      bootcssVer:3
+		    });
+			$(".entryAccount_click").bind("click",function(){
+				$(".entryAccount").show();
+				$(".entryAccount_hide").hide();
+				
+			});
+			$(".entryAccount_setting_click").bind("click",function(){
+				$(".entryAccount_setting").show();
+				$(".entryAccount_hide").hide();
+				
+			});
+			$(".viewOrder_click").bind("click",function(){
+				$(".viewOrder").show();
+				$(".entryAccount_hide").hide();
+				
+			});
+			$(".back_click").bind("click",function(){
+				$(".entryAccount").hide();
+				$(".entryAccount_hide").show();
+				$(".entryAccount_setting").hide();
+			});
+			$(".goback_click").bind("click",function(){
+				$(".viewOrder").hide();
+				$(".entryAccount_hide").show();
+			});
+			$(".set_success_click").bind("click",function(){
+				$(".set_success").show();
+				
+			});
+
+			$(".toEntryAccount").bind("click",function(){
+				$(".set_success").hide();
+				$(".entryAccount_setting").hide();
+				$(".entryAccount_hide").show();
+				
+			});
+
+		</script>
+	</body>
+</html>
+

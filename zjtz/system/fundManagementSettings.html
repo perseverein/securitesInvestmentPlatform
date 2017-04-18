@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li class="active"><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+				<ul class="nav nav-stacked nav-left col-md-1">
+					<li><a href="system.html">用户默认设置</a><div></div></li>
+					<li class="active"><a href="fundManagementSettings.html">资金管理设置</a><div></div></li>
+					<li><a href="systemNameManagement.html">系统名称管理</a><div></div></li>
+				</ul>
+                <!--/sidebar-->
+                <!-- 第二个    资金管理设置-->
+                <div class="nav-right col-md-11">
+	
+					<div>
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">系统管理</a></li>
+								<li class="active">资金管理设置</li>
+							</ol>
+						</div>
+						<div class="main">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tab621" data-toggle="tab">充值</a></li>
+								<li><a href="#tab622" data-toggle="tab">提现</a></li>
+							</ul>
+							<!--tab pane-->
+							<div class="tab-content tab_content">
+								<!-- 第一个tab 充值-->
+								<div class="tab-pane fade active in" id="tab621">
+									<div>
+										<ul class="nav nav-tabs">
+											<li class="active"><a href="#tab6211" data-toggle="tab">在岸人民币账户</a></li>
+											<li><a href="#tab6212" data-toggle="tab">美元账户</a></li>
+											<li><a href="#tab6213" data-toggle="tab">港币账户</a></li>
+											<li><a href="#tab6214" data-toggle="tab">离岸人民币账户</a></li>
+										</ul>
+										<!--tab pane-->
+										<div class="tab-content tab_content">
+											<!-- 第一个tab 充值 在岸人民币账户-->
+											<div class="tab-pane fade active in" id="tab6211">
+												<!-- 第一个tab 在岸人民币账户-->
+												<div class="new_account_hide1">
+													<a class="btn btn-info new_account1_click">新增</a>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="table-responsive">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>资金账户</th>
+																	<th>收款方账户</th>
+																	<th>收款方姓名</th>
+																	<th>收款方账号</th>
+																	<th>收款方开户行<br>(SWIFT代码)</th>
+																	<th>收款方地址</th>
+																	<th>状态</th>
+																	<th>操作</th>
+																</tr>
+															</thead>
+															<tbody class="name_receivables">
+																<tr>
+																	<td>在岸人民币账户</td>
+																	<td>交通银行</td>
+																	<td>111</td>
+																	<td>11</td>
+																	<td>111</td>
+																	<td>heading</td>
+																	<td>heading</td>
+																	<td><a class="new_account1_change">编辑</a></td>
+																</tr>	
+															</tbody>
+														</table>
+													</div> 
+												</div>
+												
+												<!-- 第一个tab 在岸人民币账户  结束-->	
+												<!-- 第一个tab 在岸人民币账户  新增-->
+											
+												<div class="new_account_show1" style="display: none;">
+													<label for="" style="margin-right: 8.5%;">收款方银行:</label>
+													<select class="form-control name_receivables1" style="width: 11%; display: inline-block;">
+														<option>交通银行</option>
+														<option>北京银行</option>
+														<option>支付宝</option>
+														<option>民生银行</option>
+														<option>中国银行</option>
+														<option>光大银行</option>
+														<option>中信银行</option>
+														<option>其他</option>
+													</select>
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方名称:</label><input type="text" class="name_receivables2"/>
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方账户:</label><input type="text" class="name_receivables3" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="">收款方开户行(SWIFT代码):</label><input type="text" class="name_receivables4" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方地址:</label><input type="text" class="name_receivables5" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 9.2%;">状态:</label>
+													<div class="name_receivables6" style="display: inline-block;">
+														<label class="checkbox-inline">
+															<input type="radio" name="optionsRadiosinlin" id="optionsRadios1" value="使用" checked> 使用
+														</label>
+														<label class="checkbox-inline">
+															<input type="radio" name="optionsRadiosinlin" id="optionsRadios2"  value="不使用"> 不使用
+														</label>
+													</div>
+												    
+													<p style="margin-bottom: 20px;"></p>
+													<div class="">
+														<a class="btn normal_btn new_account1" style="margin-left: 5%;">确定</a>
+														<a class="btn export_btn new_account_cancel">取消</a>
+													</div>
+												</div>
+											
+												<!-- 第一个tab 充值  在岸人民币账户  新增结束-->
+												<!-- 第一个tab 在岸人民币账户  编辑-->
+											
+												<div class="new_account_show11" style="display: none;">
+													<label for="" style="margin-right: 8.5%;">收款方银行:</label>
+													<select class="form-control name_receivables11" style="width: 11%; display: inline-block;">
+														<option>交通银行</option>
+														<option>北京银行</option>
+														<option>支付宝</option>
+														<option>民生银行</option>
+														<option>中国银行</option>
+														<option>光大银行</option>
+														<option>中信银行</option>
+														<option>其他</option>
+													</select>
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方名称:</label><input type="text" class="name_receivables21"/>
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方账户:</label><input type="text" class="name_receivables31" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="">收款方开户行(SWIFT代码):</label><input type="text" class="name_receivables41" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方地址:</label><input type="text" class="name_receivables51" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 9.2%;">状态:</label>
+													<div class="name_receivables61" style="display: inline-block;">
+														<label class="checkbox-inline">
+															<input type="radio" name="optionsRadiosinline" id="optionsRadios11" value="使用" checked> 使用
+														</label>
+														<label class="checkbox-inline">
+															<input type="radio" name="optionsRadiosinline" id="optionsRadios21"  value="不使用"> 不使用
+														</label>
+													</div>
+												    
+													<p style="margin-bottom: 20px;"></p>
+													<div class="">
+														<a class="btn normal_btn new_add1" style="margin-left: 5%;">确定</a>
+														<a class="btn export_btn new_account_cancel">取消</a>
+													</div>
+												</div>
+											
+												<!-- 第一个tab 充值  在岸人民币账户  编辑结束-->
+											</div>
+											
+											<!-- 第二个tab 充值 美元账户-->
+											<div class="tab-pane fade" id="tab6212">
+												<!-- 第二个tab 美元账户-->
+												<div class="new_account_hide2">
+													<a class="btn btn-info new_account_click2">新增</a>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="table-responsive">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>资金账户</th>
+																	<th>收款方账户</th>
+																	<th>收款方姓名</th>
+																	<th>收款方账号</th>
+																	<th>收款方开户行<br>(SWIFT代码)</th>
+																	<th>收款方地址</th>
+																	<th>状态</th>
+																	<th>操作</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>美元账户</td>
+																	<td>交通银行</td>
+																	<td>111</td>
+																	<td>11</td>
+																	<td>111</td>
+																	<td>heading</td>
+																	<td>heading</td>
+																	<td>编辑</td>
+																</tr>	
+															</tbody>
+														</table>
+													</div> 
+												</div>
+												<!-- 第二个tab 美元账户  结束-->
+												<!-- 第二个tab 美元账户  新增-->
+												<div class="new_account_show2" style="display: none;">
+													<label for="" style="margin-right:8.5%;">收款方银行:</label>
+													<select class="form-control" style="width: 11%; display: inline-block;">
+														<option>交通银行</option>
+														<option>北京银行</option>
+														<option>支付宝</option>
+														<option>民生银行</option>
+														<option>中国银行</option>
+														<option>光大银行</option>
+														<option>中信银行</option>
+														<option>其他</option>
+													</select>
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方名称:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方账户:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="">收款方开户行(SWIFT代码):</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方地址:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 9.2%;">状态:</label>
+												    <label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9" value="option1" checked> 使用
+													</label>
+													<label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9"  value="option2"> 不使用
+													</label>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="">
+														<a class="btn normal_btn new_account2" style="margin-left: 5%;">确定</a>
+														<a class="btn export_btn new_account2">取消</a>
+													</div>
+												</div>
+																	
+												<!-- 第二个tab 美元账户  新增 结束  -->
+											</div>
+											
+											<!-- 第二个tab 充值 美元账户  结束-->
+											
+											<!-- 第3个tab 充值 港币账户-->
+											<div class="tab-pane fade" id="tab6213">
+												<!-- 第3个tab 港币账户-->
+												<div class="new_account_hide3">
+													<a class="btn btn-info new_account_click3">新增</a>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="table-responsive">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>资金账户</th>
+																	<th>收款方账户</th>
+																	<th>收款方姓名</th>
+																	<th>收款方账号</th>
+																	<th>收款方开户行<br>(SWIFT代码)</th>
+																	<th>收款方地址</th>
+																	<th>状态</th>
+																	<th>操作</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>港币账户</td>
+																	<td>交通银行</td>
+																	<td>111</td>
+																	<td>11</td>
+																	<td>111</td>
+																	<td>heading</td>
+																	<td>heading</td>
+																	<td>编辑</td>
+																</tr>	
+															</tbody>
+														</table>
+													</div> 
+												</div>
+												<!-- 第3个tab 港币账户  结束-->
+												<!-- 第3个tab 港币账户  新增-->
+												<div class="new_account_show3" style="display: none;">
+													<label for="" style="margin-right: 8.5%;">收款方银行:</label>
+													<select class="form-control" style="width: 11%; display: inline-block;">
+														<option>交通银行</option>
+														<option>北京银行</option>
+														<option>支付宝</option>
+														<option>民生银行</option>
+														<option>中国银行</option>
+														<option>光大银行</option>
+														<option>中信银行</option>
+														<option>其他</option>
+													</select>
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方名称:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方账户:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="">收款方开户行(SWIFT代码):</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方地址:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 9.2%;">状态:</label>
+												    <label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9" value="option1" checked> 使用
+													</label>
+													<label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9"  value="option2"> 不使用
+													</label>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="">
+														<a class="btn normal_btn new_account3" style="margin-left: 5%;">确定</a>
+														<a class="btn export_btn new_account3">取消</a>
+													</div>
+												</div>
+																	
+												<!-- 第3个tab 港币账户  新增 结束  -->
+											</div>
+											
+											<!-- 第3个tab 充值 港币账户  结束-->
+											
+											<!-- 第4个tab 充值 离岸人民币账户账户-->
+											<div class="tab-pane fade" id="tab6214">
+												<!-- 第4个tab 离岸人民币账户账户-->
+												<div class="new_account_hide4">
+													<a class="btn btn-info new_account_click4">新增</a>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="table-responsive">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>资金账户</th>
+																	<th>收款方账户</th>
+																	<th>收款方姓名</th>
+																	<th>收款方账号</th>
+																	<th>收款方开户行<br>(SWIFT代码)</th>
+																	<th>收款方地址</th>
+																	<th>状态</th>
+																	<th>操作</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>离岸人民币账户</td>
+																	<td>交通银行</td>
+																	<td>111</td>
+																	<td>11</td>
+																	<td>111</td>
+																	<td>heading</td>
+																	<td>heading</td>
+																	<td>编辑</td>
+																</tr>	
+															</tbody>
+														</table>
+													</div> 
+												</div>
+												<!-- 第4个tab 离岸人民币账户账户  结束-->
+												<!-- 第4个tab 离岸人民币账户账户  新增-->
+												<div class="new_account_show4" style="display: none;">
+													<label for="" style="margin-right: 8.5%;">收款方银行:</label>
+													<select class="form-control" style="width: 11%; display: inline-block;">
+														<option>交通银行</option>
+														<option>北京银行</option>
+														<option>支付宝</option>
+														<option>民生银行</option>
+														<option>中国银行</option>
+														<option>光大银行</option>
+														<option>中信银行</option>
+														<option>其他</option>
+													</select>
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方名称:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方账户:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="">收款方开户行(SWIFT代码):</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">收款方地址:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 9.2%;">状态:</label>
+												    <label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9" value="option1" checked> 使用
+													</label>
+													<label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9"  value="option2"> 不使用
+													</label>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="">
+														<a class="btn normal_btn new_account4" style="margin-left: 5%;">确定</a>
+														<a class="btn export_btn new_account4">取消</a>
+													</div>
+												</div>
+																	
+												<!-- 第4个tab 离岸人民币账户账户  新增 结束  -->
+											</div>
+											
+											<!-- 第4个tab 充值 离岸人民币账户账户  结束-->
+									
+										</div>
+										
+										<br />
+									</div>
+								</div>
+								
+								<!-- 第2个tab 提现-->
+								<div class="tab-pane fade" id="tab622">
+									<div>
+										<ul class="nav nav-tabs">
+											<li class="active"><a href="#tab6221" data-toggle="tab">在岸人民币账户</a></li>
+											<li><a href="#tab6222" data-toggle="tab">美元账户</a></li>
+											<li><a href="#tab6223" data-toggle="tab">港币账户</a></li>
+											<li><a href="#tab6224" data-toggle="tab">离岸人民币账户</a></li>
+										</ul>
+										<!--tab pane-->
+										<div class="tab-content tab_content">
+											<!-- 第一个tab 提现 在岸人民币账户-->
+											<div class="tab-pane fade active in" id="tab6221">
+												<!-- 第一个tab 在岸人民币账户-->
+												<div class="new_account_hide11">
+													<a class="btn btn-info new_account_click11">新增</a>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="table-responsive">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>资金账户</th>
+																	<th>收款方账户</th>
+																	<th>收款方姓名</th>
+																	<th>收款方账号</th>
+																	<th>收款方开户行<br>(SWIFT代码)</th>
+																	<th>收款方地址</th>
+																	<th>状态</th>
+																	<th>操作</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>人民币账户</td>
+																	<td>交通银行</td>
+																	<td>111</td>
+																	<td>11</td>
+																	<td>111</td>
+																	<td>heading</td>
+																	<td>heading</td>
+																	<td>编辑</td>
+																</tr>	
+															</tbody>
+														</table>
+													</div> 
+												</div>
+												
+												<!-- 第一个tab 在岸人民币账户  结束-->	
+												<!-- 第一个tab 在岸人民币账户  新增-->
+											
+												<div class="new_account_show11" style="display: none;">
+													<label for="" style="margin-right: 8.5%;">付款方银行:</label>
+													<select class="form-control" style="width: 11%; display: inline-block;">
+														<option>交通银行</option>
+														<option>北京银行</option>
+														<option>支付宝</option>
+														<option>民生银行</option>
+														<option>中国银行</option>
+														<option>光大银行</option>
+														<option>中信银行</option>
+														<option>其他</option>
+													</select>
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">付款方名称:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">付款方账户:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="">付款方开户行(SWIFT代码):</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">付款方地址:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 9.2%;">状态:</label>
+												    <label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9" value="使用" checked> 使用
+													</label>
+													<label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline5" id="optionsRadios9"  value="不使用"> 不使用
+													</label>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="">
+														<a class="btn normal_btn new_account11" style="margin-left: 5%;">确定</a>
+														<a class="btn export_btn new_account11">取消</a>
+													</div>
+												</div>
+											
+												<!-- 第一个tab 提现  在岸人民币账户  新增结束-->
+											</div>
+											
+											<!-- 第二个tab 提现 美元账户-->
+											<div class="tab-pane fade" id="tab6222">
+												<!-- 第二个tab 美元账户-->
+												<div class="new_account_hide12">
+													<a class="btn btn-info new_account_click12">新增</a>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="table-responsive">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>资金账户</th>
+																	<th>收款方账户</th>
+																	<th>收款方姓名</th>
+																	<th>收款方账号</th>
+																	<th>收款方开户行<br>(SWIFT代码)</th>
+																	<th>收款方地址</th>
+																	<th>状态</th>
+																	<th>操作</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>人民币账户</td>
+																	<td>交通银行</td>
+																	<td>111</td>
+																	<td>11</td>
+																	<td>111</td>
+																	<td>heading</td>
+																	<td>heading</td>
+																	<td>编辑</td>
+																</tr>	
+															</tbody>
+														</table>
+													</div> 
+												</div>
+												<!-- 第二个tab 美元账户  结束-->
+												<!-- 第二个tab 美元账户  新增-->
+												<div class="new_account_show12" style="display: none;">
+													<label for="" style="margin-right: 8.5%;">付款方银行:</label>
+													<select class="form-control" style="width: 11%; display: inline-block;">
+														<option>交通银行</option>
+														<option>北京银行</option>
+														<option>支付宝</option>
+														<option>民生银行</option>
+														<option>中国银行</option>
+														<option>光大银行</option>
+														<option>中信银行</option>
+														<option>其他</option>
+													</select>
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">付款方名称:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">付款方账户:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="">付款方开户行(SWIFT代码):</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">付款方地址:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 9.2%;">状态:</label>
+												    <label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9" value="option1" checked> 使用
+													</label>
+													<label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9"  value="option2"> 不使用
+													</label>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="">
+														<a class="btn normal_btn new_account12" style="margin-left: 5%;">确定</a>
+														<a class="btn export_btn new_account12">取消</a>
+													</div>
+												</div>
+																	
+												<!-- 第二个tab 美元账户  新增 结束  -->
+											</div>
+											
+											<!-- 第二个tab 提现 美元账户  结束-->
+											
+											<!-- 第3个tab 提现 港币账户-->
+											<div class="tab-pane fade" id="tab6223">
+												<!-- 第3个tab 港币账户-->
+												<div class="new_account_hide13">
+													<a class="btn btn-info new_account_click13">新增</a>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="table-responsive">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>资金账户</th>
+																	<th>收款方账户</th>
+																	<th>收款方姓名</th>
+																	<th>收款方账号</th>
+																	<th>收款方开户行<br>(SWIFT代码)</th>
+																	<th>收款方地址</th>
+																	<th>状态</th>
+																	<th>操作</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>人民币账户</td>
+																	<td>交通银行</td>
+																	<td>111</td>
+																	<td>11</td>
+																	<td>111</td>
+																	<td>heading</td>
+																	<td>heading</td>
+																	<td>编辑</td>
+																</tr>	
+															</tbody>
+														</table>
+													</div> 
+												</div>
+												<!-- 第3个tab 港币账户  结束-->
+												<!-- 第3个tab 港币账户  新增-->
+												<div class="new_account_show13" style="display: none;">
+													<label for="" style="margin-right: 8.5%;">付款方银行:</label>
+													<select class="form-control" style="width: 11%; display: inline-block;">
+														<option>交通银行</option>
+														<option>北京银行</option>
+														<option>支付宝</option>
+														<option>民生银行</option>
+														<option>中国银行</option>
+														<option>光大银行</option>
+														<option>中信银行</option>
+														<option>其他</option>
+													</select>
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">付款方名称:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">付款方账户:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="">付款方开户行(SWIFT代码):</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">付款方地址:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 9.2%;">状态:</label>
+												    <label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9" value="option1" checked> 使用
+													</label>
+													<label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9"  value="option2"> 不使用
+													</label>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="">
+														<a class="btn normal_btn new_account13" style="margin-left: 5%;">确定</a>
+														<a class="btn export_btn new_account13">取消</a>
+													</div>
+												</div>
+																	
+												<!-- 第3个tab 港币账户  新增 结束  -->
+											</div>
+											
+											<!-- 第3个tab 提现 港币账户  结束-->
+											
+											<!-- 第4个tab 提现 离岸人民币账户账户-->
+											<div class="tab-pane fade" id="tab6224">
+												<!-- 第4个tab 离岸人民币账户账户-->
+												<div class="new_account_hide14">
+													<a class="btn btn-info new_account_click14">新增</a>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="table-responsive">
+														<table class="table">
+															<thead>
+																<tr>
+																	<th>资金账户</th>
+																	<th>收款方账户</th>
+																	<th>收款方姓名</th>
+																	<th>收款方账号</th>
+																	<th>收款方开户行<br>(SWIFT代码)</th>
+																	<th>收款方地址</th>
+																	<th>状态</th>
+																	<th>操作</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>人民币账户</td>
+																	<td>交通银行</td>
+																	<td>111</td>
+																	<td>11</td>
+																	<td>111</td>
+																	<td>heading</td>
+																	<td>heading</td>
+																	<td>编辑</td>
+																</tr>	
+															</tbody>
+														</table>
+													</div> 
+												</div>
+												<!-- 第4个tab 离岸人民币账户账户  结束-->
+												<!-- 第4个tab 离岸人民币账户账户  新增-->
+												<div class="new_account_show14" style="display: none;">
+													<label for="" style="margin-right: 8.5%;">付款方银行:</label>
+													<select class="form-control" style="width: 11%; display: inline-block;">
+														<option>交通银行</option>
+														<option>北京银行</option>
+														<option>支付宝</option>
+														<option>民生银行</option>
+														<option>中国银行</option>
+														<option>光大银行</option>
+														<option>中信银行</option>
+														<option>其他</option>
+													</select>
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">付款方名称:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">付款方账户:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="">付款方开户行(SWIFT代码):</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 8.2%;">付款方地址:</label><input type="text" />
+													<p style="margin-bottom: 10px;"></p>
+													<label for="" style="margin-right: 9.2%;">状态:</label>
+												    <label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9" value="option1" checked> 使用
+													</label>
+													<label class="checkbox-inline">
+														<input type="radio" name="optionsRadiosinline4" id="optionsRadios9"  value="option2"> 不使用
+													</label>
+													<p style="margin-bottom: 20px;"></p>
+													<div class="">
+														<a class="btn normal_btn new_account14" style="margin-left: 5%;">确定</a>
+														<a class="btn export_btn new_account14">取消</a>
+													</div>
+												</div>
+																	
+												<!-- 第4个tab 离岸人民币账户账户  新增 结束  -->
+											</div>
+											
+											<!-- 第4个tab 提现 离岸人民币账户账户  结束-->
+									
+										</div>
+										
+										<br />
+									</div>
+								</div>
+								
+							
+							</div>
+							
+							
+            			</div>
+            		</div>
+						    			
+					
+                </div>
+                 <!-- 第二个    资金管理设置   end-->
+			</div>
+		
+		</div>
+		<script type="text/javascript">
+			
+			/*充值    在岸人民币账户  编辑  修改    开始*/
+			
+			$(".new_account1_change").bind("click",function(){
+				$(".new_account_show11").show();
+				$(".new_account_hide1").hide();
+				
+				
+			});
+			$(".new_add1").bind("click",function(){
+					$(".new_account_hide1").show();
+					$(".new_account_show11").hide();
+					var val11 = $(this).parent().parent().children().eq(1).val();
+					var val21 = $(this).parent().parent().children().eq(4).val();
+					var val31 = $(this).parent().parent().children().eq(7).val();
+					var val41 = $(this).parent().parent().children().eq(10).val();
+					var val51 = $(this).parent().parent().children().eq(13).val();
+					var val61 = $(this).parent().parent().children().find($('input[type="radio"]:checked')).val();
+					var modifyTr1 = $(".new_account1_change").parent().parent().children().eq(1).html(val11);
+					var modifyTr2 = $(".new_account1_change").parent().parent().children().eq(2).html(val21);
+					var modifyTr3 = $(".new_account1_change").parent().parent().children().eq(3).html(val31);
+					var modifyTr4 = $(".new_account1_change").parent().parent().children().eq(4).html(val41);
+					var modifyTr5 = $(".new_account1_change").parent().parent().children().eq(5).html(val51);
+					var modifyTr6 = $(".new_account1_change").parent().parent().children().eq(6).html(val61);
+				
+				});
+			/*充值    在岸人民币账户  编辑  修改    结束*/
+			
+			/*  充值    在岸人民币账户 新增*/
+			$(".new_account1_click").bind("click",function(){
+				$(".new_account_show1").show();
+				$(".new_account_hide1").hide();
+				
+			})
+			$(".new_account1").bind("click",function(){
+					alert(11)
+					$(".new_account_hide1").show();
+					$(".new_account_show1").hide();
+					var val1 = $(this).parent().parent().children().eq(1).val();
+					var val2 = $(this).parent().parent().children().eq(4).val();
+					var val3 = $(this).parent().parent().children().eq(7).val();
+					var val4 = $(this).parent().parent().children().eq(10).val();
+					var val5 = $(this).parent().parent().children().eq(13).val();
+					var val6 = $(this).parent().parent().children().find($('input[type="radio"]:checked')).val();
+					var  tr =  '<tr><td>'+'在岸人民币账户'+'</td><td>'+val1+'</td><td>'+val2+'</td><td>'
+								+val3+'</td><td>'+val4+'</td><td>'+val5+'</td><td>'+val6+'</td><td>'
+								+'<a'+' class="new_account1_change">'+'编辑'+'</a>'+'</td></tr>';
+					var tBody = $('.name_receivables').append(tr)
+					
+				});
+			
+			
+			
+			/*取消编辑*/
+			$(".new_account_cancel").bind("click",function(){
+				$(".new_account_show1").hide();
+				$(".new_account_hide1").show();
+			});
+			
+			/*  充值    美元账户 新增*/
+			$(".new_account_click2").bind("click",function(){
+				$(".new_account_show2").show();
+				$(".new_account_hide2").hide();
+			})
+			$(".new_account2").bind("click",function(){
+				$(".new_account_hide2").show();
+				$(".new_account_show2").hide();
+			})
+			/*  充值    港币账户 新增*/
+			$(".new_account_click3").bind("click",function(){
+				$(".new_account_show3").show();
+				$(".new_account_hide3").hide();
+			})
+			$(".new_account3").bind("click",function(){
+				$(".new_account_hide3").show();
+				$(".new_account_show3").hide();
+			})
+			/*  充值    离岸人民币账户 新增*/
+			$(".new_account_click4").bind("click",function(){
+				$(".new_account_show4").show();
+				$(".new_account_hide4").hide();
+			})
+			$(".new_account4").bind("click",function(){
+				$(".new_account_hide4").show();
+				$(".new_account_show4").hide();
+			})
+			
+			
+			
+			/*  提现    在岸人民币账户 新增*/
+			$(".new_account_click11").bind("click",function(){
+				$(".new_account_show11").show();
+				$(".new_account_hide11").hide();
+			})
+			$(".new_account11").bind("click",function(){
+				$(".new_account_hide11").show();
+				$(".new_account_show11").hide();
+			})
+			/*  提现    美元账户 新增*/
+			$(".new_account_click12").bind("click",function(){
+				$(".new_account_show12").show();
+				$(".new_account_hide12").hide();
+			})
+			$(".new_account12").bind("click",function(){
+				$(".new_account_hide12").show();
+				$(".new_account_show12").hide();
+			})
+			/*  提现    港币账户 新增*/
+			$(".new_account_click13").bind("click",function(){
+				$(".new_account_show13").show();
+				$(".new_account_hide13").hide();
+			})
+			$(".new_account13").bind("click",function(){
+				$(".new_account_hide13").show();
+				$(".new_account_show13").hide();
+			})
+			/*  提现    离岸人民币账户 新增*/
+			$(".new_account_click14").bind("click",function(){
+				$(".new_account_show14").show();
+				$(".new_account_hide14").hide();
+			})
+			$(".new_account14").bind("click",function(){
+				$(".new_account_hide14").show();
+				$(".new_account_show14").hide();
+			})
+		</script>
+	</body>
+</html>
+

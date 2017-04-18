@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>证券投资平台</title>
+		<!--样式重置-->
+		<link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+		<!-- Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="../bootstrap-3.3.7/css/bootstrap.min.css">
+		<!--日期控件   css文件-->
+		<link href="../bootstrap-3.3.7/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css">
+		<!-- jQuery文件 -->
+		<script src="../bootstrap-3.3.7/js/jquery-1.12.3.min.js"></script>
+		<!-- Bootstrap 核心 JavaScript 文件 -->
+		<script src="../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+		<!--日期控件  JavaScript 文件-->
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../bootstrap-3.3.7/js/bootstrap-datetimepicker.zh-CN.js"></script>
+		<!-- main 核心 JavaScript 文件 -->
+		<script src="../assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="pf-header">
+			<!--导航-->
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!--header left-->
+					<div class="pf-logo">
+						<a class="navbar-brand" href="#" style="margin: 0 10px 0 10px;"><strong>证券投资平台</strong></a>
+					</div>
+					<ul class="user_info clearfix">
+						<li><a href="javascript:;">当前账号：32410000</a></li>
+						<li><a href="#" target="_blank">行情交易</a></li>
+						<li class="no_border"><a href="#">安全退出</a></li>
+					</ul>
+					<!-- Nav tabs -->
+					<ul class="nav" id="myTab">
+						<li class="active search_transaction"><a href="../index.html">交易管理</a></li>
+						<li class="search_fund"><a href="../fund/fund.html">资金管理</a></li>
+						<li><a href="../riskcontrol/riskcontrol.html">风控管理</a></li>
+						<li><a href="../account/account.html">账户管理</a></li>
+						<li><a href="../asset/asset.html">资产管理</a></li>
+						<li><a href="../system/system.html">系统管理</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="pf-main">
+			<div class="tabbable row">
+				<!--sidebar-->
+                <ul class="nav nav-stacked nav-left col-md-1">
+                    <li><a href="../index.html">委托查询</a><div></div></li>
+                    <li><a href="transactionRecord.html">成交记录</a><div></div></li>
+                    <li><a href="positionInquiry.html">持仓查询</a><div></div></li>
+                    <li><a href="positionComparison.html">持仓对比</a><div></div></li>
+                    <li class="active"><a href="#">收费方案</a><div></div></li>
+                    <li><a href="equityChange.html">权益变动</a><div></div></li>
+                    <li><a href="abnormalOrder.html">异常订单</a><div></div></li>
+                    <li><a href="transactionReconciliation.html">交易对账</a><div></div></li>
+                </ul>
+                <!--/sidebar-->
+                <!-- 第五个    收费方案-->
+                <div class="nav-right col-md-11">
+                	<div>
+            			<div class="header">
+							<ol class="breadcrumb">
+								<li><a href="#">交易管理</a></li>
+								<li class="active">收费方案</li>
+							</ol>
+						</div>
+						<div class="main">
+							<div style="border: 1px solid #23527C;padding: 10px ;margin-bottom: 20px;">
+								<p>1.费率设置为对用户交易的费率全局设置</p>
+								<p>2.用户新增默认使用默认收费方案</p>
+							</div>
+							<form class="form">
+								<div class="form-group">
+								    <label for="name">方案名称:</label>
+								    <select class="form-control" style="width: 20%;">
+										<option>全局收费方案1</option>
+										<option>全局收费方案2</option>
+										<option>全局收费方案3</option>
+									</select>
+								</div>
+							  	
+							</form>
+							<br />
+							<div>
+								<label for="name">方案设置:</label>
+								<ul class="nav nav-tabs">
+									<li class="active"><a href="#tab151" data-toggle="tab">沪深A股</a></li>
+									<li><a href="#tab152" data-toggle="tab">美股</a></li>
+									<li><a href="#tab153" data-toggle="tab">港股</a></li>
+									<li><a href="#tab154" data-toggle="tab">沪股通</a></li>
+									<li><a href="#tab155" data-toggle="tab">深股通</a></li>
+									<li><a href="#tab156" data-toggle="tab">金融期货</a></li>
+									<li><a href="#tab157" data-toggle="tab">换汇</a></li>
+									<li><a href="#tab158" data-toggle="tab">融资</a></li>
+									<li><a href="#tab159" data-toggle="tab">商品期货</a></li>
+									<li><a href="#tab150" data-toggle="tab">金银现货</a></li>
+								</ul>
+								<!-- Tab panes -->
+								<div class="tab-content tab_content">
+									<!-- 第一个tab 沪深A股-->
+									<div class="tab-pane fade active in" id="tab151">
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>收费类型</th>
+														<th>交易金额比例(%)</th>
+														<th>委托方向</th>
+														<th>最低费用</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>经纪商佣金</td>
+														<td>0.05</td>
+														<td>双向</td>
+														<td>8.00</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>政府印花税</td>
+														<td>0.10</td>
+														<td>卖出</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>	
+													<tr>
+														<td>过户结算费</td>
+														<td>0.002</td>
+														<td>双向</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>	
+												</tbody>
+											</table>
+										</div> 
+										
+									</div>
+									<!-- 第二个tab 美股-->
+									<div class="tab-pane fade" id="tab152">
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>收费类型</th>
+														<th>成交金额比例(%)</th>
+														<th>每股收取</th>
+														<th>委托方向</th>
+														<th>最低费用</th>
+														<th>最高费用</th>
+														<th>补偿目标最低值</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>经纪商佣金</td>
+														<td>--</td>
+														<td>0.007</td>
+														<td>双向</td>
+														<td>0.70</td>
+														<td>1.00</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>证监会费用</td>
+														<td>0.00218</td>
+														<td>--</td>
+														<td>卖出</td>
+														<td>--</td>
+														<td>--</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>	
+													<tr>
+														<td>交易所费用</td>
+														<td>--</td>
+														<td>0.003</td>
+														<td>双向</td>
+														<td>--</td>
+														<td>--</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>	
+													<tr>
+														<td>补足费用</td>
+														<td>--</td>
+														<td>--</td>
+														<td>双向</td>
+														<td>--</td>
+														<td>--</td>
+														<td>1.00</td>
+														<td>编辑</td>
+													</tr>	
+												</tbody>
+											</table>
+										</div>
+					    			</div>
+									<!-- 第三个tab 港股-->
+									<div class="tab-pane fade" id="tab153">
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>收费类型</th>
+														<th>交易金额比例(%)</th>
+														<th>委托方向</th>
+														<th>最低费用</th>
+														<th>最高费用</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>经纪商佣金</td>
+														<td>0.10</td>
+														<td>双向</td>
+														<td>30.00</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>政府印花税</td>
+														<td>0.10</td>
+														<td>双向</td>
+														<td>1.00</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>	
+													<tr>
+														<td>香港结算费</td>
+														<td>0.002</td>
+														<td>双向</td>
+														<td>2.00</td>
+														<td>100.00</td>
+														<td>编辑</td>
+													</tr>	
+													<tr>
+														<td>交易所费用</td>
+														<td>0.005+0.50</td>
+														<td>双向</td>
+														<td>--</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>	
+													<tr>
+														<td>证监会费用</td>
+														<td>0.0027</td>
+														<td>双向</td>
+														<td>--</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>	
+												</tbody>
+											</table>
+										</div>
+					    			</div>
+									<!-- 第四个tab 沪股通-->
+									<div class="tab-pane fade" id="tab154">
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>收费类型</th>
+														<th>交易金额比例(%)</th>
+														<th>委托方向</th>
+														<th>最低费用</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>经纪商佣金</td>
+														<td>0.025</td>
+														<td>双向</td>
+														<td>5.00</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>政府印花税</td>
+														<td>0.10</td>
+														<td>卖出</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>交易所费用(含投资者保护基金)</td>
+														<td>0.00487</td>
+														<td>双向</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>	
+													<tr>
+														<td>过户结算费</td>
+														<td>0.002</td>
+														<td>双向</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>香港结算费</td>
+														<td>0.004</td>
+														<td>双向</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>	
+												</tbody>
+											</table>
+										</div>
+					    			</div>
+									<!-- 第五个tab 深股通-->
+									<div class="tab-pane fade" id="tab155">
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>收费类型</th>
+														<th>交易金额比例(%)</th>
+														<th>委托方向</th>
+														<th>最低费用</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>经纪商佣金</td>
+														<td>0.025</td>
+														<td>双向</td>
+														<td>5.00</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>政府印花税</td>
+														<td>0.10</td>
+														<td>卖出</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>交易所费用(含投资者保护基金)</td>
+														<td>0.00487</td>
+														<td>双向</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>	
+													<tr>
+														<td>过户结算费</td>
+														<td>0.002</td>
+														<td>双向</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>香港结算费</td>
+														<td>0.004</td>
+														<td>双向</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>	
+												</tbody>
+											</table>
+										</div>
+					    			</div>
+									<!-- 第六个tab 金融期货-->
+									<div class="tab-pane fade" id="tab156">
+										<div class="row">
+											<div class="table-responsive col-md-4" style="padding: 1% 5% 0 3%;">
+												<caption><p style="text-align: center;">恒生指数期贷HSI单位:港币(HK$)</p></caption>
+												<table class="table">
+													<thead>
+														<tr>
+															<th>收费种类</th>
+															<th>每张合约佣金</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>经纪商佣金</td>
+															<td>30.00</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>证监会费用</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>交易所费用</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>	
+														<tr>
+															<td>隔夜搁置费</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>	
+													</tbody>
+												</table>
+											</div>
+											<div class="table-responsive col-md-4" style="padding: 1% 5% 0 5%;">
+												<caption><p style="text-align: center;">小恒生指数期贷HSI单位:港币(HK$)</p></caption>
+												<table class="table">
+													<thead>
+														<tr>
+															<th>收费种类</th>
+															<th>每张合约佣金</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>经纪商佣金</td>
+															<td>30.00</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>证监会费用</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>交易所费用</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>	
+														<tr>
+															<td>隔夜搁置费</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>	
+													</tbody>
+												</table>
+											</div>
+											<div class="table-responsive col-md-4" style="padding:  1% 5% 0 5%;">
+												<caption><p style="text-align: center;">新加坡新华富时A50指数期货单位:美元($)</p></caption>
+												<table class="table">
+													<thead>
+														<tr>
+															<th>收费种类</th>
+															<th>每张合约佣金</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>经纪商佣金</td>
+															<td>30.00</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>证监会费用</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>交易所费用</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>	
+														<tr>
+															<td>隔夜搁置费</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>	
+													</tbody>
+												</table>
+											</div>
+										</div>
+										
+					    			</div>
+									<!-- 第七个tab 换汇-->
+									<div class="tab-pane fade" id="tab157">
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>提交币种</th>
+														<th>佣金费率</th>
+														<th>最低收费</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>经纪商佣金</td>
+														<td>双向</td>
+														<td>8.00</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>政府印花税</td>
+														<td>卖出</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>过户结算费</td>
+														<td>双向</td>
+														<td>--</td>
+														<td>编辑</td>
+													</tr>	
+												</tbody>
+											</table>
+										</div>
+					    			</div>
+									<!-- 第八个tab 融资-->
+									<div class="tab-pane fade" id="tab158">
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>收费类型</th>
+														<th>日化利率(万分之)</th>
+														<th>年化利率(%)</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>美元融资</td>
+														<td>0.60</td>
+														<td>2.19</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>港币融资</td>
+														<td>1.00</td>
+														<td>3.65</td>
+														<td>编辑</td>
+													</tr>
+													<tr>
+														<td>离岸人民币<br/>融资</td>
+														<td>3.00</td>
+														<td>10.95</td>
+														<td>编辑</td>
+													</tr>	
+													<tr>
+														<td>在岸人民币<br/>融资</td>
+														<td>3.00</td>
+														<td>10.95</td>
+														<td>编辑</td>
+													</tr>	
+												</tbody>
+											</table>
+										</div>
+					    			</div>
+									<!-- 第九个tab 商品期货-->
+									<div class="tab-pane fade" id="tab159">
+										<div class="row">
+											<div class="table-responsive col-md-4" style="padding: 1% 5% 0 5%;">
+												<caption><p style="text-align: center;">美国轻质原油WTI期货&nbsp;单位:美元($)</p></caption>
+												<table class="table">
+													<thead>
+														<tr>
+															<th>收费种类</th>
+															<th>每张合约佣金</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>经纪商佣金</td>
+															<td>30.00</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>证监会费用</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>交易所费用</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>	
+														<tr>
+															<td>隔夜搁置费</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>	
+													</tbody>
+												</table>
+											</div>
+											<div class="table-responsive col-md-4" style="padding:  1% 5% 0 5%;">
+												<caption><p style="text-align: center;">美国轻质原油WTI小期货&nbsp;单位:美元($)</p></caption>
+												<table class="table">
+													<thead>
+														<tr>
+															<th>收费种类</th>
+															<th>每张合约佣金</th>
+															<th>操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>经纪商佣金</td>
+															<td>30.00</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>证监会费用</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>交易所费用</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>	
+														<tr>
+															<td>隔夜搁置费</td>
+															<td>0.00</td>
+															<td>编辑</td>
+														</tr>	
+													</tbody>
+												</table>
+											</div>
+										</div>
+					    			</div>
+									<!-- 第十个tab 金银现货-->
+									<div class="tab-pane fade" id="tab150">
+										<div class="row">
+											<div class="table-responsive col-md-6" style="padding: 1% 4% 0 5%;">
+												<caption><p style="text-align: center;">伦敦金(XAUUSD)&nbsp;单位:美元($)</p></caption>
+												<table class="table">
+													<thead>
+														<tr>
+															<th>收费种类</th>
+															<th>成交金额比例(%)</th>
+															<th>每股收取</th>
+															<th>收费方向</th>
+															<th>最低费用</th>
+															<th>最高费用(%)</th>
+															<th style="width: 43px;">操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>经纪商佣金</td>
+															<td>0.03</td>
+															<td>--</td>
+															<td>双向</td>
+															<td>2.00</td>
+															<td>--</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>隔夜置存费</td>
+															<td>--</td>
+															<td>0.05</td>
+															<td></td>
+															<td>--</td>
+															<td>--</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>交易所和监管<br/>费</td>
+															<td>0.00</td>
+															<td>--</td>
+															<td>双向</td>
+															<td>3.00</td>
+															<td>--</td>
+															<td>编辑</td>
+														</tr>	
+													</tbody>
+												</table>
+											</div>
+											<div class="table-responsive col-md-6" style="padding: 1% 5% 0 4%;">
+												<caption><p style="text-align: center;">伦敦银(XAGUSD)&nbsp;单位:美元($)</p></caption>
+												<table class="table">
+													<thead>
+														<tr>
+															<th>收费种类</th>
+															<th>成交金额比例(%)</th>
+															<th>每股收取</th>
+															<th>收费方向</th>
+															<th>最低费用</th>
+															<th>最高费用(%)</th>
+															<th style="width: 43px;">操作</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>经纪商佣金</td>
+															<td>0.03</td>
+															<td>--</td>
+															<td>双向</td>
+															<td>2.00</td>
+															<td>--</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>隔夜置存费</td>
+															<td>--</td>
+															<td>0.05</td>
+															<td></td>
+															<td>--</td>
+															<td>--</td>
+															<td>编辑</td>
+														</tr>
+														<tr>
+															<td>交易所和监管<br/>费</td>
+															<td>0.00</td>
+															<td>--</td>
+															<td>双向</td>
+															<td>3.00</td>
+															<td>--</td>
+															<td>编辑</td>
+														</tr>	
+													</tbody>
+												</table>
+											</div>		
+										</div>
+									</div>
+				    			</div>
+							</div>
+						</div>		
+					</div>
+                        		                                       
+                </div>
+                 <!-- 第五个    收费方案end-->
+			</div>
+		</div>
+	</body>
+</html>
